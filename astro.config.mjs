@@ -7,7 +7,6 @@ import { fileURLToPath } from 'url';
 
 export default defineConfig({
   site: 'https://test.beyond-tutors.com',
-  base: '/', // Ensure base is set to the root
   build: {
     outDir: './docs', // Output directory for the built site
     assetsDir: 'assets/astro', // Move assets to the assets directory
