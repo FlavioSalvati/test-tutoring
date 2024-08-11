@@ -9,7 +9,7 @@ export default defineConfig({
   site: 'https://test.beyond-tutors.com',
   build: {
     outDir: './docs', // Output directory for the built site
-    assetsDir: 'assets/astro', // Move assets to the assets directory
+    assetsDir: 'assets', // Move assets to the assets directory
   },
   integrations: [
     mdx(), // Enables MDX support
