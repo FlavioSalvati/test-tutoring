@@ -1,0 +1,135 @@
+---
+import Header from '../components/Header.astro';
+import ExtendedFooter from '../components/ExtendedFooter.astro';
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Astro Site</title>
+     <link rel="icon" type="image/jpeg" sizes="356x356" href="../assets/img/Logo_Final.jpeg">
+    <link rel="icon" type="image/jpeg" sizes="356x356" href="../assets/img/Logo_Final.jpeg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/jpeg" sizes="356x356" href="../assets/img/Logo_Final.jpeg">
+    <link rel="icon" type="image/jpeg" sizes="356x356" href="../assets/img/Logo_Final.jpeg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/jpeg" sizes="356x356" href="../assets/img/Logo_Final.jpeg">
+    <link rel="icon" type="image/jpeg" sizes="356x356" href="../assets/img/Logo_Final.jpeg">
+    <link rel="icon" type="image/jpeg" sizes="356x356" href="../assets/img/Logo_Final.jpeg">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre:600,800&amp;display=swap">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/fonts/typicons.min.css">
+    <link rel="stylesheet" href="../assets/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/Social-Icons.css">
+    <link rel="stylesheet" href="../assets/css/Fixed-navbar-starting-with-transparency-styles.css">
+    <link rel="stylesheet" href="../assets/css/Fixed-navbar-starting-with-transparency-colors.css">
+    <link rel="stylesheet" href="../assets/css/accordion-faq-list.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/Corporate-Footer-Clean.css">
+    <link rel="stylesheet" href="../assets/css/Features-Small-Icons-icons.css">
+    <link rel="stylesheet" href="../assets/css/Testimonials-images.css">
+    <link rel="stylesheet" href="../assets/css/fonts/typicons.min.css">
+    <link rel="stylesheet" href="../assets/css/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/box.css">
+    <link rel="stylesheet" href="../assets/css/hover-underline-animation.css">
+    <link rel="stylesheet" href="../assets/css/link-button.css">
+    <link rel="stylesheet" href="../assets/css/custom-table.css">
+    <link rel="stylesheet" href="../assets/css/demo.css">
+    <link rel="stylesheet" href="../assets/css/demo.compiled.css">
+    <link rel="stylesheet" href="../assets/css/filter-button.css">
+    <link rel="stylesheet" href="../assets/css/sprite.compiled.css">
+    <link rel="stylesheet" href="../assets/css/text-box.css">
+    <link rel="stylesheet" href="../assets/css/all-insights.css">
+    <link rel="stylesheet" href="../assets/css/custom-height-2col.css">
+    <link rel="stylesheet" href="../assets/css/index-style.css">
+    <link rel="stylesheet" href="../assets/css/outline-text.css">
+    <link rel="stylesheet" href="../assets/css/QA_card.css">
+    <link rel="stylesheet" href="../assets/css/responsive-header.css">
+    <link rel="stylesheet" href="../assets/css/scroll-images.css">
+    <link rel="stylesheet" href="../assets/css/style_QA_Forum.css">
+  </head>
+  <body style="overflow-x: hidden; background: #fff0e4;width: 100%;max-width: 100%;min-width: 100%;margin-right: 0px;margin-left: 0px;margin-bottom: 0px;margin-top: 0px;">
+    <Header />
+    <slot />
+    <ExtendedFooter />
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/current-day.js"></script>
+    <script src="../assets/js/Fixed-navbar-starting-with-transparency-script.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/data.min.js"></script>
+    <script src="../assets/js/header.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // script.js
+      
+      document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // Check if the element is intersecting
+          if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          } else {
+      
+          if (entry.target.classList.contains('from-left') || entry.target.classList.contains('from-right')) {
+            entry.target.classList.remove('active');
+          }
+          else if(entry.target.classList.contains('from-bottom')){
+            entry.target.classList.remove('active');
+            entry.target.classList.remove('from-bottom');
+            entry.target.classList.add('from-top');
+          }
+          else if(entry.target.classList.contains('from-top')){
+            entry.target.classList.remove('active');
+            entry.target.classList.remove('from-top');
+            entry.target.classList.add('from-bottom');
+          }
+      
+          }
+        });
+        }, {
+        threshold: 0.25 // Adjust if you want the animation to start earlier or later
+        });
+      
+        document.querySelectorAll('.slide-in').forEach((section) => {
+        observer.observe(section);
+        });
+      });
+      
+      
+      
+      </script>
+  </body>
+</html>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  let vh = window.innerHeight * 0.01; 
+  const offset = 15*vh; // Adjust this value to match the height of your navbar
+
+  // Function to adjust scroll position
+  function adjustScroll(this: any, e: Event) {
+    const targetId = this.getAttribute('href');
+    if (targetId.startsWith("#")) {
+      e.preventDefault();
+
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const topOffset = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: topOffset,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+
+  // Attach the function to all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e: Event) => adjustScroll(e));
+  });
+});
+</script>

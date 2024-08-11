@@ -1,0 +1,38 @@
+/* Pagination button container styles */
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Pagination button styles */
+
+#pagination button {
+  display: inline;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  color: black;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Pagination button hover styles */
+
+#pagination button:hover {
+  color: rgb(212, 175, 54);
+  text-decoration: underline;
+}
+
+/* Pagination button active styles */
+
+#pagination button.active {
+  color: rgb(212, 175, 54);
+  text-decoration: underline;
+}
+

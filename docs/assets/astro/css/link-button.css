@@ -1,0 +1,27 @@
+.link-button {
+  height: 50px;
+  width: 300px;
+  background: rgba(255,255,255,0);
+  color: rgb(27, 32, 64);
+  border-radius: 0px;
+  border-width: 3px;
+  border-style: solid;
+  border-top-style: solid;
+  border-top-color: rgb(27,32,64);
+  border-right-style: solid;
+  border-right-color: rgb(27,32,64);
+  border-bottom-style: solid;
+  border-bottom-color: rgb(27,32,64);
+  border-left-style: solid;
+  border-left-color: rgb(27,32,64);
+  font-family: 'Abhaya Libre', serif;
+  font-size: 25px;
+}
+
+.link-button:hover {
+  background-color: rgb(212, 175, 54);
+  border-color: rgb(212, 175, 54);
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+

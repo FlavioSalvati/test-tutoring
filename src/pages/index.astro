@@ -1,0 +1,202 @@
+---
+// src/pages/index.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import image1 from '/src/assets/img/index/index1.webp';
+import image2 from '/src/assets/img/index/index2.webp';
+import image3 from '/src/assets/img/index/index3.webp';
+import image4 from '/src/assets/img/index/index4.webp';
+
+const images = [
+{
+ src: image1,
+ alt: 'Corpus Christi College Cambridge, with beautiful mowed lawn',
+},
+{
+ src: image2,
+ alt: 'Another beautiful image',
+},
+{
+ src: image3,
+ alt: 'Another beautiful image',
+},
+{
+ src: image4,
+ alt: 'Another beautiful image',
+},
+];
+
+
+---
+
+<MainLayout>
+    
+  <main>
+<div class="container" style="max-width: 100%;width: 100%;padding: 0px;min-width: 100%;overflow: hidden;">
+    <div class="row gx-0 gy-0 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row" style="margin-right: 0px;margin-left: 0px;width: 100%;max-width: 100%;padding-right: 0px;overflow: hidden;">
+        <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 m-auto" style="padding: 0px;overflow: hidden;">
+            <div class="table-responsive" style="padding-top: 20px;overflow: hidden;overflow-x: hidden;overflow-y: hidden;">
+                <table class="table">
+                    <thead style="overflow: hidden;overflow-x: hidden;">
+                        <tr>
+                            <th style="background: rgba(255,255,255,0);border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;overflow: hidden;">
+                                <h2 class="text-center d-inline-block d-sm-inline-block slide-in from-right" style="text-align: center;width: 100%;font-family: 'Abhaya Libre', serif;font-size: 60px;padding-bottom: 10px;overflow: visible;color: rgba(27,32,64,255);"><span style="background-color: rgba(68, 62, 62, 0);">Elite</span></h2>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;width: 100%;padding: 0px;">
+                                <div>
+                                    <h3 class="centered-text d-none d-md-block slide-in from-right"><span><strong>—</strong></span><span>Unrivalled education solutions</span><span><strong>—</strong></span></h3>
+                                    <h3 class="centered-text d-md-none slide-in from-right"><span><strong>—</strong></span><span>Unrivalled <br /> education <br /> solutions</span><span><strong>—</strong></span></h3>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="justify-content-center" style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;overflow: hidden;width: 100%;padding: 0px;padding-right: 10px;padding-left: 10px;">
+                                <div class="col-sm-10 col-md-10 col-lg-12 col-xl-10 col-xxl-8 align-content-center mx-auto" style="width: 100%;overflow: hidden;max-height: 100%;padding: 0px;overflow-x: hidden;overflow-y: hidden;">
+                                    <p class="index-paragraph w-lg-50 slide-in from-right"><span style="background-color: rgba(255, 240, 228, 0);">At Beyond Tutors, we boast an exemplary record of empowering children of all ages in the UK and internationally to truly excel. Our elite tutors, mentors and education professionals are equipped to meet the unique needs of your family. We provide online and in-person private tuition, catering to the unique needs and abilities of students of all ages and across all subjects. Whether seeking support to complement conventional education through hourly sessions or hybrid tuition, or pursuing full-time residential homeschooling, we have options to meet the diverse requirements of your family. </span></p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+  <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6" style="padding: 0px;">
+      <ResponsiveImage
+		src={images && images[0] ? images[0].src : ''}
+		alt={images && images[0] ? images[0].alt : ''}
+        className="img-fluid slide-in from-left"
+        style="max-height: 100%; height: 100%; width: 100%;"
+      />
+    <div></div>
+</div>
+    </div>
+    <div class="row gx-0 gy-0 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 flex-column-reverse flex-sm-column-reverse flex-md-column-reverse flex-lg-row flex-xl-row flex-xxl-row" style="margin-right: 0px;margin-left: 0px;width: 100%;max-width: 100%;min-width: 100%;padding-right: 0px;overflow: hidden;">
+         <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6" style="padding: 0px;">
+    <ResponsiveImage
+    src={images && images[1] ? images[1].src : ''}
+    alt={images && images[1] ? images[1].alt : ''}
+      className="img-fluid slide-in from-right"
+      style="max-height: 100%; height: 100%; width: 100%;"
+    />
+    <div></div>
+  </div>
+        <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 m-auto" style="padding: 0px;">
+            <div class="table-responsive" style="padding-top: 15px;overflow: hidden;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="background: rgba(255,255,255,0);border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;overflow: hidden;">
+                                <h2 class="text-center d-inline-block d-sm-inline-block slide-in from-left" style="text-align: center;width: 100%;font-family: 'Abhaya Libre', serif;font-size: 60px;color: rgba(27,32,64,255);overflow: visible;"><span style="background-color: rgba(68, 62, 62, 0);">Bespoke</span></h2>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;width: 100%;padding: 0px;">
+                                <div>
+                                    <h3 class="centered-text d-none d-md-block slide-in from-left"><span><strong>—</strong></span><span>Every Student Thinks Indipendently</span><span><strong>—</strong></span></h3>
+                                    <h3 class="centered-text d-md-none slide-in from-left"><span><strong>—</strong></span><span>Every <br /> Student <br /> Thinks <br /> Indipendently</span><span><strong>—</strong></span></h3>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="justify-content-center" style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;overflow: hidden;width: 100%;">
+                                <div class="col-sm-10 col-md-10 col-lg-12 col-xl-10 col-xxl-8 align-content-center mx-auto" style="overflow: hidden;padding-top: 0px;">
+                                    <p class="index-paragraph w-lg-50 slide-in from-left">We pride ourselves on forging close relationships with schools, families, tutors and students to ensure that each individual need is met and exceeded. Working with our team of elite professional tutors and mentors, we ensure each child is equipped with the skills and mindset to shape their own path and achieve success. <span style="color: rgba(250, 234, 232, var(--tw-text-opacity));">We provide the flexibility to work around your busy schedule, providing tuition on an hourly basis or full-time as part of a residential placement in the UK or internationally.</span></p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row gx-0 gy-0 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row" style="margin-right: 0px;margin-left: 0px;width: 100%;max-width: 100%;padding-right: 0px;overflow: hidden;">
+        <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 m-auto" style="padding: 0px;">
+            <div class="table-responsive" style="padding-top: 15px;overflow: hidden;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="background: rgba(255,255,255,0);border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;">
+                                <h2 class="text-center d-inline-block d-sm-inline-block slide-in from-right" style="text-align: center;width: 100%;font-family: 'Abhaya Libre', serif;font-size: 60px;color: rgba(27,32,64,255);overflow: visible;"><span style="background-color: rgba(68, 62, 62, 0);">Dedicated</span></h2>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;width: 100%;padding: 0px;">
+                                <div>
+                                    <h3 class="centered-text d-none d-md-block slide-in from-right"><span><strong>—</strong></span><span>We go Above and Beyond</span><span><strong>—</strong></span></h3>
+                                    <h3 class="centered-text d-md-none slide-in from-right"><span><strong>—</strong></span><span>We go<br /> Above and <br /> Beyond</span><span><strong>—</strong></span></h3>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="justify-content-center" style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;overflow: hidden;width: 100%;">
+                                <div class="col-sm-10 col-md-10 col-lg-12 col-xl-10 col-xxl-8 align-content-center mx-auto" style="width: 100%;overflow: hidden;padding: 0px;">
+                                    <p class="index-paragraph w-lg-50 slide-in from-right">We are committed to accelerating your child’s success and will go above and beyond to make it happen. From producing weekly to monthly reports, to scheduling regular catch-ups with our team of tutors and education advisors, in all facets of our work with families we prioritise welfare to facilitate performance. Regardless of the nature of the challenge, we are confident the whole family can rely on us. <span style="color: rgba(250, 234, 232, var(--tw-text-opacity));">Our headquarters are in Cambridge, with operations spanning the rest of the world.</span></p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+          <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6" style="padding: 0px;">
+    <ResponsiveImage
+		src={images && images[2] ? images[2].src : ''}
+		alt={images && images[2] ? images[2].alt : ''}
+		className="img-fluid slide-in from-left"
+		style="max-height: 100%; height: 100%; width: 100%;"
+    />
+    <div></div>
+  </div>
+    </div>
+    <div class="row gx-0 gy-0 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 flex-column-reverse flex-sm-column-reverse flex-md-column-reverse flex-lg-row flex-xl-row flex-xxl-row" style="margin-right: 0px;margin-left: 0px;width: 100%;max-width: 100%;min-width: 100%;padding-right: 0px;overflow: hidden;">
+         <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6" style="padding: 0px;">
+    <ResponsiveImage
+		src={images && images[3] ? images[3].src : ''}
+		alt={images && images[3] ? images[3].alt : ''}
+		className="img-fluid slide-in from-right"
+		style="max-height: 100%; height: 100%; width: 100%;"
+    />
+    <div></div>
+  </div>
+        <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 m-auto" style="padding: 0px;">
+            <div class="table-responsive" style="padding-top: 15px;overflow: hidden;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="background: rgba(255,255,255,0);border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;">
+                                <h2 class="text-center d-inline-block d-sm-inline-block slide-in from-left" style="text-align: center;width: 100%;font-family: 'Abhaya Libre', serif;font-size: 60px;color: rgba(27,32,64,255);overflow: visible;"><span style="background-color: rgba(68, 62, 62, 0);">Excellent</span></h2>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;width: 100%;padding: 0px;">
+                                <div>
+                                    <h3 class="centered-text d-none d-md-block slide-in from-left"><span><strong>—</strong></span><span>Success Begins with Building Confidence</span><span><strong>—</strong></span></h3>
+                                    <h3 class="centered-text d-md-none slide-in from-left"><span><strong>—</strong></span><span>Success <br /> Begins <br /> with <br /> Building <br /> Confidence</span><span><strong>—</strong></span></h3>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="justify-content-center" style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;overflow: hidden;width: 100%;">
+                                <div class="col-sm-10 col-md-10 col-lg-12 col-xl-10 col-xxl-8 align-content-center mx-auto" style="width: 100%;overflow: hidden;padding: 0px;">
+                                    <p class="index-paragraph w-lg-50 slide-in from-left">Mastering a subject takes years of understanding and a propensity for excellence. Our team of elite professional tutors and mentors are adept at identifying gaps in a student’s understanding and areas where confidence may be lacking. Guiding students from the fundamentals to strengthening weaknesses and building confidence is of paramount importance to us, with the ultimate aim of ensuring academic success.<span style="color: rgba(27, 32, 64, var(--tw-text-opacity));">Our team of professional tutors and mentors support children at each stage of the education system.</span></p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+      </main>
+</MainLayout>

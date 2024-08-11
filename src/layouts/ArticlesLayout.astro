@@ -1,0 +1,209 @@
+---
+import MainLayout from "./MainLayout.astro"
+import Insights from "../components/Insights.astro"
+const { frontmatter } = Astro.props;
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+//import ResponsiveImage from "../components/ResponsiveImage.astro";
+
+// get folder of frontmatter.picture
+//const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/Insights/**/*.{jpeg,jpg,png,gif,webp}');
+
+// Function to filter images within the specified subfolder
+//const filterImages = (subfolder) => {
+//  const filteredImages = {};
+//  for (const key in images) {
+//    if (key.includes(`/src/assets/img/Insights/${subfolder}/`)) {
+//      filteredImages[key] = images[key];
+//    }
+//  }
+//  return filteredImages;
+// };
+
+//const filteredImages = filterImages(frontmatter.imgPath);
+//const imageKeys = Object.keys(filteredImages);
+
+---
+<link rel="stylesheet" href="/src/assets/css/insight_article_style.css">
+
+<MainLayout>
+    <div class="row">
+        <div class="col-1 sidebar">
+            <nav id="toc" class="toc">
+                <ul style="color: white;"></ul>
+            </nav>
+        </div>
+        <div class="col-11 content">
+            <div class="row all-insights">
+                <div class="col" style="width: 100%;padding: 0px;max-width: 100%;">
+                    <button class="btn" style="height: 100px;">
+                        <a href="/resources/insights.html">
+                            <span style="display: block; font-family: 'Abhaya Libre', serif; font-size: 35px;">
+                                All Insights <img src="/src/assets/img/aux/arrow.png" height="50" style="padding-left: 10px;padding-bottom: 0px; rotate: 180deg;" />
+                            </span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="container insight_article_style">
+                <h1>{frontmatter.title}</h1>
+                <slot />
+            </div>  
+        </div>
+    </div>
+    <Insights keyword="articles" number_of_articles={4}/>
+</MainLayout>
+
+<style>
+.row {
+    display: flex;
+}
+.col-3 {
+    width: 25%;
+    padding: 15px;
+}
+.col-9 {
+    width: 75%;
+    padding: 15px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: rgba(27,32,64,0.9);
+    padding: 10px;
+    border-right: 1px solid black;
+}
+.toc ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.toc li {
+    margin-bottom: 5px;
+
+}
+.sidebar .toc a {
+    color: white !important; /* Change to black and use !important */
+    text-decoration: none;
+}
+
+.sidebar .toc a.active {
+    color: #d4af36 !important; /* Golden color for the active link */
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const tocElement = document.getElementById('toc');
+    const toc = tocElement ? tocElement.querySelector('ul') : null;
+    const articleContainer = document.querySelector('.insight_article_style');
+    const headings = articleContainer?.querySelectorAll('h2, h3') ?? [];
+    let isUserScrolling = false;
+
+    let h2Counter = 0;
+    let h3Counter = 0;
+
+    // Populate TOC
+    headings.forEach((heading, index) => {
+        let id = heading.id || heading.textContent.toLowerCase().replace(/\s+/g, '-');
+        heading.id = id;
+
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.href = `#${id}`;
+        a.style.color = 'white';
+
+        if (heading.tagName === 'H2') {
+            h2Counter++;
+            h3Counter = 0; // Reset H3 counter for each new H2
+            a.textContent = `${h2Counter}. ${heading.textContent}`;
+            li.style.paddingTop = '20px';
+        } else if (heading.tagName === 'H3') {
+            h3Counter++;
+            a.textContent = `${h2Counter}.${h3Counter} ${heading.textContent}`;
+            li.style.paddingLeft = '20px'; // Indent H3 items
+        }
+
+        li.appendChild(a);
+        toc?.appendChild(li);
+    });
+
+    const links = document.querySelectorAll('.toc a');
+
+
+    function scrollLinkTop(link) {
+        const tocContainer = document.querySelector('.sidebar');
+        if (!tocContainer || !link) return; // Ensure elements are found
+
+        // Calculate the offset of the active link relative to the top of the TOC container
+        const linkOffsetTop = link.getBoundingClientRect().top - tocContainer.getBoundingClientRect().top;
+
+        // Calculate the current scroll position of the TOC container
+        const containerScrollTop = tocContainer.scrollTop;
+
+        // Calculate the target scroll position to bring the active link to the top
+        const targetScrollTop = containerScrollTop + linkOffsetTop;
+
+        // Scroll the TOC container to the calculated position
+        tocContainer.scrollTo({
+            top: targetScrollTop - 15,
+        });
+}
+
+    // Scroll spy
+    document.addEventListener('scroll', () => {
+        if (isUserScrolling) return;
+
+        let current = '';
+        headings.forEach(heading => {
+            const top = heading.getBoundingClientRect().top - 100;
+            if (top <= 50) {
+                current = heading.id;
+            }
+        });
+
+        if (current) {
+            links.forEach(link => {
+                const anchor = link as HTMLAnchorElement;
+                (anchor).style.color = 'white';
+                if (anchor.getAttribute('href') === `#${current}`) {
+                    anchor.style.color = '#d4af36';
+                    scrollLinkTop(anchor); // Ensure the active link is in view
+                }
+            });
+        }
+    });
+
+    // Handle click on TOC links
+    links.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            isUserScrolling = true;
+            const targetId = link.getAttribute('href')?.substring(1);
+            const targetElement = document.getElementById(targetId as string);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+            const anchor_selected = link as HTMLAnchorElement;
+            links.forEach(link => {
+                const anchor_deselected = link as HTMLAnchorElement;
+                anchor_deselected.style.color = 'white';
+            });
+            anchor_selected.style.color = '#d4af36';
+
+            scrollLinkTop(anchor_selected); // Ensure the clicked link is in view
+
+            setTimeout(() => {
+                isUserScrolling = false;
+            }, 500);  // Adjust time based on smooth scroll duration
+        });
+    });
+});
+    </script>

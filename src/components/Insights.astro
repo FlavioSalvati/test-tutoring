@@ -1,0 +1,66 @@
+---
+import ArticleCard from './ArticleCard.astro';
+import articles from '../assets/data/articles.json';
+
+const { keyword, number_of_articles} = Astro.props;
+
+const isInsightPage = keyword === 'insights';
+
+let filteredArticles = isInsightPage ? articles : articles.filter(article => article.id.includes(keyword) || article.id.includes("all"));
+const rows: { id: string; date: string; title: string; link: string; }[][] = [];
+
+
+for (let i = 0; i < filteredArticles.length && i < number_of_articles ; i += 4) {
+    rows.push(articles.slice(i, i + 4));
+}
+
+---
+
+<div id="container_insights" class={`container py-4 py-xl-5 ${isInsightPage ? 'insight-page' : 'article-page'}`} style="overflow-x: hidden; margin: 0; padding-top: 100px; width: 100%; padding-right: 0; max-width: 100%;">
+  <div class="row mb-5" style="width: 100%; margin-left: 0; margin-right: 0; padding-bottom: 0; padding-top: 150px;">
+    <div class="col-md-8 col-xl-6 text-center m-auto" style="width: 100%; padding: 0; padding-bottom: 100px;">
+      <h2 class={isInsightPage ? 'insight-header' : 'article-header'} style="font-size: 60px; font-family: 'Abhaya Libre', serif;">
+        Read our {isInsightPage ? 'insights' : 'articles'}
+      </h2>
+      <p class={`w-lg-50 ${isInsightPage ? 'insight-subheader' : 'article-subheader'}`} style="font-size: 25px; font-family: 'Abhaya Libre', serif;">
+        Here is a list of curated {isInsightPage ? 'insights' : 'articles'} going over everything you need to know
+      </p>
+    </div>
+  </div>
+    
+
+  {rows.map((row, rowIndex) => (
+     <div class={`row gy-0 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 row-cols-xxl-4 ${isInsightPage ? 'insight-page' : 'article-page'}`} style="margin-left: 0; margin-right: 0; width: 100%;">
+        {row.map((article) => (
+          <ArticleCard
+            id={article.id}
+            date={article.date}
+            title={article.title}
+            link={article.link}
+            isInsightPage={isInsightPage}
+          />
+        ))}
+      </div>
+    ))}
+</div>
+
+<style>
+  .insight-page {
+    background: none;
+  }
+  .article-page {
+    background: #1d3e37;
+  }
+  .insight-header {
+    color: rgb(27, 32, 64);
+  }
+  .article-header {
+    color: rgb(255, 255, 255);
+  }
+  .insight-subheader {
+    color: rgb(27, 32, 64);
+  }
+  .article-subheader {
+    color: rgb(255, 255, 255);
+  }
+</style>

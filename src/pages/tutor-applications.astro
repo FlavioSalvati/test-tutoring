@@ -1,0 +1,224 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout>
+
+<div class="container position-relative" style="background: #1d3e37;width: 100%;"><div class="row d-flex justify-content-center mx-auto" style="width: 90%;">
+    <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 col-xxl-5">
+        <div class="card mb-5" style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;">
+            <div class="card-body p-sm-5" style="background: rgba(255,255,255,0);border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;">
+                <h1 class="text-center mb-4" style="color: rgb(255,255,255);font-family: 'Abhaya Libre', serif;font-size: 60px;font-weight: bold;">Apply Now</h1>
+                <h2 class="text-center mb-4" style="font-size: 30px;color: rgb(255,255,255);font-family: 'Abhaya Libre', serif;">Provide as much information as possible</h2>
+                <p></p>
+                <form id="apply-now">
+                    <div class="mb-3 text-left">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-right: 25px;padding-left: 0px;"><label class="form-label form-label" for="name" style="font-family: 'Abhaya Libre', serif;font-size: 25px;padding-top: 10px;color: rgb(255,255,255);">Fist Name</label><input id="name" class="border-light-subtle form-control form-control form-control" type="text" inputmode="verbatim" name="name" placeholder="First Name" required style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;" /></div>
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-right: 25px;padding-left: 0px;"><label class="form-label form-label" for="surname" style="font-size: 25px;font-family: 'Abhaya Libre', serif;padding-top: 10px;color: rgb(255,255,255);">Last Name</label>
+                                <div></div><input id="surname" class="border-light-subtle form-control" type="text" inputmode="verbatim" name="surname" placeholder="Last Name" style="background: rgba(255,255,255,0.35);border-top-style: solid;border-top-color: rgb(0,0,0);border-right-style: solid;border-right-color: rgb(0,0,0);border-bottom-style: solid;border-bottom-color: rgb(0,0,0);border-left-style: solid;border-left-color: rgb(0,0,0);border-radius: 4px;width: 100%;font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-right: 25px;padding-left: 0px;"><label class="form-label form-label" for="email" style="font-family: 'Abhaya Libre', serif;font-size: 25px;padding-top: 10px;color: rgb(255,255,255);">Email address</label>
+                                <div></div><input id="email" class="border-light-subtle form-control form-control form-control" type="email" inputmode="email" name="email" placeholder="Email Address" required style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;" />
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-right: 25px;padding-left: 0px;"><label class="form-label form-label" style="font-size: 25px;font-family: 'Abhaya Libre', serif;padding-top: 10px;color: rgb(255,255,255);" for="phone">Telephone number</label>
+                                <div></div><input id="prefix" type="hidden" name="prefix" value="1" /><input id="phone" class="border-light-subtle form-control" type="tel" name="phone" style="background: rgba(255,255,255,0.35);border-radius: 4px;border-style: solid;border-top-style: solid;border-top-color: rgb(0,0,0);border-right-color: rgb(0,0,0);border-bottom-style: solid;border-bottom-color: rgb(0,0,0);border-left-style: solid;border-left-color: rgb(0,0,0);height: 51.5px;width: 100%;font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 text-left" style="padding: 0px;padding-right: 50px;padding-left: 0px;margin: 0px;"><label class="form-label form-label form-label form-label form-label form-label none" for="type_tutoring" style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);">Are you available to teach on-line or in-person? Select hybrid for both</label><select onchange="yesnoCheck(this);" id="type_tutoring" class="border-light-subtle form-control form-control" name="type_tutoring" style="background: rgba(255,255,255,0.35);border-top-style: solid;border-top-color: rgb(0,0,0);border-right-style: solid;border-right-color: rgb(0,0,0);border-bottom-style: solid;border-bottom-color: rgb(0,0,0);border-left-style: solid;border-left-color: rgb(0,0,0);padding-right: 50px;width: 250px;font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;">
+                            <option value disabled selected>Choose an option</option>
+                            <option value="On-line">On-line</option>
+                            <option value="Hybrid">Hybrid</option>
+                            <option value="In-person">In-person</option>
+                        </select></div>
+                        <div id="section-postal-address" class="mb-3 text-left" style="display: none;">
+                            <div class="col-12" style="padding-left: 0px;"><label class="form-label form-label form-label form-label form-label form-label form-label" style="font-size:25px;font-family:'Abhaya Libre', serif;padding-top:10px;color:rgb(255,255,255);">Postal Address (for hybrid or in-person tutoring)</label>
+                                <div class="row" style="padding-top: 5px;">
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" for="home" style="padding-right: 15px;"><input id="home" class="border-white form-control form-control form-control form-control form-control form-control form-control form-control" type="text" inputmode="verbatim" name="home" placeholder="House Name/Number" style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);" /></div>
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" for="city" style="padding-right: 15px;"><input id="city" class="border-white form-control form-control form-control form-control form-control form-control form-control form-control" type="text" inputmode="verbatim" name="city" placeholder="City" style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);" /></div>
+                                </div>
+                                <div class="row" style="padding-top: -2px;">
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" for="state" style="padding-right: 15px;"><input id="state" class="border-white form-control form-control form-control form-control form-control form-control form-control form-control" type="text" inputmode="verbatim" name="state" placeholder="State" style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);" /></div>
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" for="zipcode" style="padding-right: 15px;"><input id="zipcode" class="border-white form-control form-control form-control form-control form-control form-control form-control form-control" type="text" inputmode="verbatim" name="zipcode" placeholder="Zipcode" style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);" /></div>
+                                </div>
+                                <div class="row" style="padding-top: 15px;">
+                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6" for="country" style="padding-right: 15px;"><select id="country" class="form-select form-select-sm form-select form-select form-select form-select form-select form-select" name="country" style="background:rgba(255,255,255,0.35);border-top-style:solid;border-top-color:rgb(255,255,255);border-right-style:solid;border-right-color:rgb(255,255,255);border-bottom-style:solid;border-bottom-color:rgb(255,255,255);border-left-style:solid;border-left-color:rgb(255,255,255);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);"></select></div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="text-left" style="padding-right: 50px;"><label class="form-label form-label title" style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="hear">How did you hear about us?</label></div>
+                    <div class="mb-3"><input placeholder="Internet, word of mouth ... " id="hear" class="border-light-subtle form-control form-control form-control" type="text" name="hear" style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);padding-right: 50px;font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;" /></div>
+                    <div></div>
+                    <div class="text-left"><label class="form-label form-label title" label style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="qualifications">Qualifications</label></div>
+                    <div class="mb-3"><textarea id="qualifications" class="border-light-subtle form-control form-control form-control" name="qualifications" placeholder="University degrees and high school diploma, any awards or bursaries worth mentioning" rows="3" style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;"></textarea></div>
+                    <div class="text-left"><label class="form-label form-label title" label style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="tutoring_experience">Tutoring Experience</label></div>
+                    <div class="mb-3"><textarea id="tutoring_experience" class="border-light-subtle form-control form-control form-control" name="tutoring_experience" placeholder="Ddescribe your tutoring experience" rows="3" style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;"></textarea></div>
+                    <div class="text-left"><label class="form-label form-label title" label style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="tutoring_offered">Tutoring Offered</label></div>
+                    <div class="mb-3"><textarea id="tutoring_offered" class="border-light-subtle form-control form-control form-control" name="tutoring_offered" placeholder="What subjects do you teach and at what level? What is your availability to tutor?" rows="3" style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;"></textarea></div>
+                    <div class="text-left" style="padding-right: 50px;"><label class="form-label form-label title" label style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="linkedin_url">LinkedIn `Profile URL</label></div>
+                    <div class="mb-3"><input id="linkedin_url" class="border-light-subtle form-control form-control form-control" type="text" name="linkedin_url" style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);padding-right: 50px;font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;" /></div>
+                    <div class="text-left" style="padding-right: 50px;"><label class="form-label form-label title" label style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="referrer">Referrer (optional)</label></div>
+                    <div class="mb-3"><input id="referrer" class="border-light-subtle form-control form-control form-control" type="text" name="referrer" style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);padding-right: 50px;font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;" /></div>
+                    <div class="text-left"><label class="form-label form-label title" label style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="cv_file">Upload CV</label><input id="cv_file" class="border-light-subtle form-control form-control" type="file" name="cv_file" style="background: rgba(255,255,255,0.35);font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;" /></div>
+                    <div class="mb-3"></div>
+                    <div class="m-auto" style="padding: 0px;">
+                        <div class="col-sm-8 col-md-5 col-lg-3 col-xl-3 col-xxl-3 m-auto"><button id="submit_button" class="btn btn-primary d-block submit w-100 mb-3 h-50" style="background: rgb(212,175,54);border-color: rgb(212, 175, 54);" type="submit">
+                                <div id="button_label_submitting" style="display: none;color: rgb(255,255,255);"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting </div>
+                                <div id="button_label_submit" style="display:block;color:rgb(255,255,255);font-size:25px;font-family:'Abhaya Libre';">Submit</div>
+                                <div id="button_label_submitted" style="display:none;color:rgb(255,255,255);font-size:25px;font-family:'Abhaya Libre';">Submitted</div>
+                            </button></div>
+                    </div>
+                    <div><label id="confirmation_apply-now" class="form-label form-label form-label form-label form-label form-label form-label form-label hidden" style="color: white;" hidden> </label></div>
+                    <div><label id="send_error_apply-now" class="form-label form-label form-label form-label form-label form-label form-label hidden" style="color: white;" hidden></label></div>
+            </div>
+        </div>
+    </div>
+</div></div>
+
+
+</MainLayout>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwO4_HkKJFhRaIYuId08LBUaRAsYyzwBN_L15l5VYN8agjcE9y5pzB83gF_PIqkRA0-xg/exec'
+    const driveURL = "https://script.google.com/macros/s/AKfycbxGR6it2Hwonh7EhhphthOqXKHoXL3_qrjZ61WAN6QEUyVTHihw8Cx1CvDLlKFj_DCVsQ/exec";  // <--- Please set the URL of Web Apps.
+    const form = document.forms['apply-now']
+    form.addEventListener('submit', handleSubmit);
+
+    function on_success(message) {
+    console.log("post:", message);
+    if (message.toString() == '200') {
+
+        for (let i = 0, fLen = form.elements.length; i < fLen; i++) {
+            form.elements[i].readOnly = true;
+            form.elements[i].disabled = true;
+        }
+
+        var m = document.getElementById("send_error_apply-now");
+        if (m){
+            m.hidden = true;
+        }
+        var m = document.getElementById("confirmation_apply-now");
+        if (m){
+            m.hidden = false;
+        }
+
+        const options = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const formatter = new Intl.DateTimeFormat([], options);
+        const londonTime = formatter.format(new Date());
+        const londonHour = parseInt(londonTime, 10);
+
+        let userTimezone = 'Europe/London';
+
+        if (Intl && Intl.DateTimeFormat) {
+            userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        }
+    
+        if (londonHour > 8 && londonHour < 20 && m){
+          m.innerHTML = form.elements["name"].value + ", thank you for completing the form. You should have now received a confirmation email. We aim to get back to you within 1-2 hours, which is before " + (londonHour+2) + ":00 London Time. If you do not receive an email in the next 10 minutes, please try submitting the form again or contact <a href='onboarding@beyond-tutors.com'>info@beyond-tutors.com</a> for any questions."
+
+        }
+        else if (m){
+            m.innerHTML = form.elements["name"].value + ", thank you for completing the form. You should have now received a confirmation email. Please note that the time in London is " + londonTime + ", and we are currently out of office. We will get back to you first thing tomorrow morning."
+        }
+        document.getElementById("button_label_submitting").style.display = "none";
+        document.getElementById("button_label_submitted").style.display = "block";
+        
+    } 
+    else {
+    console.log("ERROR");
+    var m = document.getElementById("send_error_apply-now");
+    m.hidden = false;
+    m.innerHTML = form.elements["name"].value + ", we are sorry to inform you that an error has occured while submitting the form. Please contact <a href='mailto:onboarding@beyond-tutors.com'>onboarding@beyond-tutors.com</a> directly, or call us at +44 263 573 198."
+    var button = document.getElementById('submit_button');
+    button.disabled = false;   
+    document.getElementById("button_label_submit").style.display = "block";
+    document.getElementById("button_label_submitting").style.display = "none";
+    }
+}
+
+
+    
+function handleSubmit(event) {
+    document.getElementById("button_label_submit").style.display = "none";
+    document.getElementById("button_label_submitting").style.display = "block";
+    var button = document.getElementById('submit_button');
+    button.disabled = true;
+    event.preventDefault()
+    document.getElementById("prefix").value = iti.getSelectedCountryData().dialCode
+    const formdata = new FormData(form);
+    var cv_file = formdata.get('cv_file')
+    var name = formdata.get('name')
+    var surname = formdata.get('surname')
+    var cv_url = ''
+    const fr = new FileReader();
+    fr.readAsArrayBuffer(cv_file);
+    
+    fr.onload = form => {
+    function upload_data(formdata, e){
+        for ( var key in e ) {
+        formdata.append(key, (e[key]).toString());
+        }
+        formdata.delete('cv_file')
+        for (var pair of formdata.entries()) {
+        console.log(pair[0]+ ', ' + pair[1]); 
+        }
+        fetch(scriptURL, {method: 'POST', body: formdata})
+        .then(() => { on_success(200)} )
+        .catch(error => { on_success(error) }) 
+    }
+        
+    const qs = new URLSearchParams({filename: "CV_" + name + "_" + surname || cv_file.name, mimeType: cv_file.type});
+    fetch(`${driveURL}?${qs}`, {method: "POST", body: JSON.stringify([...new Int8Array(form.target.result)])})
+    .then(res => res.json())
+    .then(e => upload_data(formdata, e))  // <--- You can retrieve the returned value here.
+    .catch(err => console.log(err));
+  }
+
+}
+    
+    
+function yesnoCheck(that) {
+    if (that.value == "On-line") {
+        document.getElementById("section-postal-address").style.display = "none";
+    } else {
+        document.getElementById("section-postal-address").style.display = "block";
+    }
+}
+ 
+const countryData = window.intlTelInputGlobals.getCountryData();
+const input = document.querySelector("#phone") as HTMLInputElement;
+const addressDropdown = document.querySelector("#country") as HTMLSelectElement;
+    
+const iti = window.intlTelInput(input, {
+  utilsScript: "assets/js/utils.js",
+  separateDialCode: false,
+  initialCountry: ""
+});
+
+// populate the country dropdown
+for (let i = 0; i < countryData.length; i++) {
+  const country = countryData[i];
+  const optionNode = document.createElement("option");
+  optionNode.value = country.iso2;
+  const textNode = document.createTextNode(country.name);
+  optionNode.appendChild(textNode);
+  addressDropdown.appendChild(optionNode);
+
+}
+// set it's initial value
+addressDropdown.value = iti.getSelectedCountryData().iso2;
+
+// listen to the telephone input for changes
+input.addEventListener('countrychange', () => {
+  addressDropdown.value = iti.getSelectedCountryData().iso2;
+});
+   
+            
+
+// listen to the address dropdown for changes
+addressDropdown.addEventListener('change', () => {
+  iti.setCountry(this.value);
+});
+</script>

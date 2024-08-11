@@ -1,0 +1,185 @@
+---
+import Astro from 'astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+
+const { content } = Astro.props || { content: [] };
+export { content };
+---
+
+{content.map((qa) => (
+<div class="container py-4 py-xl-5" style="width: 100%; margin: 0; padding: 0; max-width: 100%;">
+    <div class="row gy-4 gy-md-0 row-cols-1" style="margin: 0; background: #1d3e37; padding-top: 100px;">
+        <div class="col-10 col-lg-8 col-xl-7 col-xxl-7 m-auto" style="padding: 0; background: rgba(29,62,55,0); padding-bottom: 50px;">
+            <h1 style="font-size: 60px; color: #000; padding-top: 20px; font-family: 'Abhaya Libre', serif; font-weight: bold;">
+                <span style="color: #fff;">{qa.title}</span>
+            </h1>
+            <h2 class="display-5 fw-bold text-white d-flex justify-content-center mb-0 center" style="text-align: center; font-size: 25px; color: #d4af36; padding-bottom: 50px;">
+                <span class="d-none d-md-block" style="color: #d4af36; font-family: 'Abhaya Libre', serif; font-size: 35px; font-weight: bold;">
+                    {qa.sections.map((section, sectionIndex) => (
+                                <span key={sectionIndex}>
+                                    &ndash; {section.title}
+                                    {sectionIndex === qa.sections.length - 1 && <span set:html= {' &ndash;'} />}
+                                </span>
+                            ))}
+            
+                </span>
+                <span class="d-block d-md-none" style="color: #d4af36; font-family: 'Abhaya Libre', serif; font-size: 35px; font-weight: bold;">
+                    {qa.sections.map((section, sectionIndex) => (
+                        
+                        <span key={sectionIndex}>
+                            &ndash; {section.title} &ndash;<br />
+                        </span>
+                    ))}
+                </span>
+            </h2>
+            <p class="w-100" style="font-size: 25px; font-family: 'Abhaya Libre', serif; padding: 5px; line-height: 30px; color: white" set:html= {qa.main_paragraph}>
+            </p>
+        <div class="row m-auto" style="text-align: center; width: 100%; height: 250px; padding-top: 50px;">
+            <div class="col all-insights" style="width: 100%; padding: 0; max-width: 100%;">
+                <div class="row" style="padding-bottom: 30px;">
+                    <div class="fees" style="font-size: 25px; font-family: 'Abhaya Libre', serif; padding: 5px; line-height: 30px; color: white;">Fees from {qa.fee}</div>
+                </div>
+                <div class="row">
+                    <button class="btn" style="height: 100px;">
+                        <a href="#contact-us">
+                            <span style="display: block; font-family: 'Abhaya Libre', serif; font-size: 60px;">
+                                Get In Touch 
+                                <img src="/src/assets/img/aux/arrow.png" height="80" style="padding-left: 10px; padding-bottom: 5px;" />
+                            </span>
+                        </a>
+                    </button>
+                </div>
+            </div>           
+        </div>
+    </div>
+</div>
+</div>
+))}
+
+{content.map((qa) => (
+    <div class="container"  style={{ maxWidth: "100%", width: "100%", padding: "0px", minWidth: "100%" }}>
+        <div class="row gx-0 gy-0 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row" style={{ marginRight: "0px", marginLeft: "0px", width: "100%", maxWidth: "100%", paddingRight: "0px" }}>
+            <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto" style={{ padding: "0px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <div class="table-responsive" style={{ paddingTop: "20px", position: "relative" }}>
+                    <h2 style={{ paddingTop: "10px", paddingBottom: "30px", color: "rgba(27,32,64,255)", fontSize: "40px", fontWeight: "bold", borderTopStyle: "none", borderRightStyle: "none", borderBottomStyle: "none", borderLeftStyle: "none", marginRight: "20px", textAlign: "center", fontFamily: "'Abhaya Libre', serif" }}> - School Admissions -</h2>
+                    <div>
+                        <table class="table" style={{ marginBottom: "0px" }}>
+                            <thead>
+                                <tr>
+                                    <th style={{ background: "rgba(255,255,255,0)", border: "none", paddingBottom: "40px" }}>
+                                        <div class="row gy-0 row-cols-1 row-cols-md-3">
+                                            {qa.sections.map((section, sectionIndex) => (
+                                                <div class="col" align="center" key={sectionIndex}>
+                                                    <a id={`var_btn_${sectionIndex}`} class="inline-block hover-underline-animation" role="button" style={{ textDecoration: "underline", textUnderlineOffset: "5px", background: "transparent", color: sectionIndex === 0 ? "rgb(212, 175, 54)" : "rgba(27,32,64,255)", fontSize: "20px", fontWeight: "bold", marginRight: "20px", textAlign: "center", fontFamily: "'Abhaya Libre', serif" }}>
+                                                        {section.title}
+                                                    </a>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {qa.sections.map((section, sectionIndex) => (
+                                    <tr key={sectionIndex} id={`var_section_${sectionIndex}`} style={{ display: sectionIndex === 0 ? "table-row" : "none" }}>
+                                        <td style={{ background: "transparent", border: "none", padding: "0" }}>
+                                            <h1 id={`var_heading_title_${sectionIndex}`} class="text-center d-inline-block" style={{ width: "100%", fontFamily: "'Abhaya Libre', serif", fontSize: "40px", color: "rgba(27,32,64,255)" }}>{section.title}</h1>
+                                            <h1 id={`var_subheading_${sectionIndex}`} class="text-center d-inline-block" style={{ width: "100%", fontFamily: "'Abhaya Libre', serif", fontSize: "30px", color: "rgb(212, 175, 54)" }}>&ndash; {section.subtitle} &ndash;</h1>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {qa.sections.map((section, sectionIndex) => (
+                                     <tr key={sectionIndex} id={`var_paragraph_${sectionIndex}`} style={{ display: sectionIndex === 0 ? "table-row" : "none" }}>
+                                        <td class="justify-content-center" style={{ background: "transparent", border: "none", padding: "30px 10px" }}>
+                                            <div class="col-12 align-content-center mx-auto" style={{ padding: "0" }}>
+                                                <p class="w-lg-50 custom-height-2col" style={{ fontFamily: "'Abhaya Libre', serif", fontSize: "20px", lineHeight: "30px", textAlign: "center" }}  set:html= {section.paragraph} >
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto d-none d-lg-block d-xl-block" style={{ display: "block", padding: "0px" }}>
+                {qa.sections.map((section, sectionIndex) => (
+                    <div style={{ display: sectionIndex === 0 ? "block" : "none", padding: 0, margin:0, height: "100%"}} id={`var_subject-image_${sectionIndex}`}>
+                        <ResponsiveImage
+                            src={content[0].sections[sectionIndex].imageSrc || ''}
+                            alt={content[0].sections[sectionIndex].imageAlt || ''}
+                            className="img-fluid"
+                            style={{ maxHeight: "100%", height: "100%", width: "100%" }}
+                        />
+                 </div>
+                 ))}
+                <div></div>
+            </div>
+        </div>
+    </div>
+))}
+    
+    <script> 
+        const btns = document.querySelectorAll(`a[id^=var_btn_]`);
+
+        btns.forEach((btn, index) => {
+            btn.addEventListener('click', (event) => {
+                event.preventDefault();
+                toggleSection(index);
+                changeImage(index);
+                btnColorChange(index);
+        });
+        });
+
+        function btnColorChange(index) {
+            btns.forEach((btn, i) => {
+                if (i === index) {
+                    btn.style.color = "rgb(212, 175, 54)";
+                } else {
+                    btn.style.color = "rgba(27, 32, 64, 255)";
+                }
+            });
+        }
+
+        function changeImage(index) {
+            const images = document.querySelectorAll(`div[id^=var_subject-image_]`);
+            images.forEach((image, i) => {
+                if (i === index) {
+                    image.style.display = 'block';
+                } else {
+                    image.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleSection(sectionIndex) {
+            // Hide all sections and paragraphs in the same qaIndex
+            const sections = document.querySelectorAll(`tr[id^=var_section_]`);
+            const paragraphs = document.querySelectorAll(`tr[id^=var_paragraph_]`);
+    
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+    
+            paragraphs.forEach(paragraph => {
+                paragraph.style.display = 'none';
+            });
+
+            // Show the selected section and paragraph
+            const selectedSection = document.querySelector(`#var_section_${sectionIndex}`);
+            const selectedParagraph = document.querySelector(`#var_paragraph_${sectionIndex}`);
+    
+            if (selectedSection) {
+                selectedSection.style.display = 'table-row'; // Adjust display style based on your table structure
+            }
+    
+            if (selectedParagraph) {
+                selectedParagraph.style.display = 'table-row'; // Adjust display style based on your table structure
+            }
+        }
+
+    
+       
+    </script>
+    

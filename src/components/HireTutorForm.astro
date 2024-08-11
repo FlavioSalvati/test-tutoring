@@ -1,0 +1,68 @@
+<section id="contact-us" class="position-relative py-4 py-xl-5" style="overflow-x: hidden; background: rgb(29,62,55); padding-bottom:50px"><div class="container position-relative" style="background: #1d3e37;">
+    <div class="row d-flex justify-content-center m-auto" style="width: 90%;">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 col-xxl-5">
+            <div class="card mb-5" style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;width: 100%;">
+                <div class="card-body p-sm-5" style="background: rgba(255,255,255,0);border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;width: 100%;">
+                    <h2 class="text-center mb-4 slide-in from-bottom" style="font-size: 60px;color: rgb(0,0,0);font-family: 'Abhaya Libre', serif;"><span  style="color: rgb(255, 255, 255);">Hire a Tutor</span></h2>
+                    <h2 class="text-center mb-4 slide-in from-bottom" style="font-size: 25px;font-family: 'Abhaya Libre', serif;"><span style="color: rgb(255, 255, 255);">All the form fields are optional, but we ask you to provide as much information as possible so that we are in a better position to quickly meet your tutoring requirements.</span></h2>
+                    <form style="width: 100%;">
+                        <div class="mb-3 text-left">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 slide-in from-left" style="padding-right: 15px; padding-left: 15px;">
+                                    <label class="form-label" style="font-size: 25px; font-family: 'Abhaya Libre', serif; padding-top: 10px; color: rgb(255, 255, 255);" for="name">First Name</label>
+                                    <input id="name" class="border-white form-control" type="text" inputmode="verbatim" name="name" placeholder="First Name" style="border-color: rgb(0, 0, 0); background: rgba(255, 255, 255, 0.35); font-size: 25px; font-family: 'Abhaya Libre', serif; color: rgb(255, 255, 255);" />
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 slide-in from-right" style="padding-right: 15px; padding-left: 15px;">
+                                    <label class="form-label" style="font-size: 25px; font-family: 'Abhaya Libre', serif; padding-top: 10px; color: rgb(255, 255, 255);" for="surname">Last Name</label>
+                                    <input id="surname" class="border-white form-control" type="text" inputmode="verbatim" name="surname" placeholder="Last Name" style="border-color: rgb(0, 0, 0); background: rgba(255, 255, 255, 0.35); font-size: 25px; font-family: 'Abhaya Libre', serif; color: rgb(255, 255, 255);" />
+                                </div>
+                            </div>                            
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 slide-in from-left" style="padding-right: 15px;padding-left: 15px;"><label class="form-label" style="font-family:'Abhaya Libre', serif;font-size:25px;padding-top:10px;color:rgb(255,255,255);" for="email">Email address</label>
+                                    <div></div><input id="email" class="border-white form-control" type="email" inputmode="email" name="email" placeholder="Email" required style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);" />
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 slide-in from-right" style="padding-right: 15px;padding-left: 15px;"><label class="form-label" style="font-size:25px;font-family:'Abhaya Libre', serif;padding-top:10px;color:rgb(255,255,255);" for="phone">Telephone number</label>
+                                    <div></div><input id="prefix" type="hidden" name="prefix" value="1" /><input id="phone" class="border-white" type="tel" name="phone" style="background:rgba(255,255,255,0.35);border-radius:4px;border-style:solid;border-top-style:solid;border-top-color:rgb(0,0,0);border-right-color:rgb(0,0,0);border-bottom-style:solid;border-bottom-color:rgb(0,0,0);border-left-style:solid;border-left-color:rgb(0,0,0);height:51.5px;width:100%;font-size:25px;font-family:'Abhaya Libre', serif; color:rgb(255, 255, 255);" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 text-left slide-in from-left" style="padding-right: 15px;padding-left: 15px;"><label class="form-label none" for="type_tutoring" style="font-family:'Abhaya Libre', serif;font-size:25px;color:rgb(255,255,255);">What type of tutoring are you looking for?</label><select onchange="yesnoCheck(this);" id="type_tutoring" class="border-white form-control form-control" name="type_tutoring" style="background:rgba(255,255,255,0.35);border-top-style:solid;border-top-color:rgb(0,0,0);border-right-style:solid;border-right-color:rgb(0,0,0);border-bottom-style:solid;border-bottom-color:rgb(0,0,0);border-left-style:solid;border-left-color:rgb(0,0,0);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);">
+                                <option value disabled selected>Choose an option</option>
+                                <option value="On-line">On-line</option>
+                                <option value="Hybrid">Hybrid</option>
+                                <option value="In-person">In-person</option>
+                            </select></div>
+                        <div id="section-postal-address" class="mb-3 text-left" style="display: none;">
+                            <div class="col-12" style="padding-left: 15px;"><label class="form-label" style="font-size:25px;font-family:'Abhaya Libre', serif;padding-top:10px;color:rgb(255,255,255);">Postal Address (for hybrid or in-person tutoring)</label>
+                                <div class="row" style="padding-top: 5px;">
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 slide-in from-left" for="home" style="padding-right: 15px;"><input id="home" class="border-white form-control form-control form-control form-control form-control form-control form-control form-control" type="text" inputmode="verbatim" name="home" placeholder="House Name/Number" style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);" /></div>
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 slide-in from-right" for="city" style="padding-right: 15px;"><input id="city" class="border-white form-control form-control form-control form-control form-control form-control form-control form-control" type="text" inputmode="verbatim" name="city" placeholder="City" style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);" /></div>
+                                </div>
+                                <div class="row" style="padding-top: -2px;">
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 slide-in from-left" for="state" style="padding-right: 15px;"><input id="state" class="border-white form-control form-control form-control form-control form-control form-control form-control form-control" type="text" inputmode="verbatim" name="state" placeholder="State" style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);" /></div>
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 slide-in from-right" for="zipcode" style="padding-right: 15px;"><input id="zipcode" class="border-white form-control form-control form-control form-control form-control form-control form-control form-control" type="text" inputmode="verbatim" name="zipcode" placeholder="Zipcode" style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);" /></div>
+                                </div>
+                                <div class="row" style="padding-top: 15px;">
+                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 slide-in from-left" for="country" style="padding-right: 15px;"><select id="country" class="form-select form-select-sm form-select form-select form-select form-select form-select form-select" name="country" style="background:rgba(255,255,255,0.35);border-top-style:solid;border-top-color:rgb(255,255,255);border-right-style:solid;border-right-color:rgb(255,255,255);border-bottom-style:solid;border-bottom-color:rgb(255,255,255);border-left-style:solid;border-left-color:rgb(255,255,255);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);"></select></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-left slide-in from-left"><label class="form-label title" label style="font-family:'Abhaya Libre', serif;font-size:25px;padding-left:15px;padding-right:15px;color:rgb(255,255,255);">Current Year and School of student</label></div>
+                        <div class="mb-3 slide-in from-left" for="info_student" style="padding-left: 15px;padding-right: 15px;"><input id="info_student" class="border-white form-control form-control form-control form-control form-control form-control form-control form-control" type="text" name="info_student" placeholder="St. Michael&#39;s Grammar, Year 9" style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);" /></div>
+                        <div class="text-left slide-in from-right" style="padding-right: 15px;padding-left: 15px;"><label class="form-label form-label form-label form-label form-label form-label form-label title" label style="font-family:'Abhaya Libre', serif;font-size:25px;color:rgb(255,255,255);">Additional Information</label></div>
+                        <div class="mb-3 slide-in from-right" for="info_add" style="padding-left: 15px;padding-right: 15px;"><textarea id="info_add" class="border-white form-control form-control form-control form-control form-control form-control form-control" name="info_add" placeholder="Tutoring requirements (subject, frequency and duration of lessons), availability for initial consulation" rows="3" style="border-color:rgb(0,0,0);background:rgba(255,255,255,0.35);font-size:25px;font-family:'Abhaya Libre', serif;color:rgb(255, 255, 255);"></textarea></div>
+                        <div class="m-auto slide-in from-bottom" style="padding: 0px;">
+                            <div class="col-sm-8 col-md-5 col-lg-3 col-xl-3 col-xxl-3 m-auto"><button id="submit_button" class="btn btn-primary d-block submit w-100 mb-3 h-50" style="background: rgb(212,175,54);border-color: rgb(212, 175, 54);" type="submit">
+                                    <div id="button_label_submitting" style="display: none;color: rgb(255,255,255);"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting </div>
+                                    <div id="button_label_submit" style="display:block;color:rgb(255,255,255);font-size:25px;font-family:'Abhaya Libre';">Submit</div>
+                                    <div id="button_label_submitted" style="display:none;color:rgb(255,255,255);font-size:25px;font-family:'Abhaya Libre';">Submitted</div>
+                                </button></div>
+                        </div>
+                        <div><label id="confirmation" class="form-label form-label form-label form-label form-label form-label form-label form-label hidden" style="color: white;" hidden> </label></div>
+                        <div><label id="send_error" class="form-label form-label form-label form-label form-label form-label form-label hidden" style="color: white;" hidden></label></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></section>

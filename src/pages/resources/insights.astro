@@ -1,0 +1,107 @@
+---
+// src/pages/index.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import Insights from '../../components/Insights.astro';
+---
+
+
+<MainLayout>
+
+    <div id="section_article_filter_button" class="row" style="padding-top: 50px;">
+        <div class="col">
+          <div class="row">
+            <div class="filter-button">
+              <button id="btn_filter" class="btn">
+                <div color="rgba(27,32,64,255)">Filter by topic
+                  <img id="img_filter" src="/src/assets/img/aux/arrow.png" height="70" style="padding-left: 10px; padding-bottom: 5px;" />
+                </div>
+              </button>
+            </div>
+          </div>
+          <div id="btn_filter_row1" class="row" style="display: none; padding-bottom: 20px;">
+            <button id="btn_selection_GCSE" class="btn" style="width: 350px;">
+              <div class="selection">GCSE</div>
+            </button>
+          </div>
+          <div id="btn_filter_row2" class="row" style="display: none; padding-bottom: 20px;">
+            <button id="btn_selection_a-levels" class="btn" style="width: 350px;">
+              <div class="selection">A-Levels</div>
+            </button>
+          </div>
+          <div id="btn_filter_row3" class="row" style="display: none; padding-bottom: 20px;">
+            <button id="btn_selection_ib" class="btn" style="width: 350px;">
+              <div class="selection">IB</div>
+            </button>
+          </div>
+          <div id="btn_filter_row4" class="row" style="display: none; padding-bottom: 20px;">
+            <button id="btn_selection_university-admission" class="btn" style="width: 350px;">
+              <div class="selection">University Admission</div>
+            </button>
+          </div>
+          <div id="btn_filter_row5" class="row" style="display: none; padding-bottom: 20px;">
+            <button id="btn_selection_university-tuition" class="btn" style="width: 350px;">
+              <div class="selection">University Tuition</div>
+            </button>
+          </div>
+          <div id="btn_filter_row6" class="row" style="display: none; padding-bottom: 20px;">
+            <button id="btn_selection_careers-advice" class="btn" style="width: 350px;">
+              <div class="selection">Careers Advice</div>
+            </button>
+          </div>
+          <div id="btn_filter_row7" class="row" style="display: none; padding-bottom: 20px;">
+            <button id="btn_selection_homeschooling" class="btn" style="width: 350px;">
+              <div class="selection">Homeschooling</div>
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+<Insights keyword="insights" number_of_articles={100} />
+</MainLayout>
+
+<script>
+    let btn_filter = document.getElementById('btn_filter');
+    let rows = document.querySelectorAll('[id^="btn_filter_row"]');
+    let btns_selection = document.querySelectorAll('[id^="btn_selection_"]');
+    let img_filter = document.getElementById('img_filter');
+    let articles =  document.querySelectorAll('[id^="article"]');
+    let is_clicked = false
+    btn_filter.addEventListener('click', function(e) {
+            if (is_clicked){
+                img_filter.style.transform = "rotate(0deg)"
+                img_filter.style.transition = "all 0.1s linear"
+                for (let row of rows){
+                    row.style.display = "none" 
+                }
+                for (let article of articles){
+                     article.style.display = "block"
+                }
+            }
+            else{
+                img_filter.style.transform = "rotate(90deg)"
+                img_filter.style.transition = "all 0.1s linear"
+                for (let row of rows){
+                    row.style.display = "block" 
+                }
+                
+            }
+            is_clicked = !is_clicked
+        
+        });
+     for (let btn_selection of btns_selection){
+       btn_selection.addEventListener('click', function(e) {
+
+            for (let article of articles){
+
+                if (article.id.includes(btn_selection.id.replace('btn_selection_', '')) || article.id.includes('all')){
+                    article.style.display = "block"
+                }
+                else{
+                    article.style.display = "none"
+            }
+         }   
+        });        
+     }
+     
+    </script>

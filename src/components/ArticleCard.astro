@@ -1,0 +1,90 @@
+---
+// ArticleCard.astro
+
+const { id, date, title, link, isInsightPage } = Astro.props;
+
+const themeClass = isInsightPage ? 'light' : 'dark';
+const dateClass = isInsightPage ? 'date-light' : 'date';
+const contentClass = isInsightPage ? 'content-light' : 'content';
+---
+
+<div id={id} class="col m-auto" style="padding-bottom: 100px; padding-top: 10px;">
+  <div class={`box ${themeClass} slide-in from-bottom`}>
+    <div class={dateClass}><span>{date}</span></div>
+    <div class={contentClass}><span>{title}</span></div>
+    <button class="btn">
+      <a href={link}>
+        <span style="display: block;">
+          Full Article <img src="/src/assets/img/aux/arrow.png" height="70" style="padding-left: 10px; padding-bottom: 10px;" alt="golden arrow" />
+        </span>
+      </a>
+    </button>
+  </div>
+</div>
+
+<style>
+.box {
+  border: 3px solid;
+  font-size: 25px;
+  font-family: 'Abhaya Libre', serif;
+  border-radius: 0 50px;
+  padding: 40px;
+  margin: 40px auto;
+  width: 275px;
+  height: 450px;
+  position: relative;
+}
+
+.light {
+  border-color: rgba(27, 32, 64, 255);
+  color: rgba(27, 32, 64, 255);
+}
+
+.dark {
+  border-color: white;
+  color: white;
+}
+
+.date {
+  text-align: center;
+  font-size: 20px;
+}
+
+.date-light {
+  color: rgb(29, 62, 55);
+}
+
+.content {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.content-light {
+  color: rgba(27, 32, 64, 255);
+}
+
+.box button {
+  color: rgb(212, 175, 54);
+  position: absolute;
+  bottom: 30px;
+  height: 70px;
+  font-size: 25px;
+}
+
+.box button:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 1400px) {
+  .box {
+    width: 325px;
+    height: 450px;
+  }
+
+  .box button {
+    height: 80px;
+    font-size: 30px;
+  }
+}
+</style>
