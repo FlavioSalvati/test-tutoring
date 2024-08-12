@@ -37,7 +37,7 @@ export default defineConfig({
         targets: [
           {
             src: 'src/assets/**/*', // Copy assets as before
-            dest: 'assets/astro' // Move assets to 'assets/astro' directory
+            dest: 'assets' // Move assets to 'assets/astro' directory
           }
         ]
       })
