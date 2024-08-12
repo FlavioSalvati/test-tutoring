@@ -1554,7 +1554,7 @@
 .iti__flag {
   height: 15px;
   box-shadow: 0 0 1px 0 #888;
-  background-image: url(../img/flags.png?1);
+  background-image: url(/src/assets/img/aux/flags.png?1);
   background-repeat: no-repeat;
   background-color: #dbdbdb;
   background-position: 20px 0;
@@ -1562,7 +1562,7 @@
 
 @media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi) {
   .iti__flag {
-    background-image: url(../img/flags@2x.png?1);
+    background-image: url(/src/assets/img/aux/flags@2x.png?1);
   }
 }
 

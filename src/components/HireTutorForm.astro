@@ -1,11 +1,11 @@
-<section id="contact-us" class="position-relative py-4 py-xl-5" style="overflow-x: hidden; background: rgb(29,62,55); padding-bottom:50px"><div class="container position-relative" style="background: #1d3e37;">
+<section  class="position-relative py-4 py-xl-5" style="overflow-x: hidden; background: rgb(29,62,55); padding-bottom:50px"><div class="container position-relative" style="background: #1d3e37;">
     <div class="row d-flex justify-content-center m-auto" style="width: 90%;">
         <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 col-xxl-5">
             <div class="card mb-5" style="background: rgba(255,255,255,0);border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;width: 100%;">
                 <div class="card-body p-sm-5" style="background: rgba(255,255,255,0);border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;width: 100%;">
                     <h2 class="text-center mb-4 slide-in from-bottom" style="font-size: 60px;color: rgb(0,0,0);font-family: 'Abhaya Libre', serif;"><span  style="color: rgb(255, 255, 255);">Hire a Tutor</span></h2>
                     <h2 class="text-center mb-4 slide-in from-bottom" style="font-size: 25px;font-family: 'Abhaya Libre', serif;"><span style="color: rgb(255, 255, 255);">All the form fields are optional, but we ask you to provide as much information as possible so that we are in a better position to quickly meet your tutoring requirements.</span></h2>
-                    <form style="width: 100%;">
+                    <form style="width: 100%;" id="contact-us">
                         <div class="mb-3 text-left">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 slide-in from-left" style="padding-right: 15px; padding-left: 15px;">
@@ -66,3 +66,128 @@
         </div>
     </div>
 </div></section>
+
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<script src="/src/assets/js/jquery.min.js"></script>  
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwtFzrD4DTKb90tEuSHH9ohAhOKSMB-aRioEk7eD9tcY0Q7FBHCqrfbD6Uo_bsi4LQ/exec'
+    const form = document.querySelector('#contact-us')
+    form.addEventListener('submit', handleSubmit)
+
+    function on_success(message) {
+    console.log("post:", message);
+    if (message.toString() == '200') {
+        
+        var f = document.forms['contact-us'];
+
+        for (var i = 0, fLen = f.elements.length; i < fLen; i++) {
+            f.elements[i].readOnly = true;
+            f.elements[i].disabled = true;
+        }
+        var m = document.getElementById("send_error");
+        m.hidden = true;
+        var m = document.getElementById("confirmation");
+        m.hidden = false;
+
+        const options = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const formatter = new Intl.DateTimeFormat([], options);
+        const londonTime = formatter.format(new Date());
+        const londonHour = parseInt(londonTime, 10);
+
+        let userTimezone = 'Europe/London';
+
+        if (Intl && Intl.DateTimeFormat) {
+            userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        }
+    
+        if (londonHour > 8 && londonHour < 20){
+          m.innerHTML = f.elements["name"].value + ", thank you for completing the form. You should have now received a confirmation email. We aim to get back to you within 1-2 hours, which is before " + (londonHour+2) + ":00 London Time. If you do not receive an email in the next 10 minutes, please try submitting the form again or contact <a href='info@beyond-tutors.com'>info@beyond-tutors.com</a> for any questions."
+
+        }
+        else{
+            m.innerHTML = f.elements["name"].value + ", thank you for completing the form. You should have now received a confirmation email. Please note that the time in London is " + londonTime + ", and we are currently out of office. We will get back to you first thing tomorrow morning."
+        }
+        document.getElementById("button_label_submitting").style.display = "none";
+        document.getElementById("button_label_submitted").style.display = "block";
+
+        // Tell Google Ads that Lead Form has been Submitted. This counts as a conversion
+        gtag('event', 'conversion', {'send_to': 'AW-11372055037/vQgFCLO4lYoZEP2Tz64q'});
+
+        
+    } 
+    else {
+    console.log("ERROR");
+    var m = document.getElementById("send_error");
+    m.hidden = false;
+    m.innerHTML = f.elements["name"].value + ", we are sorry to inform you that an error has occured while submitting the form. Please contact <a href='mailto:salvati.flavio@gmail.com'>enquiries@beyond-tutors.com</a> directly, or call us at +44 263 573 198."
+    var button = document.getElementById('submit_button');
+    button.disabled = false;   
+    document.getElementById("button_label_submit").style.display = "block";
+    document.getElementById("button_label_submitting").style.display = "none";
+        }
+}
+
+    
+function handleSubmit(event) {
+    document.getElementById("button_label_submit").style.display = "none";
+    document.getElementById("button_label_submitting").style.display = "block";
+    var button = document.getElementById('submit_button');
+    button.disabled = true;
+    event.preventDefault()
+    document.getElementById("prefix").value = iti.getSelectedCountryData().dialCode
+    const form = document.forms['contact-us']
+    var formdata = new FormData(form);
+    
+    for (var pair of formdata.entries()) {
+        console.log(pair[0]+ ', ' + pair[1]); 
+    }
+    console.log(formdata)
+    fetch(scriptURL, { method: 'POST', body: formdata})
+    .then(() => { on_success(200)} )
+    .catch(error => { on_success(error) }) 
+
+}
+    
+function yesnoCheck(that) {
+    if (that.value == "On-line") {
+        document.getElementById("section-postal-address").style.display = "none";
+    } else {
+        document.getElementById("section-postal-address").style.display = "block";
+    }
+}
+ 
+const countryData = window.intlTelInputGlobals.getCountryData();
+const input = document.querySelector("#phone");
+const addressDropdown = document.querySelector("#country");
+    
+const iti = window.intlTelInput(input, {
+  utilsScript: "assets/js/utils.js",
+  separateDialCode: false,
+  initialCountry: ""
+});
+
+// populate the country dropdown
+for (let i = 0; i < countryData.length; i++) {
+  const country = countryData[i];
+  const optionNode = document.createElement("option");
+  optionNode.value = country.iso2;
+  const textNode = document.createTextNode(country.name);
+  optionNode.appendChild(textNode);
+  addressDropdown.appendChild(optionNode);
+}
+// set it's initial value
+addressDropdown.value = iti.getSelectedCountryData().iso2;
+
+// listen to the telephone input for changes
+input.addEventListener('countrychange', () => {
+  addressDropdown.value = iti.getSelectedCountryData().iso2;
+});
+   
+            
+
+// listen to the address dropdown for changes
+addressDropdown.addEventListener('change', () => {
+  iti.setCountry(this.value);
+});
+</script>
