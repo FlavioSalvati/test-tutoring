@@ -135,7 +135,6 @@ function handleSubmit(event) {
     var button = document.getElementById('submit_button');
     button.disabled = true;
     event.preventDefault()
-    document.getElementById("prefix").value = iti.getSelectedCountryData().dialCode
     const form = document.forms['contact-us']
     var formdata = new FormData(form);
     
@@ -150,44 +149,17 @@ function handleSubmit(event) {
 }
     
 function yesnoCheck(that) {
-    if (that.value == "On-line") {
-        document.getElementById("section-postal-address").style.display = "none";
-    } else {
-        document.getElementById("section-postal-address").style.display = "block";
-    }
-}
- 
-const countryData = window.intlTelInputGlobals.getCountryData();
-const input = document.querySelector("#phone");
-const addressDropdown = document.querySelector("#country");
-    
-const iti = window.intlTelInput(input, {
-  utilsScript: "assets/js/utils.js",
-  separateDialCode: false,
-  initialCountry: ""
-});
+            if (that.value == "On-line") {
+                document.getElementById("section-postal-address").style.display = "none";
+            } else {
+                document.getElementById("section-postal-address").style.display = "block";
+            }
+        }
 
-// populate the country dropdown
-for (let i = 0; i < countryData.length; i++) {
-  const country = countryData[i];
-  const optionNode = document.createElement("option");
-  optionNode.value = country.iso2;
-  const textNode = document.createTextNode(country.name);
-  optionNode.appendChild(textNode);
-  addressDropdown.appendChild(optionNode);
-}
-// set it's initial value
-addressDropdown.value = iti.getSelectedCountryData().iso2;
-
-// listen to the telephone input for changes
-input.addEventListener('countrychange', () => {
-  addressDropdown.value = iti.getSelectedCountryData().iso2;
-});
-   
-            
-
-// listen to the address dropdown for changes
-addressDropdown.addEventListener('change', () => {
-  iti.setCountry(this.value);
+// Attach the event listener after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('type_tutoring').addEventListener('change', function() {
+        yesnoCheck(this);
+    });
 });
 </script>
