@@ -36,8 +36,8 @@ export default defineConfig({
       viteStaticCopy({
         targets: [
           {
-            src: 'src/assets/**/*', // Copy assets as before
-            dest: 'assets' // Move assets to 'assets/astro' directory
+            src: 'src/assets/*', // Copy assets as before
+            dest: 'src/assets' // Move assets to 'assets/astro' directory
           }
         ]
       })
