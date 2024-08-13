@@ -1,0 +1,1 @@
+import"./jquery.min.AVLuUERb.js";import"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js";import"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js";import"https://code.jquery.com/jquery-3.6.0.min.js";import"https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js";
