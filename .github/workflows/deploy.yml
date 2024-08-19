@@ -1,33 +1,46 @@
-name: Deploy Astro Site to GitHub Pages
+kname: Deploy to GitHub Pages
 
 on:
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches:
-      - main  # Triggers the action on push to the main branch
-  workflow_dispatch:  # Allows manual triggering
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Use the version of Node.js your project requires
-
+          node-version: 20  # Use the specific version of Node.js if necessary
+      
       - name: Install dependencies
-        run: npm install
-
+        run: npm install  # or use `pnpm install` if you're using pnpm
+      
       - name: Build Astro site
-        run: npm run build
+        run: npm run build  # Ensure this matches your build command in package.json
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: test.beyond-tutors.com  # Your custom domain
+          publish_dir: ./dist  # The directory containing your built site
+
+      - name: Add custom domain
+        run: echo 'test.beyond-tutors.com' > ./dist/CNAME
+        # Ensure the CNAME file is placed in the build output directory
