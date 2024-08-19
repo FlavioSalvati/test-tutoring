@@ -1,14 +1,10 @@
-name: Deploy to GitHub Pages
+name: Deploy Astro Site to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
@@ -24,13 +20,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20  # Use the specific version of Node.js if necessary
+          node-version: 20
       
       - name: Install dependencies
-        run: npm install  # or use `pnpm install` if you're using pnpm
+        run: npm install
       
       - name: Build Astro site
-        run: npm run build  # Ensure this matches your build command in package.json
+        run: npm run build  # Adjust if your build command is different
+
+      - name: Add .nojekyll file
+        run: echo '' > ./dist/.nojekyll
+
+      - name: Add custom domain
+        run: echo 'test.beyond-tutors.com' > ./dist/CNAME
 
   deploy:
     needs: build
@@ -39,8 +41,4 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          publish_dir: ./dist  # The directory containing your built site
-
-      - name: Add custom domain
-        run: echo 'test.beyond-tutors.com' > ./dist/CNAME
-        # Ensure the CNAME file is placed in the build output directory
+          publish_dir: ./dist  # Ensure this is the correct build directory
