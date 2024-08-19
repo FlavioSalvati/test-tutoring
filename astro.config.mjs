@@ -6,9 +6,8 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 export default defineConfig({
-  site: 'http://localhost:4321', // Site URL
+  site: 'https://test.beyond-tutors.com',
   build: {
-    outDir: './docs', // Output directory for the built site
     assetsDir: 'assets', // Move assets to the assets directory
   },
   integrations: [
@@ -16,23 +15,6 @@ export default defineConfig({
   ],
   vite: {
     plugins: [
-      {
-        name: 'create-files',
-        writeBundle() {
-          // Derive __dirname in ES module syntax
-          const __dirname = dirname(fileURLToPath(import.meta.url));
-          const outDir = resolve(__dirname, './docs');
-          
-          // Create CNAME file
-          const cnamePath = resolve(outDir, 'CNAME');
-          const cnameContent = 'test.beyond-tutors.com';
-          writeFileSync(cnamePath, cnameContent);
-
-          // Create .nojekyll file
-          const nojekyllPath = resolve(outDir, '.nojekyll');
-          writeFileSync(nojekyllPath, '');
-        }
-      },
       viteStaticCopy({
         targets: [
           {
