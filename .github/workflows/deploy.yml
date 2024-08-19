@@ -3,8 +3,8 @@ name: Deploy Astro Site to GitHub Pages
 on:
   push:
     branches:
-      - main  # This triggers the action on push to the main branch
-  workflow_dispatch:  # Allows you to manually trigger the workflow from the GitHub Actions tab
+      - main  # Triggers the action on push to the main branch
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   build:
@@ -14,15 +14,15 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Specify the Node.js version you're using
+          node-version: 18  # Use the version of Node.js your project requires
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build the Astro site
+      - name: Build Astro site
         run: npm run build
 
       - name: Deploy to GitHub Pages
@@ -30,4 +30,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          cname: test.beyond-tutors.com
+          cname: test.beyond-tutors.com  # Your custom domain
