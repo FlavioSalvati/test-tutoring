@@ -1,4 +1,4 @@
-name: Deploy Astro Site to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -16,17 +16,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-      
+          node-version: '20'
+
       - name: Install dependencies
         run: npm install
-      
+
       - name: Build Astro site
-        run: npm run build  # Adjust if your build command is different
+        run: npm run build # Adjust if your build command is different
 
       - name: Add .nojekyll file
         run: echo '' > ./dist/.nojekyll
@@ -34,11 +34,22 @@ jobs:
       - name: Add custom domain
         run: echo 'test.beyond-tutors.com' > ./dist/CNAME
 
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: github-pages
+          path: ./dist
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: github-pages
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          publish_dir: ./dist  # Ensure this is the correct build directory
+          token: ${{ secrets.GITHUB_TOKEN }}
