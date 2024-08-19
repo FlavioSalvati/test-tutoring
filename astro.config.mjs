@@ -6,7 +6,7 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 export default defineConfig({
-  site: 'https://test.beyond-tutors.com',
+  site: 'http://localhost:4321', // Site URL
   build: {
     outDir: './docs', // Output directory for the built site
     assetsDir: 'assets', // Move assets to the assets directory
