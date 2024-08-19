@@ -1,0 +1,14 @@
+.all-insights button:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .all-insights button {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+

@@ -1,0 +1,107 @@
+/* Article styles */
+.insight_article_style {
+    color: rgb(0, 0, 0, 1);
+    font-family: 'Abhaya Libre', serif;
+    padding-bottom: 100px;
+    text-align: left;
+}
+.insight_article_style ul {
+    padding-top: 20px;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: left ;
+    margin: 0;
+}
+.insight_article_style ul li {
+    font-size: 20px;
+    line-height: 35px;
+    text-align: left ;
+    margin: 0;
+}
+.insight_article_style ul li p {
+    font-size: 20px;
+    line-height: 35px;
+    text-align: left ;
+    margin: 0;
+}
+.insight_article_style p {
+    font-size: 20px;
+    line-height: 35px;
+    text-align: left;
+    margin: 0;
+}
+
+
+  .insight_article_style h1 {
+      padding-top: 10px;
+      padding-bottom: 30px;
+      font-size: 40px;
+      font-weight: bold;
+      text-align: left;
+      
+  }
+  
+  .insight_article_style h2 {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      text-align: left;
+  }
+  
+  .insight_article_style h3 {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: left;
+  }
+  
+  .insight_article_style h2.active,
+  .insight_article_style h3.active {
+      background-color: #d4af36;
+      padding: 10px;
+      border-radius: 5px;
+  }
+  
+  .insight_article_style h4 {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-size: 22.5px;
+      font-weight: bold;
+      text-align: left;
+  }
+  
+  .insight_article_style h5 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: left;
+  }
+  
+  .insight_article_style img {
+      display: block;
+      margin: 0 auto;
+      max-width: 80%;
+      padding-bottom: 50px;
+  }
+  
+  .insight_article_style a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: rgb(212, 175, 54);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+      margin: auto;
+  }
+  
+  .insight_article_style a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+  }

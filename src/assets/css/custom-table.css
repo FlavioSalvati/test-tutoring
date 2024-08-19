@@ -1,0 +1,6 @@
+/* github copilot create a subclass to table called custom-table that has 30px bottom padding for td and th elements */
+
+.custom-table td, .custom-table th {
+  padding-bottom: 30px;
+}
+
