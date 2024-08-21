@@ -4,6 +4,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 //test
 export default defineConfig({
   site: 'https://test.beyond-tutors.com',
+  base: "/",
   integrations: [
     mdx(), // Enables MDX support
   ],
