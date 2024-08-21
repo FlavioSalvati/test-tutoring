@@ -6,9 +6,6 @@ import ExtendedFooter from '../components/ExtendedFooter.astro';
 <html lang="en">
   
   <head>
-    <script is:inline src="/src/assets/js/jquery.min.js"></script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script is:inline src="/src/assets/bootstrap/js/bootstrap.min.js"></script>
      
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,6 +54,9 @@ import ExtendedFooter from '../components/ExtendedFooter.astro';
     <Header />
     <slot />
     <ExtendedFooter />
+    <script is:inline src="/src/assets/js/jquery.min.js"></script>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script is:inline src="/src/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/src/assets/js/current-day.js"></script>
     <script src="/src/assets/js/Fixed-navbar-starting-with-transparency-script.js"></script>
     <script src="/src/assets/js/data.js"></script>
