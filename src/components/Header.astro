@@ -90,6 +90,35 @@
     overflow: hidden;
 }
 
+@media (max-width: 480px) {
+    .overlay-container {
+        height: 100vh; /* Increase height for smaller screens */
+    }
+    .overlay-container .main-header-content h2{
+        font-size: 30px !important;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay-container {
+        height: 70vh; /* Increase height for smaller screens */
+    }
+    .overlay-container .main-header-content h2{
+        font-size: 30px !important;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 1028px) {
+    .overlay-container {
+        height: 50vh; /* Increase height for smaller screens */
+    }
+    .overlay-container .main-header-content h2{
+        font-size: 35px !important;
+    }
+}
+
 .overlay-image {
     position: absolute;
     top: 0;

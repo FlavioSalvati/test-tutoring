@@ -1,13 +1,19 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 //test
 export default defineConfig({
-  site: 'https://test.beyond-tutors.com',
+  site: 'https://www.beyond-tutors.com',
   base: "",
-  integrations: [
-    mdx(), // Enables MDX support
-  ],
+  integrations: [mdx({
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex]
+  })],
+  content: {
+    collections: '/src/content/config.ts', // Point to your collection schema config
+  },
   vite: {
     plugins: [
       viteStaticCopy({

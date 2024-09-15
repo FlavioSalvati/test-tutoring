@@ -1,0 +1,327 @@
+---
+import QA_Card from '../../components/QA-Card.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const qasData = await getCollection('faq');
+
+const itemsPerPage = 5;
+
+
+---
+<MainLayout>
+  <div class="row" style="padding-top: 10vh;">
+<div class="col">
+<div id="section_QA_filter_button" class="row" style="display:flex; justify-content: space-between; align-items: center;">
+    <div class="col">
+        <div class="row">
+            <div class="filter-button"><button id="btn_QA_filter" class="btn">
+                    <div color="rgba(27,32,64,255)">Filter by subject<img id="QA_img_filter" src="/src/assets/img/aux/arrow.png" height="70" style="padding-left: 10px;padding-bottom: 5px;" /></div>
+                </button></div>
+        </div>
+            <div id="QA_row1" class="row" style="display: none; height: 60px;">
+                <a class="hover-underline-animation" role="button" style="width: 200px; height: 60px; font-size: 25px; font-family: 'Abhaya Libre', serif;" id="btn_QA_selection_Physics">Physics</a>
+            </div>
+            <div id="QA_row2" class="row" style="display: none; height: 60px;">
+                <a class="hover-underline-animation" role="button" style="width: 200px; height: 60px; font-size: 25px; font-family: 'Abhaya Libre', serif;" id="btn_QA_selection_Chemistry">Chemistry</a>
+            </div>
+
+            <div id="QA_row3" class="row" style="display: none; height: 60px;">
+                <a class="hover-underline-animation" role="button" style="width: 200px; height: 60px; font-size: 25px; font-family: 'Abhaya Libre', serif;" id="btn_QA_selection_Biology">Biology</a>
+
+            </div>
+            <div id="QA_row4" class="row" style="display: none; height: 60px;">
+                <a class="hover-underline-animation" role="button" style="width: 200px; height: 60px; font-size: 25px; font-family: 'Abhaya Libre', serif;" id="btn_QA_selection_Mathematics">Mathematics</a>
+
+            </div>
+            <div id="QA_row5" class="row" style="display: none; height: 60px;">
+                <a class="hover-underline-animation" role="button" style="width: 200px; height: 60px; font-size: 25px; font-family: 'Abhaya Libre', serif;" id="btn_QA_selection_English">English</a>
+
+            </div>
+            <div id="QA_row6" class="row" style="display: none; height: 60px;">
+                <a class="hover-underline-animation" role="button" style="width: 200px; height: 60px; font-size: 25px; font-family: 'Abhaya Libre', serif;" id="btn_QA_selection_History">History</a>
+
+            </div>
+            <div id="QA_row7" class="row" style="display: none; height: 60px;">
+                <a class="hover-underline-animation" role="button" style="width: 200px; height: 60px; font-size: 25px; font-family: 'Abhaya Libre', serif;" id="btn_QA_selection_Geography">Geography</a>
+
+            </div>
+            <div id="QA_row8" class="row" style="display: none; height: 60px;">
+                <a class="hover-underline-animation" role="button" style="width: 200px; height: 60px; font-size: 25px; font-family: 'Abhaya Libre', serif;" id="btn_QA_selection_Economics">Economics</a>
+
+            </div>
+    </div>
+</div>
+</div>
+<div class="col-4" style="display: flex; justify-content: flex-end; height: 50px;">
+  <div class="row">
+    <div class="col-9">
+      <input type="text" id="search-input" placeholder="Search questions..." style="border-color: rgb(0, 0, 0); background: rgba(255, 255, 255, 0.35); font-size: 25px; font-family: 'Abhaya Libre', serif; color: rgba(27,32,64,255); padding-right: 10px; height: 100%" class="form-control">
+    </div>
+    <div class="col-3">
+      <button id="search-button" class="form-control" style="margin-left: 10px; background: rgba(27,32,64,255); color: white; height: 100%">Search</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container" style="width: 100%; padding-bottom: 100px;">
+    <div id="item-container">
+
+    </div>
+
+    <div id="pagination" class="pagination-container"></div>
+  </div>
+
+
+</MainLayout>
+
+
+<style>
+  #search-input::placeholder {
+    color: rgba(27,32,64,255); /* Adjust the color here */
+    opacity: 1; /* Ensure the color is fully visible */
+  }
+</style>
+    
+<script define:vars={{qasData:qasData, itemsPerPage: itemsPerPage}}>
+let currentPage = 1;
+let currentFilter = ""; // Initially, no filter is applied
+let paginatedQas = chunkArray(qasData, itemsPerPage);
+let totalPages = Math.ceil(qasData.length / itemsPerPage);
+let paginationContainer = document.getElementById("pagination");
+
+function chunkArray(data, chunkSize) {
+  const result = [];
+  for (let i = 0; i < data.length; i += chunkSize) {
+    result.push(data.slice(i, i + chunkSize));
+  }
+  return result;
+}
+
+function applyFilter() {
+    currentPage = 1;
+    // Filter the `qa` items
+
+    paginatedQas = qasData.filter(qa => qa.id.includes(currentFilter))
+
+    // Recalculate pagination
+    totalPages = Math.ceil(paginatedQas.length / itemsPerPage);
+    paginatedQas = chunkArray(paginatedQas, itemsPerPage);
+
+    // Reset currentPage if it exceeds the new totalPages
+    if (currentPage > totalPages) {
+        currentPage = totalPages;
+    }
+    updateItems()
+    createPaginationButtons();
+}
+
+
+function createPaginationButtons() {
+    paginationContainer.innerHTML = "";
+    createArrowButton("<", currentPage - 1);
+
+    // Calculate which pages to show
+    const maxButtons = 3;
+    const startPage = Math.max(1, currentPage - maxButtons);
+    const endPage = Math.min(totalPages, currentPage + maxButtons);
+
+    // Add the first page and dots if needed
+    if (startPage > 1) {
+        createPageButton(1); // Always show first page
+        if (startPage > 2) {
+            const dots = document.createElement("span");
+            dots.textContent = "...";
+            paginationContainer.appendChild(dots); // Add dots
+        }
+    }
+
+    // Show the pages from startPage to endPage
+    for (let i = startPage; i <= endPage; i++) {
+        createPageButton(i);
+    }
+
+    // Add the last page and dots if needed
+    if (endPage < totalPages) {
+        if (endPage < totalPages - 1) {
+            const dots = document.createElement("span");
+            dots.textContent = "...";
+            paginationContainer.appendChild(dots); // Add dots
+        }
+        createPageButton(totalPages); // Always show last page
+    }
+
+    createArrowButton(">", currentPage + 1);
+}
+
+
+  function createPageButton(pageNumber) {
+      const button = document.createElement("button");
+      button.className = pageNumber === currentPage ? "active" : "";
+      button.textContent = pageNumber;
+      button.addEventListener("click", () => {
+          changePage(pageNumber);
+      });
+      paginationContainer.appendChild(button);
+  }
+
+  function createArrowButton(label, targetPage) {
+      const button = document.createElement("button");
+      button.textContent = label;
+      button.addEventListener("click", () => {
+          if (targetPage >= 1 && targetPage <= totalPages) {
+              changePage(targetPage);
+          }
+      });
+      paginationContainer.appendChild(button);
+  }
+
+  function changePage(pageNumber) {
+      currentPage = pageNumber;
+      updateItems();
+      createPaginationButtons();
+  }
+
+  function updateItems() {
+  const itemContainer = document.getElementById("item-container");
+  itemContainer.innerHTML = "";
+  paginatedQas[currentPage - 1].forEach((qa) => {
+    const url = (qa.data.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+    const qaCard = `
+      <div class="row" style="padding-top: 50px; display: block;" id="${qa.id}">
+        <div class="col">
+          <a href="/resources/faq/${url}">
+            <div class="QA_card">
+              <div class="question">${qa.data.title}</div>
+              <div class="summary">${qa.data.summary}</div>
+              <div class="author">${qa.data.author}</div>
+              <div class="tutor_type">${qa.data.tutor_type}</div>
+              <div class="arrow"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    `;
+    itemContainer.innerHTML += qaCard;
+  });
+}
+
+  // Filter logic
+  let QA_btn_filter = document.getElementById('btn_QA_filter');
+  let QA_rows = document.querySelectorAll('[id^="QA_row"]');
+  let QA_btns_selection = document.querySelectorAll('[id^="btn_QA_selection_"]');
+  let QA_img_filter = document.getElementById('QA_img_filter');
+  let QA_is_clicked = false;
+
+  QA_btn_filter.addEventListener('click', function(e) {
+      if (QA_is_clicked) {
+          // Reset filter if the filter button is closed
+          QA_img_filter.style.transform = "rotate(0deg)";
+          QA_img_filter.style.transition = "all 0.15s linear";
+          for (let QA_row of QA_rows) {
+              QA_row.style.display = "none";
+          }
+          currentFilter = ""; // Reset filter to none
+          applyFilter();
+      } else {
+          // Open filter selection
+          QA_img_filter.style.transform = "rotate(90deg)";
+          QA_img_filter.style.transition = "all 0.15s linear";
+          for (let QA_row of QA_rows) {
+              QA_row.style.display = "block";
+          }
+      }
+      QA_is_clicked = !QA_is_clicked;
+
+  });
+
+  // Filter button click logic
+  for (let QA_btn_selection of QA_btns_selection) {
+      QA_btn_selection.addEventListener('click', function(e) {
+          currentFilter = QA_btn_selection.id.replace("btn_QA_selection_", ""); // Set the filter to the clicked subject
+          applyFilter();
+
+          // Highlight the selected subject
+          for (let btn of QA_btns_selection) {
+              if (btn.id === QA_btn_selection.id) {
+                  btn.style.color = "rgb(212, 175, 54)";
+                  btn.style.textDecoration = "underline";
+                  btn.style.textUnderlineOffset = "6.5px";
+              } else {
+                  btn.style.color = "rgb(0, 0, 0)";
+                  btn.style.textDecoration = "none";
+              }
+          }
+
+      });
+  }
+
+
+  // Search Logic
+let searchInput = document.getElementById("search-input");
+let searchButton = document.getElementById("search-button");
+
+searchButton.addEventListener("click", function() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    if (searchTerm) {
+      searchQuestions(searchTerm);
+    } else {
+        applyFilter(); // Reset to show all if no search term
+    }
+});
+
+function searchQuestions(searchTerm) {
+    currentPage = 1;
+    currentFilter = ""
+    paginatedQas = qasData.filter(qa => qa.data.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    paginatedQas = chunkArray(paginatedQas, itemsPerPage);
+    totalPages = Math.ceil(paginatedQas.length / itemsPerPage);
+
+    updateItems();
+    createPaginationButtons();
+}
+
+// Trigger search on Enter key press
+searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        searchButton.click(); // Trigger search on Enter key press
+    }
+});
+
+
+  // Initial setup
+  updateItems();
+  createPaginationButtons();
+</script>
+
+
+  
+  <style>
+    button.active {
+      background-color: #d4af36; /* Example highlight color */
+      color: white;
+    }
+  
+    .pagination-container {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+    }
+  
+    .pagination-container button {
+      margin: 0 5px;
+      padding: 10px;
+      border: none;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+  
+    .pagination-container button:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+
+
+
+

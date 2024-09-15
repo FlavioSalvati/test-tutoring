@@ -1,15 +1,21 @@
 ---
 import Header from '../components/Header.astro';
 import ExtendedFooter from '../components/ExtendedFooter.astro';
+const { title, description, author, keywords } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
   
   <head>
-     
+     <!-- SEO Metadata -->
+    <title>{title ? `${title} | FAQ` : 'Beyond Tutors'}</title>
+    <meta name="description" content={description || 'Unrivalled Education Solutions for your Family'} />
+    <meta name="author" content={author || 'Beyond Tutors'} />
+    <meta name="keywords" content={`FAQ, ${keywords || 'elite tutors, A-Levels, IB, GCSE, KS3, University Admission, Oxbridge'}, ${author || 'Beyond Tutors'}`} />
+    <meta name="robots" content="index, follow" />
+    <!-- SEO Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Astro Site</title>
      <link rel="icon" type="image/jpeg" sizes="356x356" href="/src/assets/img/Logo_Final.jpeg">
     <link rel="icon" type="image/jpeg" sizes="356x356" href="/src/assets/img/Logo_Final.jpeg" media="(prefers-color-scheme: dark)">
     <link rel="icon" type="image/jpeg" sizes="356x356" href="/src/assets/img/Logo_Final.jpeg">
@@ -17,6 +23,7 @@ import ExtendedFooter from '../components/ExtendedFooter.astro';
     <link rel="icon" type="image/jpeg" sizes="356x356" href="/src/assets/img/Logo_Final.jpeg">
     <link rel="icon" type="image/jpeg" sizes="356x356" href="/src/assets/img/Logo_Final.jpeg">
     <link rel="icon" type="image/jpeg" sizes="356x356" href="/src/assets/img/Logo_Final.jpeg">
+    
     <link rel="stylesheet" href="/src/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre:600,800&amp;display=swap">
     <link rel="stylesheet" href="/src/assets/fonts/ionicons.min.css">
@@ -40,15 +47,14 @@ import ExtendedFooter from '../components/ExtendedFooter.astro';
     <link rel="stylesheet" href="/src/assets/css/demo.compiled.css">
     <link rel="stylesheet" href="/src/assets/css/filter-button.css">
     <link rel="stylesheet" href="/src/assets/css/sprite.compiled.css">
-    <link rel="stylesheet" href="/src/assets/css/text-box.css">
     <link rel="stylesheet" href="/src/assets/css/all-insights.css">
     <link rel="stylesheet" href="/src/assets/css/custom-height-2col.css">
     <link rel="stylesheet" href="/src/assets/css/index-style.css">
     <link rel="stylesheet" href="/src/assets/css/outline-text.css">
-    <link rel="stylesheet" href="/src/assets/css/QA_card.css">
     <link rel="stylesheet" href="/src/assets/css/responsive-header.css">
     <link rel="stylesheet" href="/src/assets/css/scroll-images.css">
     <link rel="stylesheet" href="/src/assets/css/style_QA_Forum.css">
+    <link rel="stylesheet" href="/src/assets/css/QA_Card.css">
   </head>
   <body style="overflow-x: hidden; background: #fff0e4;width: 100%;max-width: 100%;min-width: 100%;margin-right: 0px;margin-left: 0px;margin-bottom: 0px;margin-top: 0px;">
     <Header />

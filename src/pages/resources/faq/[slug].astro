@@ -1,0 +1,172 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../../layouts/MainLayout.astro';
+
+
+// 1. Pre-generate all possible slugs from the title
+export async function getStaticPaths() {
+  const qasData = await getCollection('faq');
+  
+  return qasData.map(faq => {
+    const slug = (faq.data.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    return {
+      params: { slug },  // Use the generated slug
+      props: { faq },
+    };
+  });
+}
+
+// 2. Fetch the faq entry based on the slug from Astro.params
+const { slug } = Astro.params;
+const qasData = await getCollection('faq');
+
+// Find the specific FAQ by matching the slug
+const faq = qasData.find((qa) => (qa.data.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')=== slug);
+
+if (!faq) {
+  throw new Error(`FAQ not found for slug: ${slug}`);
+}
+
+// Render the MDX content
+const { Content } = await faq.render();
+
+// List of common stopwords to exclude from keywords
+const stopwords = [
+  "what", "is", "the", "and", "how", "does", "it", "of", "to", "by", "a", "an",
+  "you", "your", "my", "if", "in", "on", "at", "with", "for", "as", "or",
+  "can", "be", "not", "are", "this", "should", "i", "me", "we", "he", "she",
+  "they", "them", "us", "who", "whom", "which", "that", "these", "those",
+  "has", "have", "had", "been", "will", "would", "do", "did", "but", "so",
+  "because", "than", "then", "there", "here", "when", "where", "why", "also",
+  "all", "some", "any", "each", "more", "such", "few", "many", "most", "other",
+  "their", "his", "her", "its", "our", "whose", "about", "from", "up", "down",
+  "out", "over", "under", "again", "now", "just", "only", "very", "both", "even",
+  "same", "after", "before", "between", "during", "while", "through", "until",
+  "although", "since", "whether", "like", "one", "once", "twice", "always", 
+  "about", "across", "afterwards", "among", "anyhow", "anyone", "anything", "anywhere", 
+  "became", "become", "becomes", "becoming", "beside", "besides", "beyond", "concerning", 
+  "describe", "during", "else", "elsewhere", "enough", "everyone", "everything", 
+  "everywhere", "except", "few", "following", "further", "hers", "himself", "however", 
+  "indeed", "instead", "itself", "latter", "latterly", "meanwhile", "mine", "moreover", 
+  "myself", "neither", "nobody", "none", "noone", "nothing", "nowhere", "off", "onto", 
+  "ourselves", "outside", "own", "per", "regarding", "same", "several", "somehow", 
+  "someone", "something", "sometime", "sometimes", "somewhere", "themselves", 
+  "thereafter", "thereby", "therefore", "therein", "thereupon", "though", "throughout", 
+  "thus", "towards", "unlike", "upon", "whatever", "whenever", "whereafter", "whereas", 
+  "whereby", "wherein", "whereupon", "whether", "whichever", "while", "within", 
+  "without", "yours", "yourselves", "whomsoever", "whensoever"
+];
+
+// Function to generate keywords from the title, excluding stopwords and handling punctuation
+function generateKeywordsFromTitle(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^\w\s]/g, '')  // Remove all punctuation except word characters and spaces
+    .split(/\s+/)  // Split title into words based on spaces
+    .filter(word => !stopwords.includes(word))  // Exclude stopwords
+    .filter(Boolean)  // Ensure no empty values (handle extra spaces)
+    .join(', ');  // Join remaining words as keywords
+}
+
+
+// Generate keywords from the title
+const keywords = generateKeywordsFromTitle(faq.data.title);
+
+import 'katex/dist/katex.min.css';
+---
+<MainLayout title={faq.data.title} description={faq.data.summary} author={faq.data.author} keywords={keywords}>
+
+  <!-- FAQ Card Layout -->
+  <div class="row" style={{ paddingTop: '20px',paddingBottom: '20px',  display: 'block' }} id={faq.id}>
+    <div class="row all-insights" style="padding-left: 50px; paddi">
+        <div class="col" style="width: 100%;padding: 0px;max-width: 100%;">
+            <button class="btn" style="height: 100px;">
+                <a href="/resources/QA-Forum">
+                    <span style="display: block; font-family: 'Abhaya Libre', serif; font-size: 35px;">
+                        QA-Forum <img src="/src/assets/img/aux/arrow.png" height="50" style="padding-left: 10px;padding-bottom: 0px; rotate: 180deg;" />
+                    </span>
+                </a>
+            </button>
+        </div>
+    </div>
+    <div class="col">
+        <div class="answer_style">
+            <div class="title">
+                {faq.data.title}
+            </div>
+          <div class="content_style">
+            <Content />
+          </div>
+          <div class="author">Answered by: {faq.data.author}</div>
+          <div class="tutor_type">{faq.data.tutor_type}</div>
+        </div>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+
+.answer_style {
+  width: 80%;
+  text-align: left; 
+  min-height: 300px; /* Ensures a minimum height if needed, but allows it to grow */
+  background-color: rgba(27, 32, 64, 0);
+  border: 2px solid rgba(27, 32, 64, 1);
+  font-family: 'Abhaya Libre', serif;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+}
+
+.content_style {
+  text-align: left; 
+  left: auto;
+  font-size: 20px;
+  color: rgba(27, 32, 64, 1);
+  
+}
+
+.content_style h2,
+.content_style h3 {
+    font-weight: bold!important;
+}
+
+.title {
+  text-align: center; 
+  left: auto;
+  font-size: 35px;
+  padding-bottom: 50px;
+  color: rgba(27, 32, 64, 1);
+}
+
+.summary {
+  top: 100px;
+  text-align: center;
+  position: absolute;
+  font-size: 20px;
+  color: rgba(27, 32, 64, 1);
+}
+
+.author {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  font-size: 20px;
+  padding-top: 50px;
+  color: rgba(27, 32, 64, 1);
+}
+
+.tutor_type {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  font-size: 20px;
+  color: rgba(27, 32, 64, 1);
+}
+
+
+</style>
+

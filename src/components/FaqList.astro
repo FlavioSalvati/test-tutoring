@@ -18,12 +18,11 @@ const { questionsAndAnswers } = Astro.props;
     <div class="accordion-item" key={index}>
       <h2 class="accordion-header">
         <button class="btn accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#content-accordion-${index}`}>
-          <span class="d-flex faq-question">{qa.question}</span>
+          <span class="d-flex faq-question" set:html={qa.question}></span>
         </button>
       </h2>
       <div id={`content-accordion-${index}`} class="accordion-collapse collapse" data-bs-parent="#faqlist">
-        <p class="accordion-body">
-          {qa.answer}
+        <p class="accordion-body" set:html={qa.answer}>
         </p>
       </div>
     </div>

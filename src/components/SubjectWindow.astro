@@ -57,29 +57,29 @@ export { content };
 ))}
 
 {content.map((qa) => (
-    <div class="container"  style={{ maxWidth: "100%", width: "100%", padding: "0px", minWidth: "100%" }}>
-        <div class="row gx-0 gy-0 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row" style={{ marginRight: "0px", marginLeft: "0px", width: "100%", maxWidth: "100%", paddingRight: "0px" }}>
-            <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto" style={{ padding: "0px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <div class="container"  style={{ maxWidth: "100%", width: "100%", padding: "0px", minWidth: "100%", height: '100%', margin: "0px"}}>
+        <div class="row gx-0 gy-0 row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row" style={{display: 'flex', margin: "0px", padding: "0px", width: "100%", maxWidth: "100%"}}>
+            <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto" style={{ padding: "0px", margin:"0px", display: "flex", justifyContent: "center", alignItems: "center", flexGrow:1}}>
                 <div class="table-responsive" style={{ paddingTop: "20px", position: "relative" }}>
-                    <h2 style={{ paddingTop: "10px", paddingBottom: "30px", color: "rgba(27,32,64,255)", fontSize: "40px", fontWeight: "bold", borderTopStyle: "none", borderRightStyle: "none", borderBottomStyle: "none", borderLeftStyle: "none", marginRight: "20px", textAlign: "center", fontFamily: "'Abhaya Libre', serif" }}> - School Admissions -</h2>
+                    <h2 style={{ paddingTop: "10px", paddingBottom: "30px", color: "rgba(27,32,64,255)", fontSize: "40px", fontWeight: "bold", borderTopStyle: "none", borderRightStyle: "none", borderBottomStyle: "none", borderLeftStyle: "none", marginRight: "20px", textAlign: "center", fontFamily: "'Abhaya Libre', serif" }}> &ndash; {qa.title} &ndash; </h2>
                     <div>
-                        <table class="table" style={{ marginBottom: "0px" }}>
+                        <table class="table" style={{ marginBottom: "0px", paddingBottom : "0px" }}>
                             <thead>
                                 <tr>
                                     <th style={{ background: "rgba(255,255,255,0)", border: "none", paddingBottom: "40px" }}>
-                                        <div class="row gy-0 row-cols-1 row-cols-md-3">
-                                            {qa.sections.map((section, sectionIndex) => (
+                                        <div class={`row gy-0 row-cols-1 row-cols-md-${qa.sections.length}`}>
+                                        {qa.sections.map((section, sectionIndex) => (
                                                 <div class="col" align="center" key={sectionIndex}>
                                                     <a id={`var_btn_${sectionIndex}`} class="inline-block hover-underline-animation" role="button" style={{ textDecoration: "underline", textUnderlineOffset: "5px", background: "transparent", color: sectionIndex === 0 ? "rgb(212, 175, 54)" : "rgba(27,32,64,255)", fontSize: "20px", fontWeight: "bold", marginRight: "20px", textAlign: "center", fontFamily: "'Abhaya Libre', serif" }}>
                                                         {section.title}
                                                     </a>
                                                 </div>
-                                            ))}
+                                        ))}
                                         </div>
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody style="padding-bottom: 0;">
                                 {qa.sections.map((section, sectionIndex) => (
                                     <tr key={sectionIndex} id={`var_section_${sectionIndex}`} style={{ display: sectionIndex === 0 ? "table-row" : "none" }}>
                                         <td style={{ background: "transparent", border: "none", padding: "0" }}>
@@ -90,7 +90,7 @@ export { content };
                                 ))}
                                 {qa.sections.map((section, sectionIndex) => (
                                      <tr key={sectionIndex} id={`var_paragraph_${sectionIndex}`} style={{ display: sectionIndex === 0 ? "table-row" : "none" }}>
-                                        <td class="justify-content-center" style={{ background: "transparent", border: "none", padding: "30px 10px" }}>
+                                        <td class="justify-content-center" style={{ background: "transparent", border: "none", padding: "0px 50px" }}>
                                             <div class="col-12 align-content-center mx-auto" style={{ padding: "0" }}>
                                                 <p class="w-lg-50 custom-height-2col" style={{ fontFamily: "'Abhaya Libre', serif", fontSize: "20px", lineHeight: "30px", textAlign: "center" }}  set:html= {section.paragraph} >
                                                 </p>
@@ -103,14 +103,14 @@ export { content };
                     </div>
                 </div>
             </div>
-            <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto d-none d-lg-block d-xl-block" style={{ display: "block", padding: "0px" }}>
+            <div class="col-auto col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mx-auto" style={{ display: "block", padding: 0, flexGrow: 1 }}>
                 {qa.sections.map((section, sectionIndex) => (
                     <div style={{ display: sectionIndex === 0 ? "block" : "none", padding: 0, margin:0, height: "100%"}} id={`var_subject-image_${sectionIndex}`}>
                         <ResponsiveImage
                             src={content[0].sections[sectionIndex].imageSrc || ''}
                             alt={content[0].sections[sectionIndex].imageAlt || ''}
                             className="img-fluid"
-                            style={{ maxHeight: "100%", height: "100%", width: "100%" }}
+                            style={{ maxHeight: "100%", height: "100%", width: "100%", objectFit: "cover" }}
                         />
                  </div>
                  ))}

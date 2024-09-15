@@ -1,0 +1,428 @@
+[
+{"id": "QA_Question_Physics_1",
+"href": "/resources/QA-Forum/Physics/what-is-an-electric-field.html",
+"question": "What is an electric field, and how does it affect charged particles?",
+"summary": "Emily Johnson explains electric fields as regions where charges exert forces, created by electric charges.\n Fields influence charged objects, fundamental in understanding their behavior.",
+"author": "Emily Johnson, MSci Physics, University of Cambridge",
+"tutor_type": "A-Level Physics Tutor"},
+
+{"id": "QA_Question_Physics_2", "href": "/resources/QA-Forum/Physics/photoelectric-effect.html", "question": "The Photoelectric Effect Demystified", "summary": "Dr. David Mitchell delves into the photoelectric effect, which supports light's particle-like nature through photon-induced electron ejection, contributing to quantum mechanics' development.", "author": "Dr. David Mitchell, PhD in Physics, Universtiy of Oxford", "tutor_type": "IB Physics Tutor"} ,
+
+{"id": "QA_Question_Physics_3", "href": "/resources/QA-Forum/Physics/what-are-electromagnetic-waves.html", "question": "What are electromagnetic waves, and how do they propagate?", "summary": "Electromagnetic waves transmit energy through oscillating electric and magnetic fields, always traveling at the speed of light. They form a spectrum with diverse applications, from radio waves to gamma rays.", "author": "James Anderson, MSci in Physics, Universtiy of Cambridge", "tutor_type": "IB Physics Tutor"} ,
+
+{"id": "QA_Question_Physics_4", "href": "/resources/QA-Forum/Physics/projectile-motion.html", "question": "What is projectile motion, and how does it work?", "summary": "Projectile motion involves objects launched into the air, moving horizontally at a constant velocity while subject to gravity's vertical influence. Key factors include initial velocity and launch angle.", "author": "Dr. Sarah Miller, PhD in Physics, Universtiy of Cambridge", "tutor_type": "IB Physics Tutor"} ,
+
+{"id": "QA_Question_Chemistry_1", "href": "/resources/QA-Forum/Chemistry/chemical-bonds.html", "question": "What are chemical bonds, and how do they form?", "summary": "Chemical bonds are the forces that hold atoms together, forming compounds. Ionic, covalent, metallic, hydrogen, and van der Waals bonds result from electrons' behavior in atoms.", "author": "Dr. Elizabeth Davis, PhD in Chemistry, Universtiy of Oxford", "tutor_type": "IB Chemistry Tutor"} ,
+
+{"id": "QA_Question_Chemistry_2", "href": "/resources/QA-Forum/Chemistry/gas-laws.html", "question": "What are the gas laws, and how do they describe the behaviour of gases?", "summary": "Gas laws describe how gases behave under different conditions. Boyle's, Charles's, Gay-Lussac's, Avogadro's, and the Ideal Gas Law help predict gas behavior in various situations.", "author": "Dr. Richard Taylor, PhD in Chemistry, Universtiy of Cambridge", "tutor_type": "IB Chemistry Tutor"} ,
+
+{"id": "QA_Question_Chemistry_3", "href": "/resources/QA-Forum/Chemistry/periodic-table.html", "question": "What is the periodic table, and how does it organize elements?", "summary": "The periodic table organizes elements based on atomic number and properties. It reveals elemental trends, aiding predictions of reactivity and forming the foundation of chemical knowledge.", "author": "Dr. Michael Roberts, PhD in Chemistry, Imperial College London", "tutor_type": "A-Level Chemistry Tutor"} ,
+
+{"id": "QA_Question_Chemistry_4", "href": "/resources/QA-Forum/Chemistry/understanding-chemical-reactions.html", "question": "What are chemical reactions, and how do they work?", "summary": "Chemical reactions transform reactants into products with different properties. Balancing equations, understanding reaction types, and considering factors like catalysts are fundamental in chemistry.", "author": "Emily Mitchell, MSci in Chemistry, University of Oxford", "tutor_type": "IB Chemistry Tutor"} ,
+
+{"id": "QA_Question_Biology_1", "href": "/resources/QA-Forum/Biology/what-are-cells.html", "question": "What are cells, and how do they function?", "summary": "Cells, the fundamental units of life, vary in structure and complexity. They encompass components like the cell membrane, nucleus, and organelles. Cells perform vital functions, serving as the basis of biology.", "author": "Dr. Maria Rodriguez, PhD in Biology, Universtiy of Oxford", "tutor_type": "IB Biology Tutor"} ,
+
+{"id": "QA_Question_Biology_2", "href": "/resources/QA-Forum/Biology/what-is-photosynthesis.html", "question": "What is photosynthesis, and how does it sustain life on Earth?", "summary": "Photosynthesis, the process by which organisms convert sunlight into energy and oxygen, is a cornerstone of life on Earth. It involves light absorption, energy conversion, and glucose production, profoundly impacting ecosystems and sustainability.", "author": "John Bryl, MSci in Biology, University of Cambridge", "tutor_type": "A-Level Biology Tutor"} ,
+
+{"id": "QA_Question_Biology_3", "href": "/resources/QA-Forum/Biology/what-are-enzymes.html", "question": "What are enzymes, and how do they facilitate biochemical reactions?", "summary": "Enzymes are biological catalysts with specific structures that lower activation energy, enabling chemical reactions. Factors like temperature and pH affect enzyme activity.", "author": "Lisa Anderson, MSci in Biology, University of Cambridge", "tutor_type": "A-Level Biology Tutor"} ,
+
+{"id": "QA_Question_Biology_4", "href": "/resources/QA-Forum/Biology/genetic-engineering.html", "question": "What is genetic engineering, and how does it impact biology and biotechnology?", "summary": "Genetic engineering, using techniques like CRISPR-Cas9, revolutionizes biotechnology for applications in agriculture, medicine, and environmental remediation, sparking ethical and environmental discussions.", "author": "Mark Harrison, MSci in Biology, University of Cambridge", "tutor_type": "IB Biology Tutor"} ,
+
+{"id": "QA_Question_Mathematics_1", "href": "/resources/QA-Forum/Maths/prime-numbers.html", "question": "Why are prime numbers important?", "summary": "Prime numbers are integral to mathematics. They're essential for cryptography and number theory, posing intriguing challenges for mathematicians.", "author": "Dr. Sarah Evans, PhD in Mathematics, Universtiy of Oxford", "tutor_type": "IB Mathematics Tutor"} ,
+
+{"id": "QA_Question_Mathematics_2", "href": "/resources/QA-Forum/Maths/applications-of-calculus.html", "question": "What are some applications of calculus?", "summary": "Calculus underpins science and engineering. It includes differentiation and integration, enabling precise modeling and solving complex problems in various fields.", "author": "David Stone, MSci in Mathematics, University of Oxford", "tutor_type": "A-Level Mathematics Tutor"} ,
+
+{"id": "QA_Question_Mathematics_3", "href": "/resources/QA-Forum/Maths/infinite-series.html", "question": "An Introduction to Infinite Series", "summary": "Infinite series, sums of infinite sequences, are explored for convergence, convergence tests, and applications in engineering, physics, and statistics, with famous series discussed.", "author": "Dr. Emily Parker, PhD in Mathematics, University of Cambridge", "tutor_type": "A-Level Mathematics Tutor"} ,
+
+{"id": "QA_Question_Mathematics_4", "href": "/resources/QA-Forum/Maths/what-are-fractals.html", "question": "The Enigmatic World of Fractals", "summary": "Fractals, intricate self-replicating geometric shapes, inspire art and science. They find applications in graphics, engineering, and chaos theory, revealing beauty and complexity.", "author": "Michael Turner, MSci in Mathematics, University of Oxford", "tutor_type": "IB Maths Tutor"} ,
+
+{"id": "QA_Question_History_1", "href": "/resources/QA-Forum/History/what-sparked-the-french-revolution.html", "question": "What Sparked the French Revolution?", "summary": "Explore the French Revolution's catalysts, progression, and far-reaching consequences in this in-depth historical analysis.", "author": "Dr. Lizz Früh, PhD in History, Universtiy of Oxford", "tutor_type": "IB History Tutor"} ,
+
+{"id": "QA_Question_History_2", "href": "/resources/QA-Forum/History/cold-war-causes-and-consequences.html", "question": "The Cold War: What Were the Causes and Consequences?", "summary": "Investigate the origins, events, and global implications of the Cold War, a pivotal era in modern history.", "author": "Mary Clark, MSci in History, University of Cambridge", "tutor_type": "A-Level History Tutor"} ,
+
+{"id": "QA_Question_History_3", "href": "/resources/QA-Forum/History/what-caused-the-great-depression.html", "question": "What Caused the Great Depression?", "summary": "Explore the causes and devastating consequences of the Great Depression, including unemployment, homelessness, and political shifts, with a lasting legacy that shaped economic policy and politics.", "author": "Dr. Susan Johnson, PhD in History, University of Oxford", "tutor_type": "A-Level History Tutor"} ,
+
+{"id": "QA_Question_History_4", "href": "/resources/QA-Forum/History/15th-century-european-exploration.html", "question": "What Drove European Exploration in the 15th Century?", "summary": "Delve into the motivations driving European exploration in the 15th century, from trade and wealth to religious zeal, and discover the explorers and lasting global impacts of this era.", "author": "Thomas Patel, MSci in History, University of Cambridge", "tutor_type": "IB History Tutor"} ,
+
+{"id": "QA_Question_Geography_1", "href": "/resources/QA-Forum/Geography/what-causes-climate-change.html", "question": "What Causes Climate Change?", "summary": "Explore the intricate factors behind climate change, encompassing natural processes and human-induced factors, their consequences on the environment, and global efforts to mitigate and adapt to these changes.", "author": "Dr. Jennifer Jia, PhD in Geography, Universtiy of Oxford", "tutor_type": "IB Geography Tutor"} ,
+
+{"id": "QA_Question_Geography_2", "href": "/resources/QA-Forum/Geography/what-drives-global-trend-towards-cities.html", "question": "What Drives the Global Trend Toward Cities?", "summary": "Investigate the forces propelling urbanization, from economic opportunities to social factors, while considering the challenges and future trends of this global transformation toward cities.", "author": "William Davis, MSci in Geography, University of Cambridge", "tutor_type": "A-Level Geography Tutor"} ,
+
+{"id": "QA_Question_Geography_3", "href": "/resources/QA-Forum/Geography/how-to-prepare-for-a-warming-world.html", "question": "How Can Communities Prepare for a Warming World?", "summary": "Explore climate change adaptation strategies, from resilient infrastructure to community engagement, empowering communities to prepare for extreme weather, sea-level rise, and other climate impacts.", "author": "Dr. Michael Brown, PhD in Geography, University of Oxford", "tutor_type": "A-Level Geography Tutor"} ,
+
+{"id": "QA_Question_Geography_4", "href": "/resources/QA-Forum/Geography/promoting-a-green-future.html", "question": "How Can Cities Promote a Greener Future?", "summary": "Investigate sustainable urban development practices, including public transportation, green spaces, and waste reduction, enabling cities to address resource consumption, air pollution, and environmental challenges.", "author": "Charles Wilson, MSci in Geography, University of Cambridge", "tutor_type": "IB Geography Tutor"} ,
+
+{"id": "QA_Question_Geography_5", "href": "/resources/QA-Forum/Geography/plate-tectonics.html", "question": "How Do Plate Tectonics Shape Earth's Landscape and Impact Human Activity?", "summary": "Plate tectonics shape Earth's landscape through divergent, convergent, and transform boundaries, influencing landforms, volcanic activity, and natural hazards, impacting human activity and resource distribution.", "author": "Campbell MacFarlane, MSci in Geography, University of Oxford", "tutor_type": "IB Geography Tutor"} ,
+
+{"id": "QA_Question_English_1", "href": "/resources/QA-Forum/English/what-makes-shakespeare-timeless.html", "question": "What Makes Shakespeare's Works Timeless Masterpieces?", "summary": "Delve into the enduring appeal of Shakespeare's works, exploring his innovative language, complex characters, and universal themes. Discover how his plays and sonnets remain relevant and beloved today.", "author": "Dr. Benjamin Reynolds, PhD in English, Universtiy of Oxford", "tutor_type": "IB English Tutor"} ,
+
+{"id": "QA_Question_English_2", "href": "/resources/QA-Forum/English/satire-in-literature-and-society.html", "question": "What Is the Significance of Satire in Literature and Society?", "summary": "Satire in literature and society critiques hypocrisy and injustice using humor and wit, inspiring change and reflection on cultural norms and political systems.", "author": "Octavia Sinclair, MSci in English, University of Cambridge", "tutor_type": "A-Level English Tutor"} ,
+
+{"id": "QA_Question_English_3", "href": "/resources/QA-Forum/English/symbolism-in-the-great-gatsby.html", "question": "Explore the Role of Symbolism in F. Scott Fitzgerald's 'The Great Gatsby'", "summary": "Explore climate change adaptation strategies, from resilient infrastructure to community engagement, empowering communities to prepare for extreme weather, sea-level rise, and other climate impacts.", "author": "Dr. Thaddeus Sterling, PhD in English, University of Oxford", "tutor_type": "A-Level English Tutor"} ,
+
+{"id": "QA_Question_English_4", "href": "/resources/QA-Forum/English/women-in-pride-and-prejudice-vs-jane-eyre.html", "question": "Compare and contrast the portrayal of women in Jane Austen's 'Pride and Prejudice' and Charlotte Brontë's 'Jane Eyre.", "summary": "Investigate sustainable urban development practices, including public transportation, green spaces, and waste reduction, enabling cities to address resource consumption, air pollution, and environmental challenges.", "author": "Leander Hawthorne, MSci in English, University of Cambridge", "tutor_type": "IB English Tutor"} ,
+
+{"id": "QA_Question_Economics_1", "href": "/resources/QA-Forum/Economics/causes-and-consequences-inflation.html", "question": "What Are the Causes and Consequences of Inflation in an Economy?", "summary": "Inflation, driven by demand, costs, expectations, and monetary policy, can erode purchasing power, create uncertainty, and impact income distribution, requiring government intervention and economic stabilization measures.", "author": "Dr. Elowen Clark, PhD in Economics, Universtiy of Oxford", "tutor_type": "IB Economics Tutor"} ,
+
+{"id": "QA_Question_Economics_2", "href": "/resources/QA-Forum/Economics/role-of-government-regulating-stabilising-economy.html", "question": "What Role Does Government Play in Regulating and Stabilizing the Economy?", "summary": "Governments employ monetary and fiscal policies, regulatory oversight, and social safety nets to regulate economies, stabilize markets, and promote social welfare, addressing various economic challenges and goals.", "author": "Lucius Fairhaven, MSci in Economics, University of Cambridge", "tutor_type": "A-Level Economics Tutor"} ,
+
+{"id": "QA_Question_Economics_3", "href": "/resources/QA-Forum/Economics/key-drivers-economic-growth-development.html", "question": "What Are the Key Drivers of Economic Growth and Development in a Country?", "summary": "Economic growth results from investments, technological advancements, and macroeconomic stability, while development relies on inclusive institutions, education, infrastructure, and equitable income distribution, overcoming political and environmental challenges.", "author": "Dr. Seraphina Whitlock, PhD in Economics, University of Oxford", "tutor_type": "A-Level Economics Tutor"} ,
+
+{"id": "QA_Question_Economics_4", "href": "/resources/QA-Forum/Economics/fiscal-and-monetary-policy.html", "question": "How Do Fiscal and Monetary Policies Influence an Economy's Performance and Stability?", "summary": "Fiscal policies, including government spending and taxation, impact economic activity and budget balances. Monetary policies, controlling interest rates and money supply, affect inflation, employment, and financial stability, requiring careful balance and consideration.", "author": "Leopold Thornebrook, MSci in Economics, University of Cambridge", "tutor_type": "IB Economics Tutor"},
+
+{"id": "QA_Question_Oxbridge_1", "href": "/resources/QA-Forum/Oxbridge/general-admissions-requirements-oxford.html", "question": "What Are the General Admission Requirements for Oxford?", "summary": "Oxford University's general admissions requirements include strong academic achievements, proficiency in English, standardized test scores, personal statement, and strong references. A holistic approach is taken in evaluating applicants.", "author": "Dr. Patrick Rowen, PhD in Law, Universtiy of Oxford", "tutor_type": "IB Law Tutor"} ,
+
+{"id": "QA_Question_Oxbridge_2", "href": "/resources/QA-Forum/Oxbridge/how-are-oxbridge-applications-processed.html", "question": "How are Oxbridge Applications Processed?", "summary": "Oxbridge applications are processed through a rigorous, holistic approach. They consider academic excellence, personal statement, interviews, reference letters, and admission tests for a well-rounded assessment of applicants.", "author": "Lucius Fairhaven, MSci in Economics, University of Cambridge", "tutor_type": "A-Level Economics Tutor"} ,
+
+{"id": "QA_Question_Oxbridge_3", "href": "/resources/QA-Forum/Oxbridge/how-many-admission-rounds-does-Oxbridge-have.html", "question": "Oxbridge typically has one admission round for undergraduate applicants. The application cycle usually opens in early September and closes in October, with interviews conducted in December and offers made in January.", "summary": "", "author": "Dr. Seraphina Whitlock, PhD in Economics, University of Oxford", "tutor_type": "A-Level Economics Tutor"} ,
+
+{"id": "QA_Question_Oxbridge_4", "href": "/resources/QA-Forum/Oxbridge/what-is-the-success-rate-for-oxbridge-applications.html", "question": "What is the Success Rate for Oxbridge Applications?", "summary": "The success rate for Oxbridge applications varies by course and college. On average, Oxford and Cambridge admit about 17-20% of applicants, making it highly competitive, with some courses having even lower acceptance rates.", "author": "Leopold Thornebrook, MSci in Economics, University of Cambridge", "tutor_type": "IB Economics Tutor"},
+
+{"id": "QA_Question_Oxbridge_5", "href": "/resources/QA-Forum/Oxbridge/when-do-oxbridge-send-out-admissions-decisions.html", "question": "When do Oxbridge send out Admissions Decisions?", "summary": "Oxbridge typically send out admissions decisions in January, after the interview process is completed. Applicants are notified whether they have been offered a place, placed in a pool for consideration by other colleges, or rejected.", "author": "Leopold Thornebrook, MSci in Economics, University of Cambridge", "tutor_type": "IB Economics Tutor"},
+
+  {
+    "id": "QA_Question_Oxbridge_6",
+    "href": "/resources/QA-Forum/Oxbridge/can-i-study-part-time-as-an-undergraduate-at-oxford.html",
+    "question": "Can I study part-time as an undergraduate at Oxford?",
+    "summary": "The University of Oxford does not offer part-time undergraduate programs, emphasizing full-time, on-campus education with intensive teaching periods. Part-time options are available through their Department for Continuing Education.",
+    "author": "Emily Johnson",
+    "degree": "BSc in Psychology, Cambridge University",
+    "tutor_type": "SAT Tutor, Psychology"
+  },
+  {
+    "id": "QA_Question_Oxbridge_7",
+    "href": "/resources/QA-Forum/Oxbridge/can-i-work-during-my-degree-at-oxford.html",
+    "question": "Can I work during my degree at Oxford?",
+    "summary": "Yes, students at the University of Oxford can typically work part-time during their degree, but there are restrictions and guidelines to consider. Find out more about working during your degree at Oxford.",
+    "author": "Daniel Martinez",
+    "degree": "PhD in Computer Science, Oxford University",
+    "tutor_type": "ACT Tutor, Computer Science"
+  },
+  {
+    "id": "QA_Question_Oxbridge_8",
+    "href": "/resources/QA-Forum/Oxbridge/do-i-have-to-live-in-oxford-during-my-degree.html",
+    "question": "Do I have to live in Oxford during my degree?",
+    "summary": "Living in Oxford during your degree is typically not mandatory, but it's highly recommended for an immersive academic experience, access to university resources, and involvement in the vibrant student community.",
+    "author": "Sophia Davis",
+    "degree": "BA in History, Oxford University",
+    "tutor_type": "IB Tutor, History"
+  },
+  {
+    "id": "QA_Question_Oxbridge_9",
+    "href": "/resources/QA-Forum/Oxbridge/can-i-get-extra-time-on-exams-if-i-have-a-disability-at-oxbridge.html",
+    "question": "Can I get extra time on exams if I have a disability at Oxbridge?",
+    "summary": "Both Oxford and Cambridge provide accommodations, including extra time on exams, for students with disabilities. Specific arrangements vary based on individual needs, and it's essential to contact their disability support services for assistance and guidance.",
+    "author": "Michael Clark",
+    "degree": "MEng in Mechanical Engineering, Oxford University",
+    "tutor_type": "GRE Tutor, Mechanical Engineering"
+  },
+  {
+    "id": "QA_Question_Oxbridge_12",
+    "href": "/resources/QA-Forum/Oxbridge/what-should-i-do-if-oxbridge-interview-went-poorly.html",
+    "question": "What should I do if I feel my Oxbridge interview went poorly?",
+    "summary": "If you're feeling disappointed after an Oxbridge interview, it's completely understandable. Remember that interviews are just one part of your application, and they assess your potential, not just your performance. Keep faith in your abilities and await the outcome.",
+    "author": "Olivia Lee",
+    "degree": "MA in English Literature, Oxford University",
+    "tutor_type": "GMAT Tutor, English Literature"
+  },
+  {
+    "id": "QA_Question_Oxbridge_13",
+    "href": "/resources/QA-Forum/Oxbridge/how-is-the-oxbridge-personal-statement-evaluated.html",
+    "question": "How is the Oxbridge personal statement evaluated?",
+    "summary": "The Oxbridge personal statement is assessed for academic aptitude, passion for the chosen subject, and the ability to think critically. It should demonstrate enthusiasm, relevant knowledge, and a strong commitment to the subject.",
+    "author": "Benjamin Wright",
+    "degree": "BBA in Finance, Oxford",
+    "tutor_type": "IELTS Tutor, Finance"
+  },
+  {
+    "id": "QA_Question_Oxbridge_14",
+    "href": "/resources/QA-Forum/Oxbridge/.html",
+    "question": "Can I apply to Oxbridge without choosing a college?",
+    "summary": "Yes, you can apply to Oxford or Cambridge without selecting a specific college by making an open application. The university will then assign you to a college based on availability and your chosen course.",
+    "author": "Chloe Brown",
+    "degree": "MS in Environmental Science, Oxford",
+    "tutor_type": "TOEFL Tutor, Environmental Science"
+  },
+  {
+    "id": "QA_Question_Oxbridge_15",
+    "href": "/resources/QA-Forum/Oxbridge/.html",
+    "question": "How many times can I apply to Oxbridge?",
+    "summary": "You can apply to Oxford or Cambridge only once in an admissions cycle. If your application is unsuccessful, you can reapply in the following admissions cycle, but multiple applications within the same cycle are not allowed.",
+    "author": "Samuel Taylor",
+    "degree": "LLB in Law, Oxford",
+    "tutor_type": "SAT Tutor, Law"
+  },
+
+  {
+    "id": "QA_Question_Oxbridge_16",
+    "href": "/resources/QA-Forum/Oxbridge/should-you-reapply-to-oxbridge-if-you-didnt-get-in.html",
+    "question": "Should I reapply to Oxbridge if you didn't get in?",
+    "summary": "Reapplying to Oxbridge is a viable option if you didn't get accepted initially. Many successful applicants were not admitted on their first attempt, so it's worth trying again with a stronger application.",
+    "author": "Emma Turner",
+    "degree": "BA in Economics, Oxford University",
+    "tutor_type": "Economics Tutor"
+  },
+  {
+    "id": "QA_Question_Oxbridge_17",
+    "href": "/resources/QA-Forum/Oxbridge/does-oxbridge-accept-applications-from-homeschooling-students.html",
+    "question": "Does Oxbridge accept applications from homeschooling students?",
+    "summary": "Oxbridge welcomes applications from homeschooling students, but they must meet rigorous academic standards and may face additional assessments, ensuring fair consideration for all applicants.",
+    "author": "James Miller",
+    "degree": "BSc in Chemistry, Oxford University",
+    "tutor_type": "Chemistry Tutor"
+  },
+  {
+    "id": "QA_Question_Oxbridge_18",
+    "href": "/resources/QA-Forum/Oxbridge/do-i-need-an-english-language-qualification-to-apply-for-undergraduate-study.html",
+    "question": "Do I need an English language qualification to apply for undergraduate study?",
+    "summary": "Yes, an English language qualification is usually required for undergraduate study at Oxbridge, reflecting the need for proficiency in the language of instruction.",
+    "author": "Sophie Brown",
+    "degree": "BA in Classics, Oxford University",
+    "tutor_type": "Classics Tutor"
+  },
+  {
+  "id": "QA_Question_Oxbridge_19",
+  "href": "/resources/QA-Forum/Oxbridge/will-my-application-be-more-competitive-if-i-study-more-than-three-a-levels.html",
+  "question": "Will my application be more competitive if I study more than three A-levels?",
+  "summary": "Pursuing more than three A-levels can enhance your Oxbridge application's competitiveness, demonstrating your commitment to academic excellence.",
+  "author": "Henry White",
+  "degree": "MPhil in International Relations, Oxford University",
+  "tutor_type": "International Relations Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_20",
+  "href": "/resources/QA-Forum/Oxbridge/can-i-apply-for-an-undergraduate-degree-course-if-i-am-already-studying-at-another-uk-university.html",
+  "question": "Can I apply for an undergraduate degree course if I am already studying at another UK university?",
+  "summary": "Applying for an undergraduate degree at Oxbridge while enrolled in another UK university is possible, subject to course-specific requirements and availability.",
+  "author": "Oliver Robinson",
+  "degree": "BA in Mathematics, Oxford University",
+  "tutor_type": "Mathematics Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_21",
+  "href": "/resources/QA-Forum/Oxbridge/how-similar-are-oxford-and-cambridge-universities.html",
+  "question": "How similar are Oxford and Cambridge universities?",
+  "summary": "Oxford and Cambridge share academic excellence but maintain distinct traditions, cultures, and course structures, offering unique experiences to their students.",
+  "author": "Lucy Hall",
+  "degree": "BSc in Physics, Oxford University",
+  "tutor_type": "Physics Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_22",
+  "href": "/resources/QA-Forum/Oxbridge/can-i-correct-an-error-after-i-have-submitted-my-online-graduate-application.html",
+  "question": "Can I correct an error after I have submitted my online graduate application?",
+  "summary": "After submitting your online graduate application, correcting errors may not be possible, emphasizing the importance of careful review.",
+  "author": "William Clark",
+  "degree": "BA in Philosophy, Politics, and Economics (PPE), Oxford University",
+  "tutor_type": "PPE Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_23",
+  "href": "/resources/QA-Forum/Oxbridge/can-i-submit-more-than-one-reference-with-my-ucas-application.html",
+  "question": "Can I submit more than one reference with my UCAS application?",
+  "summary": "Typically, UCAS applications allow only one reference, so select the most supportive reference for your Oxbridge application.",
+  "author": "Isabella Davis",
+  "degree": "BA in Modern Languages, Oxford University",
+  "tutor_type": "Modern Languages Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_24",
+  "href": "/resources/QA-Forum/Oxbridge/i-have-completed-one-or-more-a-levels-early-will-those-grades-count-towards-my-conditional-offer.html",
+  "question": "I have completed one or more A-levels early. Will those grades count towards my conditional offer?",
+  "summary": "Early completion of A-levels may count toward your conditional offer, subject to individual circumstances and course prerequisites.",
+  "author": "Samuel Wilson",
+  "degree": "BSc in Engineering Science, Oxford University",
+  "tutor_type": "Engineering Science Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_25",
+  "href": "/resources/QA-Forum/Oxbridge/what-are-oxfords-english-language-requirements-for-graduate-studies.html",
+  "question": "What are Oxford's English language requirements for Graduate Studies?",
+  "summary": "Oxford's English language requirements vary by course but often require proof of proficiency through standardized tests like IELTS or TOEFL.",
+  "author": "Eleanor Smith",
+  "degree": "BA in History of Art, Oxford University",
+  "tutor_type": "History of Art Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_26",
+  "href": "/resources/QA-Forum/Oxbridge/what-is-a-jcr-mcr-scr.html",
+  "question": "What is a JCR/MCR/SCR?",
+  "summary": "JCR, MCR, and SCR represent distinct common rooms within colleges, fostering community and facilitating interactions among students and faculty.",
+  "author": "Sophia Turner",
+  "degree": "BA in English Literature, Cambridge University",
+  "tutor_type": "English Literature Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_27",
+  "href": "/resources/QA-Forum/Oxbridge/do-i-need-to-submit-a-gre-score-to-support-my-graduate-application.html",
+  "question": "Do I need to submit a GRE score to support my graduate application?",
+  "summary": "The need to submit a GRE score with your graduate application depends on your course's specific requirements; consult the program's guidelines.",
+  "author": "Benjamin Harris",
+  "degree": "BSc in Biology, Oxford University",
+  "tutor_type": "Biology Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_28",
+  "href": "/resources/QA-Forum/Oxbridge/what-should-i-do-if-my-transcript-is-not-in-english.html",
+  "question": "What should I do if my transcript is not in English?",
+  "summary": "When submitting transcripts not in English, provide a certified translation along with the original document to meet application requirements.",
+  "author": "Oliver Robinson",
+  "degree": "BA in History, Cambridge University",
+  "tutor_type": "History Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_29",
+  "href": "/resources/QA-Forum/Oxbridge/how-do-i-send-my-supporting-documents-to-accompany-my-online-graduate-application.html",
+  "question": "How do I Submit Supporting Documents for my Online Graduate Application?",
+  "summary": "To accompany your online graduate application, follow university guidelines to upload supporting documents through the designated portal.",
+  "author": "Isabella Davis",
+  "degree": "BSc in Physics, Oxford University",
+  "tutor_type": "Physics Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_30",
+  "href": "/resources/QA-Forum/Oxbridge/.html",
+  "question": "",
+  "summary": "",
+  "author": "Lucy Hall",
+  "degree": "BA in Economics, Cambridge University",
+  "tutor_type": "Economics Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_31",
+  "href": "/resources/QA-Forum/Oxbridge/what-score-do-i-need-to-achieve-in-my-oxford-admissions-test-in-order-to-get-an-interview.html",
+  "question": "What score do I need to achieve in my Oxford admissions test in order to get an interview?",
+  "summary": "The Oxford admissions test score required for an interview varies by course; strive for excellence in this assessment to enhance your selection chances.",
+  "author": "William Clark",
+  "degree": "MPhil in Development Studies, Oxford University",
+  "tutor_type": "Development Studies Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_32",
+  "href": "/resources/QA-Forum/Oxbridge/does-oxford-offer-any-scholarships-for-international-undergraduate-students.html",
+  "question": "Does Oxford offer any scholarships for international undergraduate students?",
+  "summary": "Oxford offers various scholarships for international undergraduate students, each with its own eligibility criteria and application process.",
+  "author": "Eleanor Smith",
+  "degree": "BA in Modern Languages, Cambridge University",
+  "tutor_type": "Modern Languages Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_33",
+  "href": "/resources/QA-Forum/Oxbridge/which-ib-maths-course-should-i-take-to-fulfil-the-requirements-for-my-undergraduate-course.html",
+  "question": "Which IB Maths course should I take to fulfil the requirements for my undergraduate course?",
+  "summary": "Choose your IB Math course based on your chosen undergraduate program's prerequisites, ensuring alignment with your academic goals.",
+  "author": "James Miller",
+  "degree": "MSc in Computer Science, Oxford University",
+  "tutor_type": "Computer Science Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_34",
+  "href": "/resources/QA-Forum/Oxbridge/can-i-change-my-college-after-being-made-an-offer.html",
+  "question": "Can I change my college after being made an offer?",
+  "summary": "While generally discouraged, changing colleges after receiving an offer may be possible under certain circumstances; refer to university policies for guidance.",
+  "author": "Emma Turner",
+  "degree": "BA in Philosophy, Politics, and Economics (PPE), Cambridge University",
+  "tutor_type": "PPE Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_35",
+  "href": "/resources/QA-Forum/Oxbridge/does-oxford-offer-summer-schools-for-secondary-school-students.html",
+  "question": "Does Oxford offer summer schools for secondary school students?",
+  "summary": "Oxford provides summer schools for secondary school students, offering a glimpse into university life and engaging academic experiences.",
+  "author": "Sophie Brown",
+  "degree": "BEng in Engineering, Oxford University",
+  "tutor_type": "Engineering Tutor"
+},
+{
+  "id": "QA_Question_Oxbridge_36",
+  "href": "/resources/QA-Forum/Oxbridge/does-my-choice-of-college-affect-my-chances-of-being-offered-a-place.html",
+  "question": "Does my choice of college affect my chances of being offered a place?",
+  "summary": "Your choice of college at Oxford or Cambridge can impact your social and residential experience but generally does not significantly affect admission chances.",
+  "author": "Henry White",
+  "degree": "BA in Law, Cambridge University",
+  "tutor_type": "Law Tutor"
+},
+
+
+  {
+    "id": "QA_Question_Oxbridge_37",
+    "href": "/resources/QA-Forum/Oxbridge/can-i-learn-a-language-alongside-an-undergraduate-degree-in-another-subject.html",
+    "question": "Can I learn a language alongside an undergraduate degree in another subject?",
+    "summary": "You can pursue language studies alongside an undergraduate degree in another subject at Oxbridge, enriching your academic journey and expanding your skill set.",
+    "author": "Oliver Robinson",
+    "degree": "BA in Music, Oxford University",
+    "tutor_type": "Music Tutor"
+  },
+  {
+    "id": "QA_Question_Oxbridge_38",
+    "href": "/resources/QA-Forum/Oxbridge/how-do-i-prepare-for-my-oxford-admissions-test.html",
+    "question": "How do I prepare for my Oxford admissions test?",
+    "summary": "To prepare for your Oxford admissions test, utilize practice materials, study relevant subjects, and become familiar with the test format, ensuring your best performance.",
+    "author": "Lucy Hall",
+    "degree": "MPhil in International Relations, Cambridge University",
+    "tutor_type": "International Relations Tutor"
+  },
+  {
+    "id": "QA_Question_Oxbridge_39",
+    "href": "/resources/QA-Forum/Oxbridge/.html",
+    "question": "",
+    "summary": "",
+    "author": "William Clark",
+    "degree": "BA in Geography, Oxford University",
+    "tutor_type": "Geography Tutor"
+  },
+  {
+    "id": "QA_Question_Oxbridge_40",
+    "href": "/resources/QA-Forum/Oxbridge/.html",
+    "question": "",
+    "summary": "",
+    "author": "Isabella Davis",
+    "degree": "BA in Anthropology, Cambridge University",
+    "tutor_type": "Anthropology Tutor"
+  },
+  {
+    "id": "QA_Question_Oxbridge_41",
+    "href": "/resources/QA-Forum/Oxbridge/.html",
+    "question": "",
+    "summary": "",
+    "author": "James Miller",
+    "degree": "BSc in Earth Sciences, Oxford University",
+    "tutor_type": "Earth Sciences Tutor"
+  },
+  {
+    "id": "QA_Question_Oxbridge_42",
+    "href": "/resources/QA-Forum/Oxbridge/.html",
+    "question": "",
+    "summary": "",
+    "author": "Emma Turner",
+    "degree": "BA in Psychology, Cambridge University",
+    "tutor_type": "Psychology Tutor"
+  },
+  {
+    "id": "QA_Question_Oxbridge_43",
+    "href": "/resources/QA-Forum/Oxbridge/.html",
+    "question": "",
+    "summary": "",
+    "author": "Sophia Smith",
+    "degree": "MSc in Environmental Change and Management, Oxford University",
+    "tutor_type": "Environmental Science Tutor"
+  },
+  {
+    "id": "QA_Question_Oxbridge_44",
+    "href": "/resources/QA-Forum/Oxbridge/.html",
+    "question": "",
+    "summary": "",
+    "author": "Henry White",
+    "degree": "BA in Philosophy, Cambridge University",
+    "tutor_type": "Philosophy Tutor"
+  },
+  {
+    "id": "QA_Question_Oxbridge_45",
+    "href": "/resources/QA-Forum/Oxbridge/.html",
+    "question": "",
+    "summary": "",
+    "author": "Sophie Brown",
+    "degree": "BSc in Materials Science, Oxford University",
+    "tutor_type": "Materials Science Tutor"
+  }
+]
