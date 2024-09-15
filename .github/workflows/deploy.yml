@@ -27,7 +27,7 @@ jobs:
           # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
           # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies andd build your site. Automatically detected based on your lockfile. (optional)
       - name: Add custom domain
-        run: echo 'test.beyond-tutors.com' > ./dist/CNAME
+        run: echo 'www.beyond-tutors.com' > ./dist/CNAME
 
   deploy:
     needs: build
