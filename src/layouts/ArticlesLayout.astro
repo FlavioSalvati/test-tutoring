@@ -1,33 +1,12 @@
 ---
 import MainLayout from "./MainLayout.astro"
-import Insights from "../components/Insights.astro"
-const { frontmatter } = Astro.props;
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
-//import ResponsiveImage from "../components/ResponsiveImage.astro";
-
-// get folder of frontmatter.picture
-//const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/Insights/**/*.{jpeg,jpg,png,gif,webp}');
-
-// Function to filter images within the specified subfolder
-//const filterImages = (subfolder) => {
-//  const filteredImages = {};
-//  for (const key in images) {
-//    if (key.includes(`/src/assets/img/Insights/${subfolder}/`)) {
-//      filteredImages[key] = images[key];
-//    }
-//  }
-//  return filteredImages;
-// };
-
-//const filteredImages = filterImages(frontmatter.imgPath);
-//const imageKeys = Object.keys(filteredImages);
+const { title, description, author, keywords } = Astro.props;
 
 ---
 <link rel="stylesheet" href="/src/assets/css/insight_article_style.css">
 
-<MainLayout>
-    <div class="row" style="padding-left: 25px;">
+<MainLayout title={title} description={description} author={author} keywords={keywords}>
+    <div class="row" style="padding-left: 15px;">
         <div class="col-1 sidebar">
             <nav id="toc" class="toc">
                 <ul style="color: white;"></ul>
@@ -45,13 +24,11 @@ import type { ImageMetadata } from 'astro';
                     </button>
                 </div>
             </div>
-            <div class="container insight_article_style">
-                <h1>{frontmatter.title}</h1>
+            <div class="container insight_article_style" style="width: 100%;">
                 <slot />
             </div>  
         </div>
     </div>
-    <Insights keyword="articles" number_of_articles={4}/>
 </MainLayout>
 
 <style>
@@ -187,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 100,
+                    top: targetElement.offsetTop + 480,
                     behavior: 'smooth'
                 });
             }

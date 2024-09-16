@@ -1,107 +1,440 @@
 ---
-// src/pages/index.astro
 import MainLayout from '../../layouts/MainLayout.astro';
-import Insights from '../../components/Insights.astro';
+import { getCollection } from 'astro:content';
+
+const insightsData = await getCollection('insights');
+
+const keyword = "insights";
+const number_of_articles = 12;
+
+
+const isInsightPage = keyword === 'insights';
+
+//let filteredArticles = isInsightPage ? articles : articles.filter(article => article.id.includes(keyword) || article.id.includes("all"));
+//const rows: { id: string; date: string; title: string; link: string; }[][] = [];
+
+
+//for (let i = 0; i < filteredArticles.length && i < number_of_articles ; i += 4) {
+//    rows.push(articles.slice(i, i + 4));
+//}
+
+// Split insightsData into groups of number_of_articles
+let articleGroups = [];
+
+if (!isInsightPage) {
+  articleGroups = articleGroups.filter(group => group.some(article => article.data.title.toLowerCase().includes(keyword)));
+} 
+
 ---
-
-
 <MainLayout>
+<div id="container_insights" class={`container py-4 py-xl-5 ${isInsightPage ? 'insight-page' : 'article-page'}`} style="margin: 0; padding-top: 100px; width: 100%;">
+  <div class="row mb-5" style="width: 100%; margin-left: 0; margin-right: 0; padding-bottom: 0; padding-top: 150px;">
+    <div class="col-md-8 col-xl-6 text-center m-auto" style="width: 100%; padding: 0; padding-bottom: 100px;">
+      <h2 class={isInsightPage ? 'insight-header' : 'article-header'} style="font-size: 60px; font-family: 'Abhaya Libre', serif;">
+        Read our {isInsightPage ? 'insights' : 'articles'}
+      </h2>
+      <p class={`w-lg-50 ${isInsightPage ? 'insight-subheader' : 'article-subheader'}`} style="font-size: 25px; font-family: 'Abhaya Libre', serif;">
+        Here is a list of curated {isInsightPage ? 'insights' : 'articles'} going over everything you need to know
+      </p>
+    </div>
+  </div>
 
-    <div id="section_article_filter_button" class="row" style="padding-top: 50px;">
-        <div class="col">
-          <div class="row">
-            <div class="filter-button">
-              <button id="btn_filter" class="btn">
-                <div color="rgba(27,32,64,255)">Filter by topic
-                  <img id="img_filter" src="/src/assets/img/aux/arrow.png" height="70" style="padding-left: 10px; padding-bottom: 5px;" />
-                </div>
-              </button>
+  <div id="section_article_filter_button" class="row" style="padding-top: 50px;">
+    <div class="col-8">
+      <div class="row">
+        <div class="filter-button">
+          <button id="btn_filter" class="btn">
+            <div color="rgba(27,32,64,255)">Filter by topic
+              <img id="img_filter" src="/src/assets/img/aux/arrow.png" height="70" style="padding-left: 10px; padding-bottom: 5px;" />
             </div>
-          </div>
-          <div id="btn_filter_row1" class="row" style="display: none; padding-bottom: 20px;">
-            <button id="btn_selection_GCSE" class="btn" style="width: 350px;">
-              <div class="selection">GCSE</div>
-            </button>
-          </div>
-          <div id="btn_filter_row2" class="row" style="display: none; padding-bottom: 20px;">
-            <button id="btn_selection_a-levels" class="btn" style="width: 350px;">
-              <div class="selection">A-Levels</div>
-            </button>
-          </div>
-          <div id="btn_filter_row3" class="row" style="display: none; padding-bottom: 20px;">
-            <button id="btn_selection_ib" class="btn" style="width: 350px;">
-              <div class="selection">IB</div>
-            </button>
-          </div>
-          <div id="btn_filter_row4" class="row" style="display: none; padding-bottom: 20px;">
-            <button id="btn_selection_university-admission" class="btn" style="width: 350px;">
-              <div class="selection">University Admission</div>
-            </button>
-          </div>
-          <div id="btn_filter_row5" class="row" style="display: none; padding-bottom: 20px;">
-            <button id="btn_selection_university-tuition" class="btn" style="width: 350px;">
-              <div class="selection">University Tuition</div>
-            </button>
-          </div>
-          <div id="btn_filter_row6" class="row" style="display: none; padding-bottom: 20px;">
-            <button id="btn_selection_careers-advice" class="btn" style="width: 350px;">
-              <div class="selection">Careers Advice</div>
-            </button>
-          </div>
-          <div id="btn_filter_row7" class="row" style="display: none; padding-bottom: 20px;">
-            <button id="btn_selection_homeschooling" class="btn" style="width: 350px;">
-              <div class="selection">Homeschooling</div>
+          </button>
+        </div>
+      </div>
+      <div id="btn_filter_row1" class="row" style="display: none; padding-bottom: 20px;">
+        <button id="btn_selection_GCSE" class="btn" style="width: 350px;">
+          <div class="selection">GCSE</div>
+        </button>
+      </div>
+      <div id="btn_filter_row2" class="row" style="display: none; padding-bottom: 20px;">
+        <button id="btn_selection_a-levels" class="btn" style="width: 350px;">
+          <div class="selection">A-Levels</div>
+        </button>
+      </div>
+      <div id="btn_filter_row3" class="row" style="display: none; padding-bottom: 20px;">
+        <button id="btn_selection_ib" class="btn" style="width: 350px;">
+          <div class="selection">IB</div>
+        </button>
+      </div>
+      <div id="btn_filter_row4" class="row" style="display: none; padding-bottom: 20px;">
+        <button id="btn_selection_university-admission" class="btn" style="width: 350px;">
+          <div class="selection">University Admission</div>
+        </button>
+      </div>
+      <div id="btn_filter_row5" class="row" style="display: none; padding-bottom: 20px;">
+        <button id="btn_selection_university-tuition" class="btn" style="width: 350px;">
+          <div class="selection">University Tuition</div>
+        </button>
+      </div>
+      <div id="btn_filter_row6" class="row" style="display: none; padding-bottom: 20px;">
+        <button id="btn_selection_careers-advice" class="btn" style="width: 350px;">
+          <div class="selection">Careers Advice</div>
+        </button>
+      </div>
+      <div id="btn_filter_row7" class="row" style="display: none; padding-bottom: 20px;">
+        <button id="btn_selection_homeschooling" class="btn" style="width: 350px;">
+          <div class="selection">Homeschooling</div>
+        </button>
+      </div>
+    </div>
+    <div class="col-4" style="display: flex; justify-content: flex-end; height: 50px;">
+      <div class="row">
+        <div class="col-9">
+          <input type="text" id="search-input" placeholder="Search questions..." style="border-color: rgb(0, 0, 0); background: rgba(255, 255, 255, 0.35); font-size: 25px; font-family: 'Abhaya Libre', serif; color: rgba(27,32,64,255); padding-right: 10px; height: 100%" class="form-control">
+        </div>
+        <div class="col-3">
+          <button id="search-button" class="form-control" style="margin-left: 10px; background: rgba(27,32,64,255); color: white; height: 100%">Search</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <div class="container" style="width: 100%; padding-bottom: 100px;">
+    <div id="item-container">
+
+    </div>
+
+  <div id="pagination" class="pagination-container"></div>
+</div>
+
+</div>
+</MainLayout>
+
+<style>
+  .box {
+    z-index: 10;
+    border: 3px solid;
+    font-size: 25px;
+    font-family: 'Abhaya Libre', serif;
+    border-radius: 0 50px;
+    padding: 40px;
+    margin: 40px auto;
+    width: 275px;
+    height: 450px;
+    position: relative;
+  }
+  
+  .light {
+    border-color: rgba(27, 32, 64, 255);
+    color: rgba(27, 32, 64, 255);
+  }
+  
+  .dark {
+    border-color: white;
+    color: white;
+  }
+  
+  .date {
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .date-light {
+    color: rgb(29, 62, 55);
+  }
+  
+  .content {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 25px;
+  }
+  
+  .content-light {
+    color: rgba(27, 32, 64, 255);
+  }
+  
+  .box button {
+    color: rgb(212, 175, 54);
+    position: absolute;
+    bottom: 30px;
+    height: 70px;
+    font-size: 25px;
+  }
+  
+  .box button:hover {
+    transform: scale(1.1);
+  }
+  
+  @media (min-width: 1400px) {
+    .box {
+      width: 325px;
+      height: 450px;
+    }
+  
+    .box button {
+      height: 80px;
+      font-size: 30px;
+    }
+  }
+  </style>
+
+
+<style>
+  .insight-page {
+    background: none;
+  }
+  .article-page {
+    background: #1d3e37;
+  }
+  .insight-header {
+    color: rgb(27, 32, 64);
+  }
+  .article-header {
+    color: rgb(255, 255, 255);
+  }
+  .insight-subheader {
+    color: rgb(27, 32, 64);
+  }
+  .article-subheader {
+    color: rgb(255, 255, 255);
+  }
+</style>
+
+
+
+<style>
+  #search-input::placeholder {
+    color: rgba(27,32,64,255); /* Adjust the color here */
+    opacity: 1; /* Ensure the color is fully visible */
+  }
+</style>
+    
+<script define:vars={{insightsData:insightsData, itemsPerPage: number_of_articles}}>
+let currentPage = 1;
+let currentFilter = ""; // Initially, no filter is applied
+let paginatedQas = chunkArray(insightsData, itemsPerPage);
+let totalPages = Math.ceil(insightsData.length / itemsPerPage);
+let paginationContainer = document.getElementById("pagination");
+
+function chunkArray(data, chunkSize) {
+  const result = [];
+  for (let i = 0; i < data.length; i += chunkSize) {
+    result.push(data.slice(i, i + chunkSize));
+  }
+  return result;
+}
+
+function applyFilter() {
+    currentPage = 1;
+    // Filter the `qa` items
+
+    paginatedQas = insightsData.filter(qa => qa.id.includes(currentFilter))
+
+    // Recalculate pagination
+    totalPages = Math.ceil(paginatedQas.length / itemsPerPage);
+    paginatedQas = chunkArray(paginatedQas, itemsPerPage);
+
+    updateItems()
+    createPaginationButtons();
+}
+
+
+function createPaginationButtons() {
+    paginationContainer.innerHTML = "";
+    createArrowButton("<", currentPage - 1);
+
+    // Calculate which pages to show
+    const maxButtons = 3;
+    const startPage = Math.max(1, currentPage - maxButtons);
+    const endPage = Math.min(totalPages, currentPage + maxButtons);
+
+    // Add the first page and dots if needed
+    if (startPage > 1) {
+        createPageButton(1); // Always show first page
+        if (startPage > 2) {
+            const dots = document.createElement("span");
+            dots.textContent = "...";
+            paginationContainer.appendChild(dots); // Add dots
+        }
+    }
+
+    // Show the pages from startPage to endPage
+    for (let i = startPage; i <= endPage; i++) {
+        createPageButton(i);
+    }
+
+    // Add the last page and dots if needed
+    if (endPage < totalPages) {
+        if (endPage < totalPages - 1) {
+            const dots = document.createElement("span");
+            dots.textContent = "...";
+            paginationContainer.appendChild(dots); // Add dots
+        }
+        createPageButton(totalPages); // Always show last page
+    }
+
+    createArrowButton(">", currentPage + 1);
+}
+
+
+function createPageButton(pageNumber) {
+      const button = document.createElement("button");
+      button.className = pageNumber === currentPage ? "active" : "";
+      button.textContent = pageNumber;
+      button.addEventListener("click", () => {
+          changePage(pageNumber);
+      });
+      paginationContainer.appendChild(button);
+}
+
+function createArrowButton(label, targetPage) {
+      const button = document.createElement("button");
+      button.textContent = label;
+      button.addEventListener("click", () => {
+          if (targetPage >= 1 && targetPage <= totalPages) {
+              changePage(targetPage);
+          }
+      });
+      paginationContainer.appendChild(button);
+}
+
+function changePage(pageNumber) {
+      currentPage = pageNumber;
+      updateItems();
+      createPaginationButtons();
+}
+
+function updateItems() {
+  const itemContainer = document.getElementById("item-container");
+  itemContainer.innerHTML = "";  // Clear the container
+
+  // Group articles into rows of 4
+  const articlesPerRow = 4;
+  const articles = paginatedQas[currentPage -1]; // Get the current page's articles
+
+  for (let i = 0; i < articles.length; i += articlesPerRow) {
+    // Create a new row
+    const row = document.createElement("div");
+    row.className = "row";  // You can add any custom row class here
+    row.style.marginBottom = "20px";  // Optional: Add some spacing between rows
+
+    // Add 4 articles to this row
+    articles.slice(i, i + articlesPerRow).forEach((qa) => {
+      const url = (qa.data.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+      const qaCard = `
+        <div id=${qa.id} class="col m-auto" style="padding-bottom: 100px; padding-top: 10px;">
+          <div class="box light slide-in from-bottom">
+            <div class="dateClass"><span>${qa.data.date}</span></div>
+            <div class="contentClass"><span>${qa.data.title}</span></div>
+            <button class="btn">
+              <a href="/resources/insights/${url}">
+                <span style="display: block;">
+                  Full Article <img src="/src/assets/img/aux/arrow.png" height="70" style="padding-left: 10px; padding-bottom: 10px;" alt="golden arrow" />
+                </span>
+              </a>
             </button>
           </div>
         </div>
-      </div>
-  </div>
+      `;
+      
+      row.innerHTML += qaCard;  // Append the article to the row
+    });
 
-<Insights keyword="insights" number_of_articles={100} />
-</MainLayout>
+    // Append the row to the container
+    itemContainer.appendChild(row);
+  }
+  const elements = document.querySelectorAll('.slide-in');
+  elements.forEach(element => {
+    element.classList.add('active');
+  });
+}
 
-<script >
-    let btn_filter = document.getElementById('btn_filter');
-    let rows = document.querySelectorAll('[id^="btn_filter_row"]');
-    let btns_selection = document.querySelectorAll('[id^="btn_selection_"]');
-    let img_filter = document.getElementById('img_filter');
-    let articles =  document.querySelectorAll('[id^="article"]');
-    let is_clicked = false
-    btn_filter.addEventListener('click', function(e) {
-            if (is_clicked){
-                img_filter.style.transform = "rotate(0deg)"
-                img_filter.style.transition = "all 0.1s linear"
-                for (let row of rows){
-                    row.style.display = "none" 
-                }
-                for (let article of articles){
-                     article.style.display = "block"
-                }
-            }
-            else{
-                img_filter.style.transform = "rotate(90deg)"
-                img_filter.style.transition = "all 0.1s linear"
-                for (let row of rows){
-                    row.style.display = "block" 
-                }
-                
-            }
-            is_clicked = !is_clicked
-        
-        });
-     for (let btn_selection of btns_selection){
-       btn_selection.addEventListener('click', function(e) {
+function searchQuestions(searchTerm) {
+    currentPage = 1;
+    currentFilter = ""
+    paginatedQas = insightsData.filter(qa => qa.data.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    paginatedQas = chunkArray(paginatedQas, itemsPerPage);
+    totalPages = Math.ceil(paginatedQas.length / itemsPerPage);
 
-            for (let article of articles){
+    updateItems();
+    createPaginationButtons();
+}
+  // Search Logic
+  let searchInput = document.getElementById("search-input");
+let searchButton = document.getElementById("search-button");
 
-                if (article.id.includes(btn_selection.id.replace('btn_selection_', '')) || article.id.includes('all')){
-                    article.style.display = "block"
-                }
-                else{
-                    article.style.display = "none"
-            }
-         }   
-        });        
-     }
-     
-    </script>
+searchButton.addEventListener("click", function() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    if (searchTerm) {
+      searchQuestions(searchTerm);
+    } else {
+        applyFilter(); // Reset to show all if no search term
+    }
+});
+  // Trigger search on Enter key press
+  searchInput.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+          searchButton.click(); // Trigger search on Enter key press
+      }
+  });
+
+  let QA_btn_filter = document.getElementById('btn_filter');
+  let QA_rows = document.querySelectorAll('[id^="btn_filter_row"]');
+  let QA_btns_selection = document.querySelectorAll('[id^="btn_selection_"]');
+  let QA_img_filter = document.getElementById('img_filter');
+  let QA_is_clicked = false;
+
+  QA_btn_filter.addEventListener('click', function(e) {
+      if (QA_is_clicked) {
+          // Reset filter if the filter button is closed
+          QA_img_filter.style.transform = "rotate(0deg)";
+          QA_img_filter.style.transition = "all 0.15s linear";
+          for (let QA_row of QA_rows) {
+              QA_row.style.display = "none";
+          }
+          currentFilter = ""; // Reset filter to none
+          applyFilter();
+      } else {
+          // Open filter selection
+          QA_img_filter.style.transform = "rotate(90deg)";
+          QA_img_filter.style.transition = "all 0.15s linear";
+          for (let QA_row of QA_rows) {
+              QA_row.style.display = "block";
+          }
+      }
+      QA_is_clicked = !QA_is_clicked;
+
+  });
+
+  // Filter button click logic
+  for (let QA_btn_selection of QA_btns_selection) {
+      QA_btn_selection.addEventListener('click', function(e) {
+          currentFilter = QA_btn_selection.id.replace("btn_selection_", ""); // Set the filter to the clicked subject
+          alert(currentFilter);
+          applyFilter();
+
+          // Highlight the selected subject
+          for (let btn of QA_btns_selection) {
+              if (btn.id === QA_btn_selection.id) {
+                  btn.style.color = "rgb(212, 175, 54)";
+                  btn.style.textDecoration = "underline";
+                  btn.style.textUnderlineOffset = "6.5px";
+              } else {
+                  btn.style.color = "rgb(0, 0, 0)";
+                  btn.style.textDecoration = "none";
+              }
+          }
+
+      });
+  }
+
+
+
+  // Initial setup
+  updateItems();
+  createPaginationButtons();
+</script>
+
+
+
+

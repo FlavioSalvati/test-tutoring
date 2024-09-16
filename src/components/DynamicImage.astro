@@ -1,0 +1,27 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import ResponsiveImage from './ResponsiveImage.astro';
+
+// Define the props for the component
+interface Props {
+  imagePath: string;
+  altText: string;
+}
+
+const { imagePath, altText } = Astro.props;
+
+// Use import.meta.glob to dynamically import images
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/Insights/**/*.{jpeg,jpg,png,gif}');
+
+// Check if the image exists and import it
+let imgSrc;
+if (images[imagePath]) {
+  imgSrc = (await images[imagePath]()).default;
+} else {
+  throw new Error(`"${imagePath}" does not exist in the specified glob.`);
+}
+---
+
+<!-- Render the image -->
+<ResponsiveImage src={imgSrc} alt={altText} />

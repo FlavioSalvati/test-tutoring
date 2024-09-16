@@ -10,7 +10,17 @@ const faqCollection = defineCollection({
     date: z.date()
   }),
 });
+const insightsCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    date: z.string(),
+    category: z.string().optional(),
+    image: z.string()
+  }),
+});
 
 export const collections = {
-  faq: faqCollection
+  faq: faqCollection,
+  insights: insightsCollection
 };
