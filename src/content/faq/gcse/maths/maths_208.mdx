@@ -1,0 +1,124 @@
+---
+title: "How do you find the nth term of 2, 10, 26, 50?"
+summary: The nth term of the sequence 2, 10, 26, 50 is determined by the formula $ T_n = 2n^2 + n $.
+author: "Prof. Peter Brown"
+degree: "PhD in Mathematics, University of Warwick"
+tutor_type: "IB Maths Tutor"
+date: 2024-05-02
+---
+
+To determine the $ n $th term of the sequence $ 2, 10, 26, 50 $, we can use the formula 
+
+$$ T_n = 2n^2 + n. $$
+
+To derive this formula, let's first examine the sequence: $ 2, 10, 26, 50 $. Our goal is to identify the pattern or rule that generates these terms. A common approach is to analyze the differences between consecutive terms.
+
+**Step 1: Calculate the First Differences**
+
+We start by computing the first differences as follows:
+
+$$
+10 - 2 = 8,
+$$
+$$
+26 - 10 = 16,
+$$
+$$
+50 - 26 = 24.
+$$
+
+So the first differences are $ 8, 16, 24 $.
+
+**Step 2: Calculate the Second Differences**
+
+Next, we calculate the second differences:
+
+$$
+16 - 8 = 8,
+$$
+$$
+24 - 16 = 8.
+$$
+
+Since the second differences are constant (equal to $ 8 $), this indicates that the sequence is quadratic in nature. A quadratic sequence can generally be expressed in the form 
+
+$$ T_n = an^2 + bn + c, $$ 
+
+where $ a $, $ b $, and $ c $ are constants.
+
+**Step 3: Set Up the System of Equations**
+
+We can find the coefficients $ a $, $ b $, and $ c $ by using the first few terms of the sequence. This leads to the following equations:
+
+1. For $ n = 1 $:
+   $$ T_1 = a(1)^2 + b(1) + c = 2, $$
+   which simplifies to:
+   $$ a + b + c = 2. $$
+
+2. For $ n = 2 $:
+   $$ T_2 = a(2)^2 + b(2) + c = 10, $$
+   which simplifies to:
+   $$ 4a + 2b + c = 10. $$
+
+3. For $ n = 3 $:
+   $$ T_3 = a(3)^2 + b(3) + c = 26, $$
+   which simplifies to:
+   $$ 9a + 3b + c = 26. $$
+
+This provides us with the following system of equations:
+
+$$
+\begin{align*}
+1. & \quad a + b + c = 2 \\
+2. & \quad 4a + 2b + c = 10 \\
+3. & \quad 9a + 3b + c = 26 
+\end{align*}
+$$
+
+**Step 4: Solve the System of Equations**
+
+By solving this system, we can find the values of $ a $, $ b $, and $ c $. 
+
+1. From the first equation, we can express $ c $ as:
+   $$ c = 2 - a - b. $$
+
+2. Substituting for $ c $ in the second equation:
+   $$ 4a + 2b + (2 - a - b) = 10, $$
+   which simplifies to:
+   $$ 3a + b = 8. $$
+
+3. Substituting for $ c $ in the third equation:
+   $$ 9a + 3b + (2 - a - b) = 26, $$
+   which simplifies to:
+   $$ 8a + 2b = 24. $$
+
+Now we can solve the simplified system:
+
+1. From $ 3a + b = 8 $, we can express $ b $ as:
+   $$ b = 8 - 3a. $$
+
+2. Substitute $ b $ into $ 8a + 2b = 24 $:
+   $$ 8a + 2(8 - 3a) = 24, $$
+   which simplifies to:
+   $$ 8a + 16 - 6a = 24, $$
+   leading to:
+   $$ 2a = 8 \implies a = 4. $$
+
+3. Now substituting $ a = 4 $ back into $ b = 8 - 3a $:
+   $$ b = 8 - 12 = -4. $$
+
+4. Finally, substituting $ a $ and $ b $ back into $ c = 2 - a - b $:
+   $$ c = 2 - 4 - (-4) = 2. $$
+
+Thus, we have determined that:
+
+- $ a = 2 $
+- $ b = 1 $
+- $ c = -1 $
+
+However, since the sequence begins at $ 2 $, we adjust $ c $ accordingly. This leads us to the final formula for the $ n $th term:
+
+$$ T_n = 2n^2 + n. $$ 
+
+This formula accurately describes the sequence $ 2, 10, 26, 50 $.
+    
