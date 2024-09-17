@@ -13,7 +13,7 @@ $$
 \text{Area} = \pi \times \text{radius}^2
 $$
 
-The area of a circle represents the space enclosed within its boundary. To determine this area, you need to know the radius, which is the distance from the center of the circle to any point on its circumference. The area is computed by multiplying π (pi) by the square of the radius. The constant π is a special mathematical value approximately equal to $3.14159$. For most GCSE Mathematics problems, you can use the rounded value of $3.14$ or the π button available on your calculator.
+The area of a circle represents the space enclosed within its boundary. To determine this area, you need to know the radius, which is the distance from the center of the circle to any point on its circumference. The area is computed by multiplying $\pi$ (pi) by the square of the radius. The constant $\pi$ is a special mathematical value approximately equal to $3.14159$. For most GCSE Mathematics problems, you can use the rounded value of $3.14$ or the $\pi$ button available on your calculator.
 
 For instance, if the radius of a circle is $5 \, \text{cm}$, you would first calculate the square of the radius:
 
@@ -21,7 +21,7 @@ $$
 5 \, \text{cm} \times 5 \, \text{cm} = 25 \, \text{cm}^2
 $$
 
-Next, multiply this result by π:
+Next, multiply this result by $\pi$:
 
 $$
 25 \, \text{cm}^2 \times 3.14 \approx 78.5 \, \text{cm}^2

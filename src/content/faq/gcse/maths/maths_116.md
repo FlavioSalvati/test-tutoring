@@ -7,7 +7,7 @@ tutor_type: "GCSE Physics Tutor"
 date: 2024-05-13
 ---
 
-The key for entering the mathematical constant pi, denoted as $\pi$, is typically labeled as "π" or "PI" on calculators. To access this key, you often need to press the "shift" or "2nd" key first.
+The key for entering the mathematical constant pi, denoted as $\pi$, is typically labeled as "$\pi$" or "PI" on calculators. To access this key, you often need to press the "shift" or "2nd" key first.
 
 On most scientific calculators, the $\pi$ key serves as a shortcut for inputting the value of $\pi$, which is approximately $3.14159$. This key is usually positioned above another key, so you will need to press "shift" or "2nd" followed by the key it is located above. For instance, on many Casio calculators, the $\pi$ symbol is found above the "EXP" key; therefore, you would press "shift" and then "EXP" to enter $\pi$.
 
