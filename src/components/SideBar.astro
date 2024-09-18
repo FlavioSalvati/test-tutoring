@@ -1,0 +1,119 @@
+---
+const sections = [
+  {
+    title: 'What is Physics?',
+    href: '#what-is-physics',
+    subSections: [
+      { title: 'Introduction', href: '#introduction' },
+      { title: 'Definitions and Applications', href: '#definitions-applications' }
+    ]
+  },
+  {
+    title: 'Chapter 2: Mechanics',
+    href: '#mechanics',
+    subSections: [
+      { title: 'Kinematics', href: '#kinematics' },
+      { title: 'Dynamics', href: '#dynamics' }
+    ]
+  }
+];
+---
+
+<style>
+  .sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-right: 1px solid #ddd;
+  }
+
+  .sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  .section {
+    margin-bottom: 10px;
+  }
+
+  .section a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px 0;
+    font-size: 1em;
+    transition: color 0.3s ease;
+  }
+
+  .section a:hover {
+    color: #007bff;
+  }
+
+  .sub-sections {
+    display: none;
+    padding-left: 15px;
+  }
+
+  .sub-sections.active {
+    display: block;
+  }
+
+  .toggle-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1em;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+
+  .toggle-btn svg {
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+</style>
+
+<div class="sidebar" data-testid="toc">
+  <h2>Table of Contents</h2>
+  {sections.map((section, index) => (
+    <div class="section" key={index}>
+      <button 
+        class="toggle-btn" 
+        type="button" 
+        aria-expanded="false"
+        data-index={index}
+      >
+        <svg viewBox="0 0 192 512" aria-hidden="true" fill="currentColor" width="12px">
+          <path d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"></path>
+        </svg>
+        {section.title}
+      </button>
+      <ol class="sub-sections" id={`sub-section-${index}`}>
+        {section.subSections.map((subSection) => (
+          <li><a href={subSection.href}>{subSection.title}</a></li>
+        ))}
+      </ol>
+    </div>
+  ))}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.toggle-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const index = button.getAttribute('data-index');
+        const subSection = document.getElementById(`sub-section-${index}`);
+        const isActive = subSection.classList.contains('active');
+
+        if (isActive) {
+          subSection.classList.remove('active');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          subSection.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  });
+</script>
