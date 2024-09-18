@@ -22,6 +22,3 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
-
-src/content/faq/ib
-src/content/faq/a-levels
