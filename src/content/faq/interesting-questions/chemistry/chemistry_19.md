@@ -1,6 +1,6 @@
 ---
 title: "Why are crystals rare?"
-summary: "Crystals are incredibly common, found in everyday objects like metal utensils, ice, salt, and even your phone screen. The "pretty crystals" we associate with the term are rare due to erosion breaking them down and mixed compositions hindering their growth. So, while beautiful crystals are scarce, the building blocks of crystals are everywhere."
+summary: "Crystals are incredibly common, found in everyday objects like metal utensils, ice, salt, and even your phone screen. The 'pretty crystals' we associate with the term are rare due to erosion breaking them down and mixed compositions hindering their growth. So, while beautiful crystals are scarce, the building blocks of crystals are everywhere."
 author: "Dr. Ava Mitchell"
 degree: "PhD in Medicinal Chemistry, University College London"
 tutor_type: "IB & A-Level Chemistry Tutor"

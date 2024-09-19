@@ -1,6 +1,6 @@
 ---
 title: "Why is there no up and down in space?"
-summary: "There is an up and down in space. "Down" is the direction gravity pulls you, and "up" is the opposite. Gravity exists everywhere in space, so there's always an up and down. Learn why astronauts float and how "down" changes based on the nearest massive object."
+summary: "There is an up and down in space. 'Down' is the direction gravity pulls you, and 'up' is the opposite. Gravity exists everywhere in space, so there's always an up and down. Learn why astronauts float and how 'down' changes based on the nearest massive object."
 author: "Prof. Mia Turner"
 degree: "PhD in Quantum Mechanics, University of Oxford"
 tutor_type: "IB Physics Tutor"

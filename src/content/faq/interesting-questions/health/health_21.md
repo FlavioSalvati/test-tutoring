@@ -1,6 +1,6 @@
 ---
 title: "I know anything from a plant is safe to eat, but anything from a lab can be dangerous. How can I tell if something came from a plant or a lab?"
-summary: "Don't assume "natural" means "safe." Many plants are toxic, and herbal supplements lack the safety regulations of lab-made medicines.  "Natural" doesn't equal "healthy," and man-made dangers often pale in comparison to natural ones."
+summary: "Don't assume 'natural' means 'safe'. Many plants are toxic, and herbal supplements lack the safety regulations of lab-made medicines.  'Natural' doesn't equal 'healthy', and man-made dangers often pale in comparison to natural ones."
 author: "Prof. Sophie Harris"
 degree: "PhD in Organic Chemistry, University of Cambridge"
 tutor_type: "IB & A-Level Chemistry Tutor"

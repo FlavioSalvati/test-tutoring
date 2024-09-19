@@ -1,6 +1,6 @@
 ---
 title: "Where does the atmosphere end? Where is the edge of space?"
-summary: "Earth's atmosphere doesn't have a defined edge, gradually thinning into space. There are various "effective edges" based on factors like human flight, satellite orbits, and the interplanetary medium. Learn about the different definitions of the edge of space and their significance in human exploration and scientific research."
+summary: "Earth's atmosphere doesn't have a defined edge, gradually thinning into space. There are various 'effective edges' based on factors like human flight, satellite orbits, and the interplanetary medium. Learn about the different definitions of the edge of space and their significance in human exploration and scientific research."
 author: "Prof. Sophie Harris"
 degree: "PhD in Organic Chemistry, University of Cambridge"
 tutor_type: "IB & A-Level Chemistry Tutor"

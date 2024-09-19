@@ -1,6 +1,6 @@
 ---
 title: "Can it rain fish?"
-summary: "Yes, fish can fall from the sky!  Tornadoes over water (waterspouts) suck up fish and deposit them miles away, often encased in ice.  This rare phenomenon, known as "raining fish," occurs about 40 times a year."
+summary: "Yes, fish can fall from the sky!  Tornadoes over water (waterspouts) suck up fish and deposit them miles away, often encased in ice.  This rare phenomenon, known as 'raining fish', occurs about 40 times a year."
 author: "Dr. Ava Mitchell"
 degree: "PhD in Medicinal Chemistry, University College London"
 tutor_type: "IB & A-Level Chemistry Tutor"

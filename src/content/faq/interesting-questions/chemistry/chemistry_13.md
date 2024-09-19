@@ -1,6 +1,6 @@
 ---
 title: "What kind of crystal are crystal drinking glasses made out of?"
-summary: ""Crystal" drinking glasses are not made of crystal, but rather a lead-free glass with barium or zinc added for sparkle. This glass is often called "lead glass" and was traditionally made with lead oxide."
+summary: "'Crystal' drinking glasses are not made of crystal, but rather a lead-free glass with barium or zinc added for sparkle. This glass is often called 'lead glass' and was traditionally made with lead oxide."
 author: "Prof. Lily Johnson"
 degree: "PhD in Environmental Chemistry, University of Edinburgh"
 tutor_type: "IB & A-Level Chemistry Tutor"

@@ -1,6 +1,6 @@
 ---
 title: "How long can you wait after dropping food on the ground to eat it without having germs attached? Some say it's a five-second rule, others say ten."
-summary: "Germs immediately stick to food dropped on the floor, regardless of the "five-second rule."  Research shows wood and tile floors transfer more bacteria than carpet.  While most germs are harmless, avoid eating food off the floor for your health."
+summary: "Germs immediately stick to food dropped on the floor, regardless of the 'five-second rule'. Research shows wood and tile floors transfer more bacteria than carpet.  While most germs are harmless, avoid eating food off the floor for your health."
 author: "Dr. Ava Mitchell"
 degree: "PhD in Medicinal Chemistry, University College London"
 tutor_type: "IB & A-Level Chemistry Tutor"

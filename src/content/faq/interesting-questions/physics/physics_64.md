@@ -1,6 +1,6 @@
 ---
 title: "What is the speed of electricity?"
-summary: "The speed of electricity depends on what you mean by "electricity".  While individual electrons move slowly, electromagnetic effects travel close to the speed of light, carrying energy and information down wires. This is why you experience an almost instant response when you turn on a light switch, even though electrons themselves move much slower."
+summary: "The speed of electricity depends on what you mean by 'electricity'.  While individual electrons move slowly, electromagnetic effects travel close to the speed of light, carrying energy and information down wires. This is why you experience an almost instant response when you turn on a light switch, even though electrons themselves move much slower."
 author: "Dr. Noah Martin"
 degree: "PhD in Theoretical Physics, University of Manchester"
 tutor_type: "IB Physics Tutor"

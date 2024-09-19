@@ -1,6 +1,6 @@
 ---
 title: "Can I turn my cat into a diamond?"
-summary: "Turn your beloved pet or relative into a diamond! It's possible, with companies specializing in creating "memorial diamonds" from remains. They use high pressure and heat to transform carbon-rich tissue into a diamond, offering a unique way to remember loved ones."
+summary: "Turn your beloved pet or relative into a diamond! It's possible, with companies specializing in creating 'memorial diamonds' from remains. They use high pressure and heat to transform carbon-rich tissue into a diamond, offering a unique way to remember loved ones."
 author: "Dr. Abigail Parker"
 degree: "PhD in Neuroscience, University of Bristol"
 tutor_type: "IB Biology Tutor"

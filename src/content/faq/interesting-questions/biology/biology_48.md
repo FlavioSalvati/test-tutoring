@@ -1,6 +1,6 @@
 ---
 title: "Why does evolution always lead to more advanced species?"
-summary: "Evolution doesn't always lead to "advanced" species. It's about adapting to environments, sometimes leading to traits like the Texas blind salamander's loss of eyes, which is not progress from a broader view. #evolution #biology #adaptation"
+summary: "Evolution doesn't always lead to 'advanced' species. It's about adapting to environments, sometimes leading to traits like the Texas blind salamander's loss of eyes, which is not progress from a broader view. #evolution #biology #adaptation"
 author: "Dr. Abigail Parker"
 degree: "PhD in Neuroscience, University of Bristol"
 tutor_type: "IB Biology Tutor"

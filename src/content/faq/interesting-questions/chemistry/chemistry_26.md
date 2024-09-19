@@ -1,6 +1,6 @@
 ---
 title: "Why is lead used in pencils even though lead is poisonous?"
-summary: "Pencils don't contain lead, they contain graphite, a form of carbon.  The name "lead" stuck because people mistook it for lead in the 1600s.  Graphite's layered structure makes it easy to write with and a good lubricant."
+summary: "Pencils don't contain lead, they contain graphite, a form of carbon.  The name 'lead' stuck because people mistook it for lead in the 1600s.  Graphite's layered structure makes it easy to write with and a good lubricant."
 author: "Dr. William Davis"
 degree: "PhD in Chemical Physics, University of Manchester"
 tutor_type: "IB & A-Level Chemistry Tutor"

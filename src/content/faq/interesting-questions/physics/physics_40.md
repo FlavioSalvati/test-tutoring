@@ -1,6 +1,6 @@
 ---
 title: "How do you make a one-photon-thick beam of light?"
-summary: "A "one-photon-thick" beam of light is impossible. Photons behave like waves and cannot be lined up like particles. Wave diffraction limits beam width, making smaller wavelengths narrower. Even a beam with 1 photon/second spreads out like a conventional light beam."
+summary: "A 'one-photon-thick' beam of light is impossible. Photons behave like waves and cannot be lined up like particles. Wave diffraction limits beam width, making smaller wavelengths narrower. Even a beam with 1 photon/second spreads out like a conventional light beam."
 author: "Dr. Thomas Walker"
 degree: "PhD in Astrophysics, University of Cambridge"
 tutor_type: "IB Physics Tutor"

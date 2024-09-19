@@ -1,6 +1,6 @@
 ---
 title: "Which sunscreens are chemical-free?"
-summary: "All sunscreens contain chemicals, including those labeled "chemical-free." The term "chemical" is often misused, with people associating it with danger or artificiality.  To determine the healthiest sunscreen, consider its effectiveness in blocking UV rays and the concentration of potentially reactive ingredients."
+summary: "All sunscreens contain chemicals, including those labeled 'chemical-free'. The term 'chemical' is often misused, with people associating it with danger or artificiality.  To determine the healthiest sunscreen, consider its effectiveness in blocking UV rays and the concentration of potentially reactive ingredients."
 author: "Dr. Thomas Walker"
 degree: "PhD in Inorganic Chemistry, University of Oxford"
 tutor_type: "IB & A-Level Chemistry Tutor"

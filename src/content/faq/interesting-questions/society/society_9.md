@@ -1,6 +1,6 @@
 ---
 title: "I watched a science documentary and then came up with my own theory. Where can I get it published?"
-summary: "Learn how to formulate a scientific hypothesis and get your ideas published. Discover if your "theory" is actually a hypothesis and how to validate it before submitting to academic journals."
+summary: "Learn how to formulate a scientific hypothesis and get your ideas published. Discover if your 'theory' is actually a hypothesis and how to validate it before submitting to academic journals."
 author: "Dr. Thomas Walker"
 degree: "PhD in Astrophysics, University of Cambridge"
 tutor_type: "IB Physics Tutor"

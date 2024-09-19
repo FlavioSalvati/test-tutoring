@@ -1,6 +1,6 @@
 ---
 title: "How does a microwave oven heat up food even though it emits no thermal radiation?"
-summary: "Microwave ovens use electromagnetic radiation to heat food, just like sunlight. All frequencies of radiation, including microwaves, can carry energy and heat objects, making them "thermal radiation"."
+summary: "Microwave ovens use electromagnetic radiation to heat food, just like sunlight. All frequencies of radiation, including microwaves, can carry energy and heat objects, making them 'thermal radiation'."
 author: "Prof. Emma Johnson"
 degree: "PhD in Condensed Matter Physics, University of Bristol"
 tutor_type: "IB Physics Tutor"

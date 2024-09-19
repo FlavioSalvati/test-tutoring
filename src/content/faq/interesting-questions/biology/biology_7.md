@@ -1,6 +1,6 @@
 ---
 title: "Do Kirlian photographs show the soul of an organism?"
-summary: "Kirlian photography does not capture the soul of an organism. It shows the light emitted by electrified air surrounding an object, a phenomenon called corona discharge. This mundane effect is similar to neon signs and lightning, and is influenced by the object's conductivity and shape, not its "soul.""
+summary: "Kirlian photography does not capture the soul of an organism. It shows the light emitted by electrified air surrounding an object, a phenomenon called corona discharge. This mundane effect is similar to neon signs and lightning, and is influenced by the object's conductivity and shape, not its 'soul.'"
 author: "Prof. Thomas Green"
 degree: "PhD in Botany, University of Sheffield"
 tutor_type: "IB Biology Tutor"

@@ -1,6 +1,6 @@
 ---
 title: "Why does the moon get bigger when it's closer to the horizon?"
-summary: "The moon's apparent size doesn't change significantly. The "bigger" moon illusion near the horizon is a psychological trick, comparing it to distant objects.  #moon #illusion #horizon #space"
+summary: "The moon's apparent size doesn't change significantly. The 'bigger' moon illusion near the horizon is a psychological trick, comparing it to distant objects.  #moon #illusion #horizon #space"
 author: "Dr. Thomas Walker"
 degree: "PhD in Astrophysics, University of Cambridge"
 tutor_type: "IB Physics Tutor"

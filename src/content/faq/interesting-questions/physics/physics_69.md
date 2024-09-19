@@ -1,6 +1,6 @@
 ---
 title: "What makes radioactive atoms get old so quickly and decay?"
-summary: "Radioactive atoms don't decay because they get old; their decay is a random, probabilistic event based on their nuclear configuration.  The "lifetime" of a radioactive isotope is the average time it takes for a group of atoms to decay, not the time a single atom will exist."
+summary: "Radioactive atoms don't decay because they get old; their decay is a random, probabilistic event based on their nuclear configuration.  The 'lifetime' of a radioactive isotope is the average time it takes for a group of atoms to decay, not the time a single atom will exist."
 author: "Prof. Emma Johnson"
 degree: "PhD in Condensed Matter Physics, University of Bristol"
 tutor_type: "IB Physics Tutor"

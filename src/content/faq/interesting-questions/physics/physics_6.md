@@ -1,6 +1,6 @@
 ---
 title: "Can light bend around corners?"
-summary: "Light can bend around corners due to diffraction, a fundamental wave property. This bending is often too subtle to notice, but it's noticeable with narrow beams or larger wavelengths like radio waves. Diffraction occurs both internally within light beams and through interaction with objects, like the "creeping waves" in radar."
+summary: "Light can bend around corners due to diffraction, a fundamental wave property. This bending is often too subtle to notice, but it's noticeable with narrow beams or larger wavelengths like radio waves. Diffraction occurs both internally within light beams and through interaction with objects, like the 'creeping waves' in radar."
 author: "Dr. Thomas Walker"
 degree: "PhD in Astrophysics, University of Cambridge"
 tutor_type: "IB Physics Tutor"

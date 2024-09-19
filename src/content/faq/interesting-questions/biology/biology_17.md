@@ -1,6 +1,6 @@
 ---
 title: "How do I turn on more parts of my brain and get smarter?"
-summary: "You can't "turn on" more brain parts to get smarter.  Intelligence isn't about using more brain power, it's about learning and applying skills in areas you value.  The key to getting smarter is choosing a field you care about and dedicating time to learn and practice within that field."
+summary: "You can't 'turn on' more brain parts to get smarter.  Intelligence isn't about using more brain power, it's about learning and applying skills in areas you value.  The key to getting smarter is choosing a field you care about and dedicating time to learn and practice within that field."
 author: "Dr. Chloe Simmons"
 degree: "MSc in Biology, University of Birmingham"
 tutor_type: "IB Biology Tutor"

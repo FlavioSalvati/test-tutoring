@@ -1,6 +1,6 @@
 ---
 title: "Does an atom have a color?"
-summary: "Whether an atom has a color depends on the definition of "color". While individual atoms are too small for traditional reflection and thermal radiation, they exhibit color through Rayleigh scattering and gas discharge, where their unique spectral signatures are revealed."
+summary: "Whether an atom has a color depends on the definition of 'color'. While individual atoms are too small for traditional reflection and thermal radiation, they exhibit color through Rayleigh scattering and gas discharge, where their unique spectral signatures are revealed."
 author: "Dr. Jacob Wilson"
 degree: "PhD in Particle Physics, University College London"
 tutor_type: "IB Physics Tutor"

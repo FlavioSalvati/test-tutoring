@@ -1,6 +1,6 @@
 ---
 title: "Why were electrons chosen to be negatively charged? Wouldn't it make more sense to call electrons positively charged because when they move they make electricity?"
-summary: "Electrons were labeled negative by Benjamin Franklin based on experiments, not because they create electricity. "Electricity" encompasses all electric charge effects, not just moving charges. While electrons are charge carriers in metals, other materials like semiconductors and biological systems use different charge carriers, making a label change confusing."
+summary: "Electrons were labeled negative by Benjamin Franklin based on experiments, not because they create electricity. 'Electricity' encompasses all electric charge effects, not just moving charges. While electrons are charge carriers in metals, other materials like semiconductors and biological systems use different charge carriers, making a label change confusing."
 author: "Dr. Jacob Wilson"
 degree: "PhD in Particle Physics, University College London"
 tutor_type: "IB Physics Tutor"

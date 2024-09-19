@@ -1,6 +1,6 @@
 ---
 title: "Why is gravity not a real force?"
-summary: "Gravity is not a classical force, but an emergent force caused by spacetime curvature. This means it appears like a force due to objects interacting with warped spacetime. While some prefer the term "interaction," gravity is still a real force, albeit one arising from more fundamental effects."
+summary: "Gravity is not a classical force, but an emergent force caused by spacetime curvature. This means it appears like a force due to objects interacting with warped spacetime. While some prefer the term 'interaction', gravity is still a real force, albeit one arising from more fundamental effects."
 author: "Dr. Thomas Walker"
 degree: "PhD in Astrophysics, University of Cambridge"
 tutor_type: "IB Physics Tutor"

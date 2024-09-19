@@ -1,5 +1,5 @@
 ---
-title: "What makes a "fluorescent" highlighter marker so bright?"
+title: "What makes a 'fluorescent' highlighter marker so bright?"
 summary: "Fluorescent highlighter markers are so bright because they contain chemicals that absorb invisible ultraviolet light and emit visible light, making them appear unnaturally bright under normal illumination."
 author: "Dr. Thomas Walker"
 degree: "PhD in Inorganic Chemistry, University of Oxford"

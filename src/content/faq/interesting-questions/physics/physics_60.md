@@ -1,6 +1,6 @@
 ---
 title: "What did Schrodinger's Cat experiment prove?"
-summary: "Schrödinger's Cat is a thought experiment, not a real experiment. It was created to illustrate the absurdity of the idea that quantum particles only collapse into a single state when observed. The experiment shows that quantum state collapse is not driven by conscious observers but by any interaction. It highlights the "measurement problem" in quantum physics: why does a measurement collapse a quantum object from a superposition of states to a single definite state?"
+summary: "Schrödinger's Cat is a thought experiment, not a real experiment. It was created to illustrate the absurdity of the idea that quantum particles only collapse into a single state when observed. The experiment shows that quantum state collapse is not driven by conscious observers but by any interaction. It highlights the 'measurement problem' in quantum physics: why does a measurement collapse a quantum object from a superposition of states to a single definite state?"
 author: "Dr. Jacob Wilson"
 degree: "PhD in Particle Physics, University College London"
 tutor_type: "IB Physics Tutor"

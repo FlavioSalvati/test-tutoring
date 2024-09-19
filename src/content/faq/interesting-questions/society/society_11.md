@@ -1,6 +1,6 @@
 ---
 title: "What are some fake-science headlines that reappear regularly?"
-summary: "Common fake-science headlines like "The Sun is Green!" or "Gravity is not Real!" reappear regularly, often appealing to people's desire for novelty and feeling smarter than others. These headlines, while catchy, are based on misleading interpretations of scientific concepts."
+summary: "Common fake-science headlines like 'The Sun is Green!' or 'Gravity is not Real!' reappear regularly, often appealing to people's desire for novelty and feeling smarter than others. These headlines, while catchy, are based on misleading interpretations of scientific concepts."
 author: "Dr. Thomas Walker"
 degree: "PhD in Astrophysics, University of Cambridge"
 tutor_type: "IB Physics Tutor"

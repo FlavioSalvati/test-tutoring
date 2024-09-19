@@ -1,6 +1,6 @@
 ---
 title: "How can glass be a liquid if it's so hard?"
-summary: "Glass isn't a true liquid, but an "amorphous solid" - a distinct phase of matter. Unlike solids with crystalline structures, glass lacks long-range order, giving it a liquid-like flow over extremely long timescales."
+summary: "Glass isn't a true liquid, but an 'amorphous solid' - a distinct phase of matter. Unlike solids with crystalline structures, glass lacks long-range order, giving it a liquid-like flow over extremely long timescales."
 author: "Prof. Lily Johnson"
 degree: "PhD in Environmental Chemistry, University of Edinburgh"
 tutor_type: "IB & A-Level Chemistry Tutor"
