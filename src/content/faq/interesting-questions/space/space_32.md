@@ -1,6 +1,6 @@
 ---
 title: "Since a star's light takes so long to reach us, how do we know that the star is still there?"
-summary: "We see stars as they were in the past, because their light takes time to reach us.  While a star might not exist now, we only see its past light, so it appears to exist from our perspective.  This is a philosophical question, as the star's light still reaches us, making it scientifically "present." #space #astronomy #stars"
+summary: "We see stars as they were in the past, because their light takes time to reach us.  While a star might not exist now, we only see its past light, so it appears to exist from our perspective.  This is a philosophical question, as the star's light still reaches us, making it scientifically 'present'."
 author: "Prof. Mia Turner"
 degree: "PhD in Quantum Mechanics, University of Oxford"
 tutor_type: "IB Physics Tutor"

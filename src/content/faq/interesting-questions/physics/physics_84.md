@@ -1,6 +1,6 @@
 ---
 title: "Why do diamonds last forever?"
-summary: "Diamonds don't last forever, they degrade to graphite over long periods. Though diamond is metastable, it takes extreme heat or ion bombardment to overcome the energy barrier.  Under normal conditions, the process is so slow that diamonds last millions of years, making "diamonds are forever" a good approximation for everyday use."
+summary: "Diamonds don't last forever, they degrade to graphite over long periods. Though diamond is metastable, it takes extreme heat or ion bombardment to overcome the energy barrier.  Under normal conditions, the process is so slow that diamonds last millions of years, making 'diamonds are forever' a good approximation for everyday use."
 author: "Dr. Jacob Wilson"
 degree: "PhD in Particle Physics, University College London"
 tutor_type: "IB Physics Tutor"

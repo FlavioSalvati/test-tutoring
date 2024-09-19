@@ -1,6 +1,6 @@
 ---
 title: "Why do camera flashes make your eyes turn red?"
-summary: "Camera flashes don't make your eyes red, they just reveal the natural redness of your retina, which is packed with blood vessels needed for vision. The bright light makes this color more visible, resulting in the familiar "red-eye" in photos."
+summary: "Camera flashes don't make your eyes red, they just reveal the natural redness of your retina, which is packed with blood vessels needed for vision. The bright light makes this color more visible, resulting in the familiar 'red-eye' in photos."
 author: "Prof. James Robinson"
 degree: "PhD in Evolutionary Biology, University of Cambridge"
 tutor_type: "IB Biology Tutor"

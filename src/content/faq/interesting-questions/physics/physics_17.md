@@ -1,6 +1,6 @@
 ---
 title: "Do atoms ever actually touch each other?"
-summary: "Do atoms ever actually touch? It depends on what you mean by "touch". Atoms don't have hard boundaries, but their wavefunctions overlap, meaning they always influence each other. Atoms touch significantly when they're close enough to interact, like forming chemical bonds. However, due to the Pauli exclusion principle, atoms never occupy the same location at room temperature."
+summary: "Do atoms ever actually touch? It depends on what you mean by 'touch'. Atoms don't have hard boundaries, but their wavefunctions overlap, meaning they always influence each other. Atoms touch significantly when they're close enough to interact, like forming chemical bonds. However, due to the Pauli exclusion principle, atoms never occupy the same location at room temperature."
 author: "Dr. Thomas Walker"
 degree: "PhD in Astrophysics, University of Cambridge"
 tutor_type: "IB Physics Tutor"

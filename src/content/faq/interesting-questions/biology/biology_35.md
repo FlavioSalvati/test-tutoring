@@ -1,6 +1,6 @@
 ---
 title: "Why are bats blind?"
-summary: "Bats are not blind and have good eyesight, especially in low light. They use echolocation to navigate at night but also rely on vision for finding food and social interactions. The saying "blind as a bat" is a misconception."
+summary: "Bats are not blind and have good eyesight, especially in low light. They use echolocation to navigate at night but also rely on vision for finding food and social interactions. The saying 'blind as a bat' is a misconception."
 author: "Dr. Chloe Simmons"
 degree: "MSc in Biology, University of Birmingham"
 tutor_type: "IB Biology Tutor"

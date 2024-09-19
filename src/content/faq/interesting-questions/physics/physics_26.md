@@ -1,6 +1,6 @@
 ---
 title: "How can a material at a certain temperature have all of its molecules at the same energy?"
-summary: "A material at a certain temperature doesn't have all molecules at the same energy. Temperature is the average kinetic energy of particles, meaning some move faster or slower than the average. This is like measuring the average height of a group – some people will be taller or shorter.  The distribution of particle energies follows a "thermal distribution", with the temperature representing the center of this distribution."
+summary: "A material at a certain temperature doesn't have all molecules at the same energy. Temperature is the average kinetic energy of particles, meaning some move faster or slower than the average. This is like measuring the average height of a group – some people will be taller or shorter.  The distribution of particle energies follows a 'thermal distribution', with the temperature representing the center of this distribution."
 author: "Dr. Jacob Wilson"
 degree: "PhD in Particle Physics, University College London"
 tutor_type: "IB Physics Tutor"

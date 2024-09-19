@@ -1,6 +1,6 @@
 ---
 title: "Why can only certain parts of the tongue taste sweet flavors? Is there an evolutionary benefit to this?"
-summary: "All parts of the tongue can taste all flavors. The "tongue map" is a misconception stemming from an inaccurate 1901 study. Each taste bud contains cells that detect sweet, sour, salty, bitter, and umami flavors."
+summary: "All parts of the tongue can taste all flavors. The 'tongue map' is a misconception stemming from an inaccurate 1901 study. Each taste bud contains cells that detect sweet, sour, salty, bitter, and umami flavors."
 author: "Dr. Chloe Simmons"
 degree: "MSc in Biology, University of Birmingham"
 tutor_type: "IB Biology Tutor"

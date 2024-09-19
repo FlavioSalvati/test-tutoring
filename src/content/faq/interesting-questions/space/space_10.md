@@ -1,6 +1,6 @@
 ---
 title: "Have astronomers ever observed a violet shift like they have blue shifts and red shifts?"
-summary: "Astronomers don't observe a "violet shift" because a "blue shift" already describes light moving towards an observer, even if it shifts beyond blue. While violet is the highest frequency visible light, human vision isn't sensitive to it, making blue the perceived limit.  The Doppler effect, responsible for these shifts, allows astronomers to study the motion of stars and galaxies."
+summary: "Astronomers don't observe a 'violet shift' because a 'blue shift' already describes light moving towards an observer, even if it shifts beyond blue. While violet is the highest frequency visible light, human vision isn't sensitive to it, making blue the perceived limit.  The Doppler effect, responsible for these shifts, allows astronomers to study the motion of stars and galaxies."
 author: "Dr. Jacob Wilson"
 degree: "PhD in Particle Physics, University College London"
 tutor_type: "IB Physics Tutor"

@@ -1,6 +1,6 @@
 ---
 title: "What is the difference between a chemical process and a physical process in chemistry?"
-summary: "There is no fundamental difference between chemical and physical processes in chemistry. All processes involving atom interactions are chemical, including phase changes. Even dissolving salt in water is a chemical reaction.  The term "physical process" is too broad to be useful, as all observable processes are physical."
+summary: "There is no fundamental difference between chemical and physical processes in chemistry. All processes involving atom interactions are chemical, including phase changes. Even dissolving salt in water is a chemical reaction.  The term 'physical process' is too broad to be useful, as all observable processes are physical."
 author: "Prof. Sophie Harris"
 degree: "PhD in Organic Chemistry, University of Cambridge"
 tutor_type: "IB & A-Level Chemistry Tutor"
