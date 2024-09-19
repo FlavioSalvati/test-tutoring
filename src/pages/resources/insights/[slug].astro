@@ -72,12 +72,26 @@ function generateKeywordsFromTitle(title) {
 
 // Generate keywords from the title
 const keywords = generateKeywordsFromTitle(insight.data.title);
-const image = insight.data.image;
+let image = ""
+
+if (insight.data.image) {
+    image = insight.data.image;
+} else {
+    image = '/src/assets/img/Insights/general-help/11.jpg';
+}
+
+let summary = ""
+
+if (insight.data.summary) {
+    summary = insight.data.summary;
+} else {
+    summary = "Unrivalled Education Solutions for your Family";
+}
 
 import 'katex/dist/katex.min.css';
 ---
 
-<ArticlesLayout image = {insight.data.image} title={insight.data.title} description={insight.data.summary} author={insight.data.author} keywords={keywords}>
+<ArticlesLayout image = {image} title={insight.data.title} description={summary} author={insight.data.author} keywords={keywords}>
 
   <!-- insight Card Layout -->
   <div class="row" style={{ paddingTop: '20px',paddingBottom: '0px',  display: 'block' }} id={insight.id}>

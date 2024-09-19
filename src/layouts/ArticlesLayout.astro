@@ -5,7 +5,7 @@ const { title, description, author, keywords, canonicalUrl } = Astro.props;
 ---
 <link rel="stylesheet" href="/src/assets/css/insight_article_style.css">
 
-<MainLayout title={title} description={description} author={author} keywords={keywords} canonicalUrl = {canonicalUrl}>
+<MainLayout title={title} description={description} author={author} keywords={keywords}>
     <div class="row" style="padding-left: 15px;">
         <div class="col-1 sidebar">
             <nav id="toc" class="toc">
@@ -47,24 +47,30 @@ const { title, description, author, keywords, canonicalUrl } = Astro.props;
 /* Sidebar styles */
 .sidebar {
     position: sticky;
+    width: 60%;
     top: 100px;
     height: 100vh;
     overflow-y: auto;
     background-color: rgba(27,32,64,0.9);
-    padding: 10px;
+    padding: 20px;
+    padding-left: 10px;
+    font-size: 13px;
     border-right: 1px solid black;
 }
 .toc ul {
     list-style-type: none;
     padding-left: 0;
+    margin-right: 10px;
 }
 .toc li {
     margin-bottom: 5px;
+    margin-right: 10px;
 
 }
 .sidebar .toc a {
     color: white !important; /* Change to black and use !important */
     text-decoration: none;
+    margin-right: 10px;
 }
 
 .sidebar .toc a.active {
@@ -83,6 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let h2Counter = 0;
     let h3Counter = 0;
 
+    let h2total = 0;
+    for (let i = 0; i < headings.length; i++) {
+        if (headings[i].tagName === 'H2') {
+            h2total++;
+        }
+    }
+
     // Populate TOC
     headings.forEach((heading, index) => {
         let id = heading.id || heading.textContent.toLowerCase().replace(/\s+/g, '-');
@@ -96,12 +109,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (heading.tagName === 'H2') {
             h2Counter++;
             h3Counter = 0; // Reset H3 counter for each new H2
-            a.textContent = `${h2Counter}. ${heading.textContent}`;
+            a.textContent = `${h2Counter}. ${heading.textContent.replace(/^\d+\.\s*/, '').trim()}`;
             li.style.paddingTop = '20px';
         } else if (heading.tagName === 'H3') {
             h3Counter++;
-            a.textContent = `${h2Counter}.${h3Counter} ${heading.textContent}`;
-            li.style.paddingLeft = '20px'; // Indent H3 items
+            if (h2total > 1) { 
+                a.textContent = `${h2Counter}.${h3Counter} ${heading.textContent.replace(/^\d+\.\s*/, '').trim()}`;
+                li.style.paddingLeft = '15px'; // Indent H3 items
+                a.style.fontSize = '12px';
+            } else {
+                a.textContent = `${h3Counter}. ${heading.textContent.replace(/^\d+\.\s*/, '').trim()}`;
+                li.style.paddingBottom = '20px';
+            }
         }
 
         li.appendChild(a);
