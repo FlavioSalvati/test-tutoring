@@ -1,6 +1,6 @@
 ---
 title: "How can I tell whether my friend's scientific explanation is accurate?"
-summary: "Learn how to evaluate the accuracy of your friend's scientific explanations. Look for red flags like vague explanations, reliance on "theories" or buzzwords, contradictions, and use of fictional concepts.  Experts in the field are your best source for reliable scientific information."
+summary: "Learn how to evaluate the accuracy of your friend's scientific explanations. Look for red flags like vague explanations, reliance on 'theories' or buzzwords, contradictions, and use of fictional concepts.  Experts in the field are your best source for reliable scientific information."
 author: "Prof. Emma Johnson"
 degree: "PhD in Condensed Matter Physics, University of Bristol"
 tutor_type: "IB Physics Tutor"

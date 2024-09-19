@@ -1,6 +1,6 @@
 ---
 title: "How can an electron leap between atomic levels without passing through all the space in between?"
-summary: "Electrons in atoms don't "leap" between energy levels; they smoothly transition. Quantum theory states electrons can only exist at discrete energy levels when their energy is stationary. During transitions, electrons don't have a well-defined energy and their average energy smoothly shifts between levels. The term "quantum leap" is misleading."
+summary: "Electrons in atoms don't 'leap' between energy levels; they smoothly transition. Quantum theory states electrons can only exist at discrete energy levels when their energy is stationary. During transitions, electrons don't have a well-defined energy and their average energy smoothly shifts between levels. The term 'quantum leap' is misleading."
 author: "Prof. Emma Johnson"
 degree: "PhD in Condensed Matter Physics, University of Bristol"
 tutor_type: "IB Physics Tutor"
