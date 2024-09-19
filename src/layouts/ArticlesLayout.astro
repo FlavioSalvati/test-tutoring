@@ -1,11 +1,11 @@
 ---
 import MainLayout from "./MainLayout.astro"
-const { title, description, author, keywords } = Astro.props;
+const { title, description, author, keywords, canonicalUrl } = Astro.props;
 
 ---
 <link rel="stylesheet" href="/src/assets/css/insight_article_style.css">
 
-<MainLayout title={title} description={description} author={author} keywords={keywords}>
+<MainLayout title={title} description={description} author={author} keywords={keywords} canonicalUrl = {canonicalUrl}>
     <div class="row" style="padding-left: 15px;">
         <div class="col-1 sidebar">
             <nav id="toc" class="toc">
@@ -16,7 +16,7 @@ const { title, description, author, keywords } = Astro.props;
             <div class="row all-insights">
                 <div class="col" style="width: 100%;padding: 0px;max-width: 100%;">
                     <button class="btn" style="height: 100px;">
-                        <a href="/resources/insights.html">
+                        <a href="/resources/insights/">
                             <span style="display: block; font-family: 'Abhaya Libre', serif; font-size: 35px;">
                                 All Insights <img src="/src/assets/img/aux/arrow.png" height="50" style="padding-left: 10px;padding-bottom: 0px; rotate: 180deg;" />
                             </span>

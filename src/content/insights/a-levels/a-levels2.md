@@ -1,6 +1,7 @@
 ---
 title: Choosing the correct A-Level subjects for your child
 author: Flavio Salvati
+summary: A guide to help you and your child navigate the important decision-making process of selecting A-level subjects, focusing on interests, future goals, balance, guidance, and stress management.
 date: 01-08-2024
 category: A-Levels
 image: /src/assets/img/Insights/a-levels/2.jpeg

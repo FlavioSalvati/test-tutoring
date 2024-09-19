@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import ExtendedFooter from '../components/ExtendedFooter.astro';
 const { title, description, author, keywords } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, 'https://www.beyond-tutors.com').toString();
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,7 @@ const { title, description, author, keywords } = Astro.props;
     <meta name="author" content={author || 'Beyond Tutors'} />
     <meta name="keywords" content={`FAQ, ${keywords || 'elite tutors, A-Levels, IB, GCSE, KS3, University Admission, Oxbridge'}, ${author || 'Beyond Tutors'}`} />
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={`https://www.beyond-tutors.com/${canonicalUrl}`} />
     <!-- SEO Metadata -->
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta charset="UTF-8">
