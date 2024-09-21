@@ -2,7 +2,7 @@
 title: 600+ EPQ Ideas and Examples for All Subjects
 summary: Explore over 600 EPQ ideas and examples across various subjects, including Physics, Biology, Maths, Chemistry, and History, to inspire your Extended Project Qualification.
 author: Flavio Salvati
-date: 01-08-2024
+date: 2024-05-21
 image: /src/assets/img/Insights/a-levels/1.jpeg
 --- 
 

@@ -2,7 +2,7 @@
 
 title: "IB Extended Essay: 300+ Ideas And Guide"
 author: Flavio Salvati
-date: 08-08-2024
+date: 2024-08-23
 category: IB 
 image: '/src/assets/img/Insights/ib/3.jpeg'
 --- 

@@ -1,8 +1,7 @@
 ---
-
 title: Preparing for SAT
 author: Flavio Salvati
-date: 20-11-1999
+date: 2024-07-19
 category: US Applications
 image: /src/assets/img/Insights/ivy-league/2.jpeg
 ---

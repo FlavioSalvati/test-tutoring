@@ -2,7 +2,7 @@
 
 title: IB Middle Years Programme (MYP), A Complete Guide
 author: Flavio Salvati
-date: 08-08-2024
+date: 2024-08-23
 category: A- Levels
 image: '/src/assets/img/Insights/ib/5.jpeg'
 --- 

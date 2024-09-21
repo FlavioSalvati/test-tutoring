@@ -2,7 +2,7 @@
 
 title: "King’s College School, Wimbledon: Admissions Guide"
 author: Flavio Salvati
-date: 20-11-1999
+date: 2024-05-21
 category: School Admissions
 image: /src/assets/img/Insights/school-admissions/2.jpeg
 ---

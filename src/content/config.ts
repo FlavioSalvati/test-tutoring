@@ -1,3 +1,4 @@
+import { date } from 'astro/zod';
 import { z, defineCollection } from 'astro:content';
 
 const faqCollection = defineCollection({
@@ -15,6 +16,7 @@ const insightsCollection = defineCollection({
     title: z.string(),
     author: z.string(),
     category: z.string().optional(),
+    date: z.date(),
     image: z.string().optional()
   }),
 });

@@ -2,7 +2,7 @@
 
 title: The Complete Guide to the IB Diploma Programme
 author: Flavio Salvati
-date: 08-08-2024
+date: 2024-08-23
 category: IB 
 image: '/src/assets/img/Insights/ib/2.jpeg'
 --- 

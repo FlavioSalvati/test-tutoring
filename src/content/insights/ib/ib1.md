@@ -1,7 +1,7 @@
 --- 
 title: 150+ IB CAS (Creativity, Activity, Service) Ideas
 author: Flavio Salvati
-date: 08-08-2024
+date: 2024-08-23
 category: IB CAS
 image: '/src/assets/img/Insights/ib/1.jpeg'
 --- 

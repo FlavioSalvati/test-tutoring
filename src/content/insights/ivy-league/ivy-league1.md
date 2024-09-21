@@ -1,8 +1,7 @@
 --- 
-
 title: What is the Ivy League?
 author: Flavio Salvati
-date: 08-08-2024
+date: 2024-07-19
 category: US Applications
 image: /src/assets/img/Insights/ivy-league/1.jpeg
 --- 
