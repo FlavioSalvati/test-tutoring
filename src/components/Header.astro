@@ -31,7 +31,7 @@ import headerImage from '/src/assets/img/header/landing.webp'; // Example image 
 <div class="navbar-background-container">
 
     <!-- Navbar for phone and tablet -->
-    <nav class="navbar navbar-expand-xl bg-transparent d-block d-lg-none d-xxl-block navbar-dark sticky-top" style="position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0); padding-left: 35px;">
+    <nav id="navbar" class="navbar navbar-expand-xl bg-transparent d-block d-lg-none d-xxl-block navbar-dark sticky-top" style="position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0); padding-left: 35px;">
         <div class="container-fluid"><a class="navbar-brand" href="/">Beyond Tutors</a>
             <button id="NavbarToggle" class="navbar-toggler text-primary" data-bs-toggle="collapse" data-bs-target="#navcol-2">
                 <span class="visually-hidden">Toggle navigation</span>
@@ -105,22 +105,25 @@ import headerImage from '/src/assets/img/header/landing.webp'; // Example image 
 <script>
     var isFirstClick = true;
     document.addEventListener("DOMContentLoaded", function() {
-        var navbar = document.getElementById("NavbarToggle");
+        var navbar = document.getElementById("navbar");
+        var navbarToggle = document.getElementById("NavbarToggle");
         //Increase height of header when navbar is toggled
-        navbar.addEventListener("click", function() {
+        navbarToggle.addEventListener("click", function() {
             var header = document.querySelector(".overlay-container");
             var header_content = document.querySelector(".main-header-content");
             if (isFirstClick) {
-            header.style.height = "80vh";
-            header_content.style.paddingTop = "30vh";     
-            header_content.style.paddingLeft = "30vh";
+            header.style.height = "100vh";
+            header_content.style.display = "none";  // Hide content
+            navbar.style.background = "rgb(255, 240, 228, 1)";
+            navbar.style.zIndex = "1000";
             isFirstClick = false;
-            } else {
-                header.style.height = "50vh";
-                header_content.style.paddingTop = "0vh";  
-                header_content.style.paddingLeft = "0vh";
-                isFirstClick = true;
-            }
+        } else {
+            header.style.height = "50vh";
+            header_content.style.display = "block";  // Show content
+            navbar.style.background = "rgb(255, 255, 255, 0)";
+            navbar.style.zIndex = "100";
+            isFirstClick = true;
+        }
         });
       
     });
@@ -145,6 +148,18 @@ import headerImage from '/src/assets/img/header/landing.webp'; // Example image 
         font-size: 30px !important;
         padding-top: 30px;
     }
+    .navbar .dropdown-menu .dropdown-item {
+    padding-top: 0px;  /* Reduce top padding */
+    padding-bottom: 0px;  /* Reduce bottom padding */
+    margin-bottom: 0px;  /* Optionally, adjust margin */
+    line-height: 2;     /* Tighten line spacing */
+
+}
+/* Ensure no additional space around the dropdown menu */
+.navbar .dropdown-menu {
+    padding: 0; /* Remove padding around the menu */
+    margin: 0; /* Remove margin around the menu */
+}
 }
 
 @media (max-width: 768px) {
@@ -155,6 +170,18 @@ import headerImage from '/src/assets/img/header/landing.webp'; // Example image 
         font-size: 30px !important;
         padding-top: 30px;
     }
+.navbar .dropdown-menu .dropdown-item {
+    padding-top: 0px;  /* Reduce top padding */
+    padding-bottom: 0px;  /* Reduce bottom padding */
+    margin-bottom: 0px;  /* Optionally, adjust margin */
+    line-height: 2;     /* Tighten line spacing */
+
+}
+/* Ensure no additional space around the dropdown menu */
+.navbar .dropdown-menu {
+    padding: 0; /* Remove padding around the menu */
+    margin: 0; /* Remove margin around the menu */
+}
 }
 
 @media (max-width: 1028px) {

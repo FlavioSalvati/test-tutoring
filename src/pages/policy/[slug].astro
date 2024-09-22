@@ -46,13 +46,14 @@ const { Content } = await faq.render();
                     <button class="btn" style="height: 100px;">
                         <a href="/">
                             <span style="display: block; font-family: 'Abhaya Libre', serif; font-size: 35px;">
-                                All Policy <img src="/src/assets/img/aux/arrow.png" height="50" style="padding-left: 10px;padding-bottom: 0px; rotate: 180deg;" />
+                                All Policy <img src="/src/assets/img/aux/arrow.png" height="50" style="padding-bottom: 0px; rotate: 180deg;" />
                             </span>
                         </a>
                     </button>
                 </div>
             </div>
             <div class="container insight_article_style" style="width: 100%;">
+              <h1 style="text-align: center"> {faq.data.title} </h1>
                 <Content>
             </div>  
         </div>
