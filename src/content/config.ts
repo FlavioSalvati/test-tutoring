@@ -20,8 +20,14 @@ const insightsCollection = defineCollection({
     image: z.string().optional()
   }),
 });
+const policyCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+  }),
+});
 
 export const collections = {
   faq: faqCollection,
-  insights: insightsCollection
+  insights: insightsCollection,
+  policy: policyCollection
 };

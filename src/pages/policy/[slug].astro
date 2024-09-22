@@ -1,0 +1,233 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro'
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const policy = await getCollection('policy');
+  
+  return policy.map(faq => {
+    const slug = (faq.data.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    return {
+      params: { slug },  // Use the generated slug
+      props: { faq },
+    };
+  });
+}
+
+// 2. Fetch the faq entry based on the slug from Astro.params
+const { slug } = Astro.params;
+const policy = await getCollection('policy');
+
+// Find the specific FAQ by matching the slug
+const faq = policy.find((qa) => (qa.data.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')=== slug);
+
+if (!faq) {
+  throw new Error(`Policy Page not found for slug: ${slug}`);
+}
+
+// Render the MDX content
+const { Content } = await faq.render();
+
+
+---
+
+<link rel="stylesheet" href="/src/assets/css/insight_article_style.css">
+
+<MainLayout>
+    <div class="row" style="padding-left: 15px;">
+        <div class="col-1 sidebar">
+            <nav id="toc" class="toc">
+                <ul style="color: white;"></ul>
+            </nav>
+        </div>
+        <div class="col-11 content">
+            <div class="row all-insights">
+                <div class="col" style="width: 100%;padding: 0px;max-width: 100%;">
+                    <button class="btn" style="height: 100px;">
+                        <a href="/">
+                            <span style="display: block; font-family: 'Abhaya Libre', serif; font-size: 35px;">
+                                All Policy <img src="/src/assets/img/aux/arrow.png" height="50" style="padding-left: 10px;padding-bottom: 0px; rotate: 180deg;" />
+                            </span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="container insight_article_style" style="width: 100%;">
+                <Content>
+            </div>  
+        </div>
+    </div>
+</MainLayout>
+
+<style>
+.row {
+    display: flex;
+}
+.col-3 {
+    width: 25%;
+    padding: 15px;
+}
+.col-9 {
+    width: 75%;
+    padding: 15px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: sticky;
+    width: 60%;
+    top: 100px;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: rgba(27,32,64,0.9);
+    padding: 20px;
+    padding-left: 10px;
+    font-size: 13px;
+    border-right: 1px solid black;
+}
+.toc ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-right: 10px;
+}
+.toc li {
+    margin-bottom: 5px;
+    margin-right: 10px;
+
+}
+.sidebar .toc a {
+    color: white !important; /* Change to black and use !important */
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.sidebar .toc a.active {
+    color: #d4af36 !important; /* Golden color for the active link */
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const tocElement = document.getElementById('toc');
+    const toc = tocElement ? tocElement.querySelector('ul') : null;
+    const articleContainer = document.querySelector('.insight_article_style');
+    const headings = articleContainer?.querySelectorAll('h2, h3') ?? [];
+    let isUserScrolling = false;
+
+    let h2Counter = 0;
+    let h3Counter = 0;
+
+    let h2total = 0;
+    for (let i = 0; i < headings.length; i++) {
+        if (headings[i].tagName === 'H2') {
+            h2total++;
+        }
+    }
+
+    // Populate TOC
+    headings.forEach((heading, index) => {
+        let id = heading.id || heading.textContent.toLowerCase().replace(/\s+/g, '-');
+        heading.id = id;
+
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.href = `#${id}`;
+        a.style.color = 'white';
+
+        if (heading.tagName === 'H2') {
+            h2Counter++;
+            h3Counter = 0; // Reset H3 counter for each new H2
+            a.textContent = `${h2Counter}. ${heading.textContent.replace(/^\d+\.\s*/, '').trim()}`;
+            li.style.paddingTop = '20px';
+        } else if (heading.tagName === 'H3') {
+            h3Counter++;
+            if (h2total > 1) { 
+                a.textContent = `${h2Counter}.${h3Counter} ${heading.textContent.replace(/^\d+\.\s*/, '').trim()}`;
+                li.style.paddingLeft = '15px'; // Indent H3 items
+                a.style.fontSize = '12px';
+            } else {
+                a.textContent = `${h3Counter}. ${heading.textContent.replace(/^\d+\.\s*/, '').trim()}`;
+                li.style.paddingBottom = '20px';
+            }
+        }
+
+        li.appendChild(a);
+        toc?.appendChild(li);
+    });
+
+    const links = document.querySelectorAll('.toc a');
+
+
+    function scrollLinkTop(link) {
+        const tocContainer = document.querySelector('.sidebar');
+        if (!tocContainer || !link) return; // Ensure elements are found
+
+        // Calculate the offset of the active link relative to the top of the TOC container
+        const linkOffsetTop = link.getBoundingClientRect().top - tocContainer.getBoundingClientRect().top;
+
+        // Calculate the current scroll position of the TOC container
+        const containerScrollTop = tocContainer.scrollTop;
+
+        // Calculate the target scroll position to bring the active link to the top
+        const targetScrollTop = containerScrollTop + linkOffsetTop;
+
+        // Scroll the TOC container to the calculated position
+        tocContainer.scrollTo({
+            top: targetScrollTop - 15,
+        });
+}
+
+    // Scroll spy
+    document.addEventListener('scroll', () => {
+        if (isUserScrolling) return;
+
+        let current = '';
+        headings.forEach(heading => {
+            const top = heading.getBoundingClientRect().top - 100;
+            if (top <= 50) {
+                current = heading.id;
+            }
+        });
+
+        if (current) {
+            links.forEach(link => {
+                const anchor = link as HTMLAnchorElement;
+                (anchor).style.color = 'white';
+                if (anchor.getAttribute('href') === `#${current}`) {
+                    anchor.style.color = '#d4af36';
+                    scrollLinkTop(anchor); // Ensure the active link is in view
+                }
+            });
+        }
+    });
+
+    // Handle click on TOC links
+    links.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            isUserScrolling = true;
+            const targetId = link.getAttribute('href')?.substring(1);
+            const targetElement = document.getElementById(targetId as string);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop + 480,
+                    behavior: 'smooth'
+                });
+            }
+            const anchor_selected = link as HTMLAnchorElement;
+            links.forEach(link => {
+                const anchor_deselected = link as HTMLAnchorElement;
+                anchor_deselected.style.color = 'white';
+            });
+            anchor_selected.style.color = '#d4af36';
+
+            scrollLinkTop(anchor_selected); // Ensure the clicked link is in view
+
+            setTimeout(() => {
+                isUserScrolling = false;
+            }, 500);  // Adjust time based on smooth scroll duration
+        });
+    });
+});
+    </script>
