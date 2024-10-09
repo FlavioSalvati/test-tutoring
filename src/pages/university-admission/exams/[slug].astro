@@ -1,0 +1,185 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro'
+import { getCollection } from 'astro:content';
+import DynamicImage from '../../../components/DynamicImage.astro';
+
+
+export async function getStaticPaths() {
+    const exam = await getCollection('university-admission');
+  
+  return exam.map(faq => {
+    const slug = (faq.data.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    return {
+      params: { slug },  // Use the generated slug
+      props: { faq },
+    };
+  });
+}
+
+// 2. Fetch the faq entry based on the slug from Astro.params
+const { slug } = Astro.params;
+const exam = await getCollection('university-admission');
+
+// Find the specific FAQ by matching the slug
+const faq = exam.find((qa) => (qa.data.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')=== slug);
+
+if (!faq) {
+  throw new Error(`Exam Page not found for slug: ${slug}`);
+}
+
+// Render the MDX content
+const { Content } = await faq.render();
+
+const title = faq.data.title;
+const summary = faq.data.summary;
+const image = faq.data.card1_image;
+
+
+---
+
+<MainLayout>
+      <section class="cards-section">
+        <div class="container">
+          <h2>Our {title} Preparation Programs</h2>
+  
+          <!-- Card 1 (Image on left, text on right) -->
+          <div class="card">
+            <div class="card-image card-image-right">
+                <DynamicImage imagePath={image} altText="Article Image" />
+            </div>
+            <div class="card-content">
+              <h3>Group Classes</h3>
+              <p>Join small group classes that encourage peer interaction and collaborative learning while benefiting from expert guidance.</p>
+            </div>
+          </div>
+  
+          <!-- Card 2 (Image on right, text on left) -->
+          <div class="card reverse">
+            <div class="card-content">
+              <h3>Group Classes</h3>
+              <p>Join small group classes that encourage peer interaction and collaborative learning while benefiting from expert guidance.</p>
+            </div>
+            <div class="card-image card-image-right">
+                <DynamicImage imagePath={image} altText="Article Image"/>
+            </div>
+          </div>
+  
+          <!-- Card 3 (Image on left, text on right) -->
+          <div class="card">
+            <div class="card-image card-image-right">
+                <DynamicImage imagePath={image} altText="Article Image"/>
+            </div>
+            <div class="card-content">
+              <h3>Group Classes</h3>
+              <p>Join small group classes that encourage peer interaction and collaborative learning while benefiting from expert guidance.</p>
+            </div>
+          </div>
+  
+        </div>
+      </section>
+  </MainLayout>
+  
+
+<style>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+/* Card Styles */
+.cards-section .card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease;
+  max-width: 1000px;  /* Constrain the card's width */
+  margin: 20px auto;  /* Center the card horizontally */
+}
+
+.cards-section .card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  flex-basis: 40%;
+  max-width: 400px;  /* Set a max width for images */
+  height: 250px!important;  /* Fixed height for the images */
+  overflow: hidden;  /* Ensure image is contained */
+  display: grid;  /* Ensure flexbox context */
+  align-items: center;  /* Center the image vertically */
+  justify-content: center;  /* Center the image horizontally */
+}
+
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* Ensures the image covers the area without stretching */
+}
+
+.card-image-left {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.card-image-right {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.card-content {
+  padding: 20px;
+  flex: 1;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.75rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Alternating Layout */
+.card.reverse {
+  flex-direction: row-reverse;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .card.reverse {
+    flex-direction: column;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+}
+</style>

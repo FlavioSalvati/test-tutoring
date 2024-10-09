@@ -25,9 +25,18 @@ const policyCollection = defineCollection({
     title: z.string(),
   }),
 });
+const examsCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    card1_image: z.string(),
+    card1_title: z.string(),
+  }),
+});
 
 export const collections = {
   faq: faqCollection,
   insights: insightsCollection,
-  policy: policyCollection
+  policy: policyCollection,
+  exams: examsCollection,
 };

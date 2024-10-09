@@ -23,7 +23,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                                 <div></div><input id="email" class="border-light-subtle form-control form-control form-control" type="email" inputmode="email" name="email" placeholder="Email Address" required style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;" />
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style="padding-right: 25px;padding-left: 0px;"><label class="form-label form-label" style="font-size: 25px;font-family: 'Abhaya Libre', serif;padding-top: 10px;color: rgb(255,255,255);" for="phone">Telephone number</label>
-                                <div></div><input id="prefix" type="hidden" name="prefix" value="1" /><input id="phone" class="border-light-subtle form-control" type="tel" name="phone" style="background: rgba(255,255,255,0.35);border-radius: 4px;border-style: solid;border-top-style: solid;border-top-color: rgb(0,0,0);border-right-color: rgb(0,0,0);border-bottom-style: solid;border-bottom-color: rgb(0,0,0);border-left-style: solid;border-left-color: rgb(0,0,0);height: 51.5px;width: 100%;font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;" />
+                                <div></div><input id="phone" class="border-light-subtle form-control" type="tel" name="phone" style="background: rgba(255,255,255,0.35);border-radius: 4px;border-style: solid;border-top-style: solid;border-top-color: rgb(0,0,0);border-right-color: rgb(0,0,0);border-bottom-style: solid;border-bottom-color: rgb(0,0,0);border-left-style: solid;border-left-color: rgb(0,0,0);height: 51.5px;width: 100%;font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;" />
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                     <div class="mb-3"><textarea id="tutoring_experience" class="border-light-subtle form-control form-control form-control" name="tutoring_experience" placeholder="Ddescribe your tutoring experience" rows="3" style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;"></textarea></div>
                     <div class="text-left"><label class="form-label form-label title" label style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="tutoring_offered">Tutoring Offered</label></div>
                     <div class="mb-3"><textarea id="tutoring_offered" class="border-light-subtle form-control form-control form-control" name="tutoring_offered" placeholder="What subjects do you teach and at what level? What is your availability to tutor?" rows="3" style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;"></textarea></div>
-                    <div class="text-left" style="padding-right: 50px;"><label class="form-label form-label title" label style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="linkedin_url">LinkedIn `Profile URL</label></div>
+                    <div class="text-left" style="padding-right: 50px;"><label class="form-label form-label title" label style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="linkedin_url">LinkedIn Profile URL</label></div>
                     <div class="mb-3"><input id="linkedin_url" class="border-light-subtle form-control form-control form-control" type="text" name="linkedin_url" style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);padding-right: 50px;font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;" /></div>
                     <div class="text-left" style="padding-right: 50px;"><label class="form-label form-label title" label style="font-family: 'Abhaya Libre', serif;font-size: 25px;color: rgb(255,255,255);" for="referrer">Referrer (optional)</label></div>
                     <div class="mb-3"><input id="referrer" class="border-light-subtle form-control form-control form-control" type="text" name="referrer" style="border-color: rgb(0,0,0);background: rgba(255,255,255,0.35);padding-right: 50px;font-size: 25px;font-family: 'Abhaya Libre', serif;color: #ffffff;height: 51.5px;" /></div>
@@ -107,7 +107,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         const options = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit' };
         const formatter = new Intl.DateTimeFormat([], options);
         const londonTime = formatter.format(new Date());
-        const londonHour = parseInt(londonTime, 10);
+        const londonHour = parseInt(londonTime.split(':')[0], 10);
 
         let userTimezone = 'Europe/London';
 
@@ -116,11 +116,11 @@ import MainLayout from '../layouts/MainLayout.astro';
         }
     
         if (londonHour > 8 && londonHour < 20 && m){
-          m.innerHTML = form.elements["name"].value + ", thank you for completing the form. You should have now received a confirmation email. We aim to get back to you within 1-2 hours, which is before " + (londonHour+2) + ":00 London Time. If you do not receive an email in the next 10 minutes, please try submitting the form again or contact <a href='onboarding@beyond-tutors.com'>info@beyond-tutors.com</a> for any questions."
+          m.innerHTML = form.elements["name"].value + ", thank you for completing the form. You should have now received a confirmation email. We aim to get back to you within 1-2 days. If you do not receive an email in the next 10 minutes, please try submitting the form again or contact <a href='onboarding@beyond-tutors.com'>info@beyond-tutors.com</a> for any questions."
 
         }
         else if (m){
-            m.innerHTML = form.elements["name"].value + ", thank you for completing the form. You should have now received a confirmation email. Please note that the time in London is " + londonTime + ", and we are currently out of office. We will get back to you first thing tomorrow morning."
+            m.innerHTML = form.elements["name"].value + ", thank you for completing the form. You should have now received a confirmation email. Please note that the time in London is " + londonTime + ", and we are currently out of office. If there are any openings, we will get back to you as soon as possible."
         }
         document.getElementById("button_label_submitting").style.display = "none";
         document.getElementById("button_label_submitted").style.display = "block";
@@ -146,7 +146,6 @@ function handleSubmit(event) {
     var button = document.getElementById('submit_button');
     button.disabled = true;
     event.preventDefault()
-    document.getElementById("prefix").value = iti.getSelectedCountryData().dialCode
     const formdata = new FormData(form);
     var cv_file = formdata.get('cv_file')
     var name = formdata.get('name')
@@ -186,39 +185,6 @@ function yesnoCheck(that) {
         document.getElementById("section-postal-address").style.display = "block";
     }
 }
- 
-const countryData = window.intlTelInputGlobals.getCountryData();
-const input = document.querySelector("#phone") as HTMLInputElement;
-const addressDropdown = document.querySelector("#country") as HTMLSelectElement;
-    
-const iti = window.intlTelInput(input, {
-  utilsScript: "assets/js/utils.js",
-  separateDialCode: false,
-  initialCountry: ""
-});
 
-// populate the country dropdown
-for (let i = 0; i < countryData.length; i++) {
-  const country = countryData[i];
-  const optionNode = document.createElement("option");
-  optionNode.value = country.iso2;
-  const textNode = document.createTextNode(country.name);
-  optionNode.appendChild(textNode);
-  addressDropdown.appendChild(optionNode);
 
-}
-// set it's initial value
-addressDropdown.value = iti.getSelectedCountryData().iso2;
-
-// listen to the telephone input for changes
-input.addEventListener('countrychange', () => {
-  addressDropdown.value = iti.getSelectedCountryData().iso2;
-});
-   
-            
-
-// listen to the address dropdown for changes
-addressDropdown.addEventListener('change', () => {
-  iti.setCountry(this.value);
-});
 </script>
