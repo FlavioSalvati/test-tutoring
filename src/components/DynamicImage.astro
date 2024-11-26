@@ -7,9 +7,10 @@ import ResponsiveImage from './ResponsiveImage.astro';
 interface Props {
   imagePath: string;
   altText: string;
+  style: string;
 }
 
-const { imagePath, altText } = Astro.props;
+const { imagePath, altText, style } = Astro.props;
 
 // Use import.meta.glob to dynamically import images
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/img/**/*.{jpeg,jpg,png,gif,webp}');
@@ -24,4 +25,4 @@ if (images[imagePath]) {
 ---
 
 <!-- Render the image -->
-<ResponsiveImage src={imgSrc} alt={altText} />
+<ResponsiveImage src={imgSrc} alt={altText} style={style} />
