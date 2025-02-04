@@ -305,26 +305,31 @@ function changePage(pageNumber) {
 
 function updateItems() {
   const itemContainer = document.getElementById("item-container");
-  itemContainer.innerHTML = "";  // Clear the container
+  itemContainer.innerHTML = "";
 
-  // Group articles into rows of 4
   const articlesPerRow = 4;
-  const articles = paginatedQas[currentPage -1]; // Get the current page's articles
+  const articles = paginatedQas[currentPage -1];
 
   for (let i = 0; i < articles.length; i += articlesPerRow) {
-    // Create a new row
     const row = document.createElement("div");
-    row.className = "row";  // You can add any custom row class here
-    row.style.marginBottom = "20px";  // Optional: Add some spacing between rows
+    row.className = "row";
+    row.style.marginBottom = "20px";
 
-    // Add 4 articles to this row
     articles.slice(i, i + articlesPerRow).forEach((qa) => {
       const url = (qa.data.title).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      
+      // Format the date
+      const date = new Date(qa.data.date);
+      const formattedDate = date.toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
 
       const qaCard = `
         <div id=${qa.id} class="col m-auto" style="padding-bottom: 100px; padding-top: 10px;">
           <div class="box light slide-in from-bottom">
-            <div class="dateClass"><span>${qa.data.date}</span></div>
+            <div class="dateClass"><span>${formattedDate}</span></div>
             <div class="contentClass"><span>${qa.data.title}</span></div>
             <button class="btn">
               <a href="/resources/insights/${url}">
@@ -337,10 +342,9 @@ function updateItems() {
         </div>
       `;
       
-      row.innerHTML += qaCard;  // Append the article to the row
+      row.innerHTML += qaCard;
     });
 
-    // Append the row to the container
     itemContainer.appendChild(row);
   }
   const elements = document.querySelectorAll('.slide-in');
